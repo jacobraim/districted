@@ -1,31 +1,11 @@
 import React, { useRef, useState } from "react";
 
 const dailyLocations = [
-  {
-    name: "The Lincoln Memorial",
-    category: "Monument",
-    answer: { lat: 38.889269, lng: -77.050176 }
-  },
-  {
-    name: "Ben's Chili Bowl",
-    category: "Restaurant",
-    answer: { lat: 38.917025, lng: -77.03145 }
-  },
-  {
-    name: "Nationals Park",
-    category: "Sports",
-    answer: { lat: 38.872987, lng: -77.007435 }
-  },
-  {
-    name: "The Anthem",
-    category: "Music Venue",
-    answer: { lat: 38.881954, lng: -77.026972 }
-  },
-  {
-    name: "Dan's Cafe",
-    category: "Dive Bar",
-    answer: { lat: 38.914139, lng: -77.042258 }
-  }
+  { name: "The Lincoln Memorial", category: "Monument", answer: { lat: 38.889269, lng: -77.050176 } },
+  { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
+  { name: "Nationals Park", category: "Sports", answer: { lat: 38.872987, lng: -77.007435 } },
+  { name: "The Anthem", category: "Music Venue", answer: { lat: 38.881954, lng: -77.026972 } },
+  { name: "Dan's Cafe", category: "Dive Bar", answer: { lat: 38.914139, lng: -77.042258 } }
 ];
 
 const TILE_SIZE = 256;
@@ -89,11 +69,11 @@ function formatMiles(miles) {
 }
 
 function scoreClass(d) {
-  if (d <= 0.15) return "bg-emerald-500";
-  if (d <= 0.5) return "bg-lime-500";
-  if (d <= 1.5) return "bg-yellow-400";
-  if (d <= 3.5) return "bg-orange-500";
-  return "bg-red-500";
+  if (d <= 0.15) return "green-dark";
+  if (d <= 0.5) return "green";
+  if (d <= 1.5) return "yellow";
+  if (d <= 3.5) return "orange";
+  return "red";
 }
 
 function scoreEmoji(d) {
@@ -136,10 +116,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
 
   function pointToScreen(point) {
     const world = latLngToWorld(point, zoom);
-    return {
-      x: world.x - topLeft.x,
-      y: world.y - topLeft.y
-    };
+    return { x: world.x - topLeft.x, y: world.y - topLeft.y };
   }
 
   function screenToPoint(x, y) {
@@ -157,11 +134,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
 
     if (pointersRef.current.size === 1) {
       setDragging(false);
-      dragRef.current = {
-        startX: e.clientX,
-        startY: e.clientY,
-        centerAtStart: center
-      };
+      dragRef.current = { startX: e.clientX, startY: e.clientY, centerAtStart: center };
       pinchRef.current = null;
     }
 
@@ -194,6 +167,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
       if (delta < -110) nextZoom = pinchRef.current.baseZoom - 2;
 
       nextZoom = clamp(nextZoom, MIN_ZOOM, MAX_ZOOM);
+
       if (nextZoom !== pinchRef.current.lastAppliedZoom) {
         pinchRef.current.lastAppliedZoom = nextZoom;
         setZoom(nextZoom);
@@ -209,11 +183,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
     if (Math.abs(dx) + Math.abs(dy) > 4) setDragging(true);
 
     const startWorld = latLngToWorld(dragRef.current.centerAtStart, zoom);
-    const nextWorld = {
-      x: startWorld.x - dx,
-      y: startWorld.y - dy
-    };
-
+    const nextWorld = { x: startWorld.x - dx, y: startWorld.y - dy };
     const nextCenter = worldToLatLng(nextWorld, zoom);
 
     setCenter({
@@ -228,9 +198,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
 
     if (!wasDragging && dragRef.current && !revealed) {
       const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      onGuess(screenToPoint(x, y));
+      onGuess(screenToPoint(e.clientX - rect.left, e.clientY - rect.top));
     }
 
     if (pointersRef.current.size === 0) {
@@ -241,12 +209,9 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
   }
 
   return (
-    <div
-      className="relative overflow-hidden rounded-2xl border bg-slate-200"
-      style={{ height: MAP_HEIGHT, touchAction: "none" }}
-    >
+    <div className="map-wrap" style={{ height: MAP_HEIGHT }}>
       <div
-        className={`absolute inset-0 select-none ${dragging ? "cursor-grabbing" : "cursor-crosshair"}`}
+        className={`map-surface ${dragging ? "dragging" : "ready"}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={endPointer}
@@ -263,7 +228,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
               key={`${zoom}-${tile.x}-${tile.y}`}
               alt=""
               draggable="false"
-              className="absolute h-64 w-64 max-w-none"
+              className="tile"
               src={`https://basemaps.cartocdn.com/light_nolabels/${zoom}/${wrappedX}/${tile.y}.png`}
               style={{ left, top }}
             />
@@ -273,11 +238,7 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
         {guesses.map((guess, index) => {
           const p = pointToScreen(guess.guess);
           return (
-            <div
-              key={index}
-              className={`absolute z-10 flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white text-sm font-black text-white shadow-lg ${scoreClass(guess.distance)}`}
-              style={{ left: p.x, top: p.y }}
-            >
+            <div key={index} className={`pin ${scoreClass(guess.distance)}`} style={{ left: p.x, top: p.y }}>
               {index + 1}
             </div>
           );
@@ -291,24 +252,20 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
           return (
             <>
               {guessPoint && (
-                <svg className="pointer-events-none absolute inset-0 z-20 h-full w-full overflow-visible">
+                <svg className="reveal-line">
                   <line
                     x1={guessPoint.x}
                     y1={guessPoint.y}
                     x2={p.x}
                     y2={p.y}
-                    stroke="black"
+                    stroke="#020617"
                     strokeWidth="3"
                     strokeDasharray="6 6"
                     opacity="0.75"
                   />
                 </svg>
               )}
-
-              <div
-                className="absolute z-30 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-black text-lg font-black text-white shadow-xl"
-                style={{ left: p.x, top: p.y }}
-              >
+              <div className="pin answer-pin" style={{ left: p.x, top: p.y }}>
                 ★
               </div>
             </>
@@ -316,14 +273,12 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
         })()}
       </div>
 
-      <div className="absolute right-3 top-3 z-40 flex flex-col gap-2">
-        <button className="rounded-lg bg-white px-3 py-1 text-lg font-black shadow" onClick={() => zoomBy(1)}>+</button>
-        <button className="rounded-lg bg-white px-3 py-1 text-lg font-black shadow" onClick={() => zoomBy(-1)}>−</button>
+      <div className="zoom-controls">
+        <button type="button" onClick={() => zoomBy(1)}>+</button>
+        <button type="button" onClick={() => zoomBy(-1)}>−</button>
       </div>
 
-      <div className="absolute bottom-3 left-3 z-40 rounded-lg bg-white/95 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-slate-500 shadow">
-        No-label demo map
-      </div>
+      <div className="map-label">No-label demo map</div>
     </div>
   );
 }
@@ -338,7 +293,10 @@ export default function DistrictedPrototype() {
   const gameOver = round >= dailyLocations.length;
   const totalMiles = guesses.reduce((sum, g) => sum + g.distance, 0);
   const scoreLine = guesses.map((g) => scoreEmoji(g.distance)).join("");
-  const shareText = `Districted Demo\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://districted.vercel.app/`;
+  const shareText = `Districted Demo
+${scoreLine}
+${totalMiles.toFixed(2)} total miles off
+https://districted.vercel.app/`;
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
@@ -347,12 +305,7 @@ export default function DistrictedPrototype() {
 
     setGuesses([
       ...guesses,
-      {
-        guess,
-        answer: currentLocation.answer,
-        distance: d,
-        location: currentLocation
-      }
+      { guess, answer: currentLocation.answer, distance: d, location: currentLocation }
     ]);
 
     setRevealed(true);
@@ -395,25 +348,23 @@ export default function DistrictedPrototype() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 p-4 text-slate-950">
-      <div className="mx-auto max-w-md space-y-4">
-        <header className="space-y-1 text-center">
-          <h1 className="text-4xl font-black tracking-tight">Districted</h1>
-          <p className="text-sm text-slate-600">Pin the DC location. One guess only.</p>
+    <main className="app">
+      <div className="shell">
+        <header className="header">
+          <h1>Districted</h1>
+          <p>Pin the DC location. One guess only.</p>
         </header>
 
         {!gameOver && (
-          <section className="space-y-3 rounded-2xl border bg-white p-4 shadow-sm">
-            <div className="flex items-center justify-between text-xs uppercase tracking-wide text-slate-500">
+          <section className="card">
+            <div className="meta">
               <span>Districted Daily</span>
               <span>Round {round + 1} / 5</span>
             </div>
 
-            <div className="rounded-xl border bg-white p-4 text-center">
-              <div className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-500">
-                {currentLocation.category}
-              </div>
-              <h2 className="text-3xl font-black">{currentLocation.name}</h2>
+            <div className="location-card">
+              <div className="category">{currentLocation.category}</div>
+              <h2>{currentLocation.name}</h2>
             </div>
 
             <TileMap
@@ -423,73 +374,54 @@ export default function DistrictedPrototype() {
               onGuess={handleGuess}
             />
 
-            <p className="text-center text-xs text-slate-500">
-              Drag to move the map. Pinch or use +/− to zoom. You get ONE guess.
-            </p>
+            <p className="hint">Drag to move the map. Pinch or use +/− to zoom. You get ONE guess.</p>
           </section>
         )}
 
         {revealed && guesses[round] && (
-          <section className="space-y-4 rounded-2xl border bg-white p-4 shadow-sm">
-            <div className="grid grid-cols-5 gap-2">
+          <section className="card">
+            <div className="score-boxes">
               {[0, 1, 2, 3, 4].map((i) => (
-                <div key={i} className={`h-8 rounded-md ${guesses[i] ? scoreClass(guesses[i].distance) : "bg-slate-200"}`} />
+                <div key={i} className={`score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`} />
               ))}
             </div>
 
-            <div className="space-y-2 rounded-xl bg-slate-100 p-4 text-sm">
-              <div className="flex items-center justify-between">
-                <span className="font-semibold">Distance Off</span>
-                <span>{formatMiles(guesses[round].distance)}</span>
-              </div>
+            <div className="result-row">
+              <strong>Distance Off</strong>
+              <span>{formatMiles(guesses[round].distance)}</span>
             </div>
 
-            <button
-              className="w-full rounded-xl bg-slate-950 px-4 py-3 font-semibold text-white"
-              onClick={nextRound}
-            >
+            <br />
+
+            <button className="primary-button" onClick={nextRound}>
               {round === dailyLocations.length - 1 ? "See Final Score" : "Next Location"}
             </button>
           </section>
         )}
 
         {gameOver && (
-          <section className="space-y-4 rounded-2xl border bg-white p-4 text-center shadow-sm">
-            <div>
-              <div className="text-xs uppercase tracking-wide text-slate-500">Final Score</div>
-              <h2 className="text-4xl font-black">{totalMiles.toFixed(2)}</h2>
-              <p className="text-sm text-slate-600">Total miles off</p>
-            </div>
+          <section className="card final-score">
+            <div className="category">Final Score</div>
+            <h2>{totalMiles.toFixed(2)}</h2>
+            <p>Total miles off</p>
 
-            <div className="grid grid-cols-5 gap-2">
+            <div className="score-boxes">
               {guesses.map((g, i) => (
-                <div key={i} className={`h-8 rounded-md ${scoreClass(g.distance)}`} />
+                <div key={i} className={`score-box ${scoreClass(g.distance)}`} />
               ))}
             </div>
 
-            <pre className="whitespace-pre-wrap rounded-xl bg-slate-950 p-3 text-left text-sm text-white">{shareText}</pre>
+            <pre className="share">{shareText}</pre>
 
-            <div className="grid gap-2">
-              <button
-                className="w-full rounded-xl bg-slate-950 px-4 py-3 font-semibold text-white"
-                onClick={shareGame}
-              >
-                Share Result
-              </button>
-
-              <button
-                className="w-full rounded-xl border px-4 py-3 font-semibold"
-                onClick={restart}
-              >
-                Play Again
-              </button>
+            <div className="button-stack">
+              <button className="primary-button" onClick={shareGame}>Share Result</button>
+              <button className="secondary-button" onClick={restart}>Play Again</button>
             </div>
 
-            {shareStatus && <p className="text-xs font-semibold text-slate-500">{shareStatus}</p>}
+            {shareStatus && <p className="share-status">{shareStatus}</p>}
           </section>
         )}
       </div>
-    </div>
+    </main>
   );
 }
-
