@@ -51,29 +51,22 @@ function revealLine(guess, answer) {
 }
 
 function ensureLine(map) {
-  if (!map.getSource("districted-reveal-line")) {
-    map.addSource("districted-reveal-line", {
-      type: "geojson",
-      data: emptyLine()
-    });
-  }
-
-  if (!map.getLayer("districted-reveal-line-casing")) {
-    map.addLayer({
-      id: "districted-reveal-line-casing",
-      type: "line",
-      source: "districted-reveal-line",
-      layout: {
-        "line-cap": "round",
-        "line-join": "round"
-      },
-      paint: {
-        "line-color": "#ffffff",
-        "line-width": 8,
-        "line-opacity": 0.95
-      }
-    });
-  }
+ if (!map.getLayer("districted-reveal-line")) {
+  map.addLayer({
+    id: "districted-reveal-line",
+    type: "line",
+    source: "districted-reveal-line",
+    layout: {
+      "line-cap": "round",
+      "line-join": "round"
+    },
+    paint: {
+      "line-color": "#2563eb",
+      "line-width": 7,
+      "line-opacity": 1
+    }
+  });
+}
 
   if (!map.getLayer("districted-reveal-line")) {
     map.addLayer({
