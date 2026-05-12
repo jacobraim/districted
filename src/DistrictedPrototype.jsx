@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -18,6 +18,8 @@ function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${m
 function scoreClass(d){if(d<=0.15)return"green-dark";if(d<=0.5)return"green";if(d<=1.5)return"yellow";if(d<=3.5)return"orange";return"red";}
 function scoreEmoji(d){if(d<=0.15)return"🟩";if(d<=0.5)return"🟢";if(d<=1.5)return"🟨";if(d<=3.5)return"🟧";return"🟥";}
 function makeMarkerElement(className,label){const el=document.createElement("div");el.className=className;el.textContent=label;return el;}
+function emptyLineData(){return{type:"Feature",geometry:{type:"LineString",coordinates:[]}};}
+function fullLineData(guess, answer){return{type:"Feature",geometry:{type:"LineString",coordinates:[[guess.lng,guess.lat],[answer.lng,answer.lat]]}};}
 
 function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess }) {
   const mapNodeRef = useRef(null);
@@ -25,28 +27,9 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
   const guessMarkerRef = useRef(null);
   const answerMarkerRef = useRef(null);
   const revealedRef = useRef(revealed);
-  const [linePoints, setLinePoints] = useState(null);
+  const [mapReady, setMapReady] = useState(false);
 
   useEffect(() => { revealedRef.current = revealed; }, [revealed]);
-
-  const updateLine = useCallback(() => {
-    const map = mapRef.current;
-    if (!map || !revealed || !activeGuess || !currentAnswer) {
-      setLinePoints(null);
-      return;
-    }
-
-    const guess = map.project([activeGuess.guess.lng, activeGuess.guess.lat]);
-    const answer = map.project([currentAnswer.lng, currentAnswer.lat]);
-
-    setLinePoints({
-      x1: guess.x,
-      y1: guess.y,
-      x2: answer.x,
-      y2: answer.y,
-      key: `${roundNumber}-${activeGuess.distance.toFixed(6)}`
-    });
-  }, [activeGuess, currentAnswer, revealed, roundNumber]);
 
   useEffect(() => {
     if (!MAPBOX_TOKEN || mapRef.current || !mapNodeRef.current) return;
@@ -66,14 +49,33 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     map.addControl(new mapboxgl.AttributionControl({ compact: true }), "bottom-right");
 
+    map.on("load", () => {
+      if (!map.getSource("reveal-line")) {
+        map.addSource("reveal-line", { type: "geojson", data: emptyLineData() });
+      }
+
+      if (!map.getLayer("reveal-line")) {
+        map.addLayer({
+          id: "reveal-line",
+          type: "line",
+          source: "reveal-line",
+          layout: { "line-cap": "round", "line-join": "round" },
+          paint: {
+            "line-color": "#020617",
+            "line-width": 4,
+            "line-opacity": 0.85,
+            "line-dasharray": [1.5, 1.2]
+          }
+        });
+      }
+
+      setMapReady(true);
+    });
+
     map.on("click", (event) => {
       if (revealedRef.current) return;
       onGuess({ lat: event.lngLat.lat, lng: event.lngLat.lng });
     });
-
-    map.on("move", updateLine);
-    map.on("zoom", updateLine);
-    map.on("resize", updateLine);
 
     mapRef.current = map;
 
@@ -81,49 +83,61 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
       map.remove();
       mapRef.current = null;
     };
-  }, [onGuess, updateLine]);
+  }, [onGuess]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || !mapReady) return;
 
     if (guessMarkerRef.current) {
       guessMarkerRef.current.remove();
       guessMarkerRef.current = null;
     }
 
-    if (!activeGuess) {
-      setLinePoints(null);
-      return;
+    if (answerMarkerRef.current) {
+      answerMarkerRef.current.remove();
+      answerMarkerRef.current = null;
     }
+
+    const source = map.getSource("reveal-line");
+    if (source) source.setData(emptyLineData());
+
+    if (!activeGuess) return;
 
     guessMarkerRef.current = new mapboxgl.Marker({
       element: makeMarkerElement(`map-marker ${scoreClass(activeGuess.distance)}`, String(roundNumber))
     })
       .setLngLat([activeGuess.guess.lng, activeGuess.guess.lat])
       .addTo(map);
-
-    updateLine();
-  }, [activeGuess, roundNumber, updateLine]);
+  }, [activeGuess, roundNumber, mapReady]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || !mapReady) return;
+
+    const source = map.getSource("reveal-line");
+
+    if (!revealed || !activeGuess || !currentAnswer || !source) {
+      if (source) source.setData(emptyLineData());
+      if (answerMarkerRef.current) {
+        answerMarkerRef.current.remove();
+        answerMarkerRef.current = null;
+      }
+      return;
+    }
 
     if (answerMarkerRef.current) {
       answerMarkerRef.current.remove();
       answerMarkerRef.current = null;
     }
 
-    setLinePoints(null);
-
-    if (!revealed || !activeGuess || !currentAnswer) return;
-
     answerMarkerRef.current = new mapboxgl.Marker({
       element: makeMarkerElement("answer-marker", "★")
     })
       .setLngLat([currentAnswer.lng, currentAnswer.lat])
       .addTo(map);
+
+    source.setData(fullLineData(activeGuess.guess, currentAnswer));
 
     const bounds = new mapboxgl.LngLatBounds();
     bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
@@ -134,10 +148,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
       maxZoom: 14.5,
       duration: 650
     });
-
-    window.setTimeout(updateLine, 80);
-    window.setTimeout(updateLine, 720);
-  }, [revealed, activeGuess, currentAnswer, updateLine]);
+  }, [revealed, activeGuess, currentAnswer, mapReady]);
 
   if (!MAPBOX_TOKEN) {
     return (
@@ -149,22 +160,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
     );
   }
 
-  return (
-    <div className="map-wrap">
-      <div ref={mapNodeRef} className="mapbox-map" />
-      {linePoints && (
-        <svg key={linePoints.key} className="reveal-overlay">
-          <line
-            x1={linePoints.x1}
-            y1={linePoints.y1}
-            x2={linePoints.x2}
-            y2={linePoints.y2}
-            pathLength="1000"
-          />
-        </svg>
-      )}
-    </div>
-  );
+  return <div className="map-wrap"><div ref={mapNodeRef} className="mapbox-map" /></div>;
 }
 
 export default function DistrictedPrototype() {
