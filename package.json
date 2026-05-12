@@ -9,7 +9,8 @@
     "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "mapbox-gl": "latest"
   },
   "devDependencies": {}
 }
