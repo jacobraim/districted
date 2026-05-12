@@ -17,15 +17,112 @@ function distance(a,b){const R=3958.8;const toRad=(d)=>(d*Math.PI)/180;const dLa
 function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${miles.toFixed(2)} mi`;}
 function scoreClass(d){if(d<=0.15)return"green-dark";if(d<=0.5)return"green";if(d<=1.5)return"yellow";if(d<=3.5)return"orange";return"red";}
 function scoreEmoji(d){if(d<=0.15)return"🟩";if(d<=0.5)return"🟢";if(d<=1.5)return"🟨";if(d<=3.5)return"🟧";return"🟥";}
-function makeMarkerElement(className,label){const el=document.createElement("div");el.className=className;el.textContent=label;return el;}
-function emptyLineData(){return{type:"Feature",geometry:{type:"LineString",coordinates:[]}};}
-function fullLineData(guess, answer){return{type:"Feature",geometry:{type:"LineString",coordinates:[[guess.lng,guess.lat],[answer.lng,answer.lat]]}};}
+function scoreColor(d){if(d<=0.15)return"#10b981";if(d<=0.5)return"#84cc16";if(d<=1.5)return"#facc15";if(d<=3.5)return"#f97316";return"#ef4444";}
+
+function emptyFeatureCollection(){return{type:"FeatureCollection",features:[]};}
+function emptyLine(){return{type:"Feature",geometry:{type:"LineString",coordinates:[]},properties:{}};}
+function pointFeature(point, properties={}){return{type:"Feature",geometry:{type:"Point",coordinates:[point.lng,point.lat]},properties};}
+function lineFeature(a,b){return{type:"Feature",geometry:{type:"LineString",coordinates:[[a.lng,a.lat],[b.lng,b.lat]]},properties:{}};}
+
+function safeSetData(map, sourceId, data) {
+  const source = map.getSource(sourceId);
+  if (source) source.setData(data);
+}
+
+function addRevealLayers(map) {
+  if (!map.getSource("guess-point")) {
+    map.addSource("guess-point", { type: "geojson", data: emptyFeatureCollection() });
+  }
+  if (!map.getSource("answer-point")) {
+    map.addSource("answer-point", { type: "geojson", data: emptyFeatureCollection() });
+  }
+  if (!map.getSource("reveal-line")) {
+    map.addSource("reveal-line", { type: "geojson", data: emptyLine() });
+  }
+
+  if (!map.getLayer("reveal-line-layer")) {
+    map.addLayer({
+      id: "reveal-line-layer",
+      type: "line",
+      source: "reveal-line",
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": "#020617",
+        "line-width": 4,
+        "line-opacity": 0.85,
+        "line-dasharray": [1.5, 1.2]
+      }
+    });
+  }
+
+  if (!map.getLayer("guess-circle-layer")) {
+    map.addLayer({
+      id: "guess-circle-layer",
+      type: "circle",
+      source: "guess-point",
+      paint: {
+        "circle-radius": 15,
+        "circle-color": ["get", "color"],
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 3
+      }
+    });
+  }
+
+  if (!map.getLayer("guess-label-layer")) {
+    map.addLayer({
+      id: "guess-label-layer",
+      type: "symbol",
+      source: "guess-point",
+      layout: {
+        "text-field": ["get", "label"],
+        "text-size": 14,
+        "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true
+      },
+      paint: {
+        "text-color": "#ffffff"
+      }
+    });
+  }
+
+  if (!map.getLayer("answer-circle-layer")) {
+    map.addLayer({
+      id: "answer-circle-layer",
+      type: "circle",
+      source: "answer-point",
+      paint: {
+        "circle-radius": 19,
+        "circle-color": "#020617",
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 3
+      }
+    });
+  }
+
+  if (!map.getLayer("answer-label-layer")) {
+    map.addLayer({
+      id: "answer-label-layer",
+      type: "symbol",
+      source: "answer-point",
+      layout: {
+        "text-field": "★",
+        "text-size": 22,
+        "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true
+      },
+      paint: {
+        "text-color": "#ffffff"
+      }
+    });
+  }
+}
 
 function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess }) {
   const mapNodeRef = useRef(null);
   const mapRef = useRef(null);
-  const guessMarkerRef = useRef(null);
-  const answerMarkerRef = useRef(null);
   const revealedRef = useRef(revealed);
   const [mapReady, setMapReady] = useState(false);
 
@@ -50,25 +147,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
     map.addControl(new mapboxgl.AttributionControl({ compact: true }), "bottom-right");
 
     map.on("load", () => {
-      if (!map.getSource("reveal-line")) {
-        map.addSource("reveal-line", { type: "geojson", data: emptyLineData() });
-      }
-
-      if (!map.getLayer("reveal-line")) {
-        map.addLayer({
-          id: "reveal-line",
-          type: "line",
-          source: "reveal-line",
-          layout: { "line-cap": "round", "line-join": "round" },
-          paint: {
-            "line-color": "#020617",
-            "line-width": 4,
-            "line-opacity": 0.85,
-            "line-dasharray": [1.5, 1.2]
-          }
-        });
-      }
-
+      addRevealLayers(map);
       setMapReady(true);
     });
 
@@ -89,66 +168,42 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
     const map = mapRef.current;
     if (!map || !mapReady) return;
 
-    if (guessMarkerRef.current) {
-      guessMarkerRef.current.remove();
-      guessMarkerRef.current = null;
-    }
-
-    if (answerMarkerRef.current) {
-      answerMarkerRef.current.remove();
-      answerMarkerRef.current = null;
-    }
-
-    const source = map.getSource("reveal-line");
-    if (source) source.setData(emptyLineData());
+    // Reset every round first.
+    safeSetData(map, "guess-point", emptyFeatureCollection());
+    safeSetData(map, "answer-point", emptyFeatureCollection());
+    safeSetData(map, "reveal-line", emptyLine());
 
     if (!activeGuess) return;
 
-    guessMarkerRef.current = new mapboxgl.Marker({
-      element: makeMarkerElement(`map-marker ${scoreClass(activeGuess.distance)}`, String(roundNumber))
-    })
-      .setLngLat([activeGuess.guess.lng, activeGuess.guess.lat])
-      .addTo(map);
-  }, [activeGuess, roundNumber, mapReady]);
+    safeSetData(map, "guess-point", {
+      type: "FeatureCollection",
+      features: [
+        pointFeature(activeGuess.guess, {
+          label: String(roundNumber),
+          color: scoreColor(activeGuess.distance)
+        })
+      ]
+    });
 
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !mapReady) return;
+    if (!revealed || !currentAnswer) return;
 
-    const source = map.getSource("reveal-line");
+    safeSetData(map, "answer-point", {
+      type: "FeatureCollection",
+      features: [pointFeature(currentAnswer)]
+    });
 
-    if (!revealed || !activeGuess || !currentAnswer || !source) {
-      if (source) source.setData(emptyLineData());
-      if (answerMarkerRef.current) {
-        answerMarkerRef.current.remove();
-        answerMarkerRef.current = null;
-      }
-      return;
-    }
-
-    if (answerMarkerRef.current) {
-      answerMarkerRef.current.remove();
-      answerMarkerRef.current = null;
-    }
-
-    answerMarkerRef.current = new mapboxgl.Marker({
-      element: makeMarkerElement("answer-marker", "★")
-    })
-      .setLngLat([currentAnswer.lng, currentAnswer.lat])
-      .addTo(map);
-
-    source.setData(fullLineData(activeGuess.guess, currentAnswer));
+    safeSetData(map, "reveal-line", lineFeature(activeGuess.guess, currentAnswer));
 
     const bounds = new mapboxgl.LngLatBounds();
     bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
     bounds.extend([currentAnswer.lng, currentAnswer.lat]);
 
     map.fitBounds(bounds, {
-      padding: 95,
+      padding: 90,
       maxZoom: 14.5,
       duration: 650
     });
-  }, [revealed, activeGuess, currentAnswer, mapReady]);
+  }, [activeGuess, revealed, currentAnswer, roundNumber, mapReady]);
 
   if (!MAPBOX_TOKEN) {
     return (
