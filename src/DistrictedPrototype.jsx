@@ -13,48 +13,22 @@ const dailyLocations = [
   { name: "Dan's Cafe", category: "Dive Bar", answer: { lat: 38.914139, lng: -77.042258 } }
 ];
 
-function distance(a, b) {
-  const R = 3958.8;
-  const toRad = (deg) => (deg * Math.PI) / 180;
-  const dLat = toRad(b.lat - a.lat);
-  const dLng = toRad(b.lng - a.lng);
-  const lat1 = toRad(a.lat);
-  const lat2 = toRad(b.lat);
-  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(h));
-}
-function formatMiles(miles) { return miles < 0.1 ? `${Math.round(miles * 5280)} ft` : `${miles.toFixed(2)} mi`; }
-function scoreClass(d) {
-  if (d <= 0.15) return "green-dark";
-  if (d <= 0.5) return "green";
-  if (d <= 1.5) return "yellow";
-  if (d <= 3.5) return "orange";
-  return "red";
-}
-function scoreEmoji(d) {
-  if (d <= 0.15) return "🟩";
-  if (d <= 0.5) return "🟢";
-  if (d <= 1.5) return "🟨";
-  if (d <= 3.5) return "🟧";
-  return "🟥";
-}
-function makeMarkerElement(className, label) {
-  const el = document.createElement("div");
-  el.className = className;
-  el.textContent = label;
-  return el;
-}
-function interpolatePoint(from, to, t) {
-  return [from.lng + (to.lng - from.lng) * t, from.lat + (to.lat - from.lat) * t];
-}
+function distance(a,b){const R=3958.8;const toRad=(d)=>(d*Math.PI)/180;const dLat=toRad(b.lat-a.lat);const dLng=toRad(b.lng-a.lng);const lat1=toRad(a.lat);const lat2=toRad(b.lat);const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
+function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${miles.toFixed(2)} mi`;}
+function scoreClass(d){if(d<=0.15)return"green-dark";if(d<=0.5)return"green";if(d<=1.5)return"yellow";if(d<=3.5)return"orange";return"red";}
+function scoreEmoji(d){if(d<=0.15)return"🟩";if(d<=0.5)return"🟢";if(d<=1.5)return"🟨";if(d<=3.5)return"🟧";return"🟥";}
+function makeMarkerElement(className,label){const el=document.createElement("div");el.className=className;el.textContent=label;return el;}
+function emptyLineData(){return{type:"Feature",geometry:{type:"LineString",coordinates:[]}};}
+function interpolatePoint(from,to,t){return[from.lng+(to.lng-from.lng)*t,from.lat+(to.lat-from.lat)*t];}
 
-function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
+function TileMap({ activeGuess, currentAnswer, revealed, onGuess }) {
   const mapNodeRef = useRef(null);
   const mapRef = useRef(null);
-  const markersRef = useRef([]);
+  const guessMarkerRef = useRef(null);
   const answerMarkerRef = useRef(null);
   const animationRef = useRef(null);
   const revealedRef = useRef(revealed);
+  const [mapReady, setMapReady] = useState(false);
 
   useEffect(() => { revealedRef.current = revealed; }, [revealed]);
 
@@ -76,17 +50,17 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
     map.addControl(new mapboxgl.AttributionControl({ compact: true }), "bottom-right");
 
     map.on("load", () => {
-      map.addSource("reveal-line", {
-        type: "geojson",
-        data: { type: "Feature", geometry: { type: "LineString", coordinates: [] } }
-      });
-      map.addLayer({
-        id: "reveal-line",
-        type: "line",
-        source: "reveal-line",
-        layout: { "line-cap": "round", "line-join": "round" },
-        paint: { "line-color": "#020617", "line-width": 4, "line-opacity": 0.78, "line-dasharray": [1.5, 1.2] }
-      });
+      if (!map.getSource("reveal-line")) map.addSource("reveal-line", { type: "geojson", data: emptyLineData() });
+      if (!map.getLayer("reveal-line")) {
+        map.addLayer({
+          id: "reveal-line",
+          type: "line",
+          source: "reveal-line",
+          layout: { "line-cap": "round", "line-join": "round" },
+          paint: { "line-color": "#020617", "line-width": 4, "line-opacity": 0.82, "line-dasharray": [1.5, 1.2] }
+        });
+      }
+      setMapReady(true);
     });
 
     map.on("click", (event) => {
@@ -100,75 +74,74 @@ function TileMap({ guesses, currentAnswer, revealed, onGuess }) {
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
-    markersRef.current.forEach((marker) => marker.remove());
-    markersRef.current = [];
+    if (!map || !mapReady) return;
 
-    guesses.forEach((guess, index) => {
-      const marker = new mapboxgl.Marker({
-        element: makeMarkerElement(`map-marker ${scoreClass(guess.distance)}`, String(index + 1))
-      }).setLngLat([guess.guess.lng, guess.guess.lat]).addTo(map);
-      markersRef.current.push(marker);
-    });
-  }, [guesses]);
+    if (guessMarkerRef.current) {
+      guessMarkerRef.current.remove();
+      guessMarkerRef.current = null;
+    }
+
+    if (!activeGuess) return;
+
+    guessMarkerRef.current = new mapboxgl.Marker({
+      element: makeMarkerElement(`map-marker ${scoreClass(activeGuess.distance)}`, "1")
+    })
+      .setLngLat([activeGuess.guess.lng, activeGuess.guess.lat])
+      .addTo(map);
+  }, [activeGuess, mapReady]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !currentAnswer) return;
+    if (!map || !mapReady) return;
 
     if (answerMarkerRef.current) {
       answerMarkerRef.current.remove();
       answerMarkerRef.current = null;
     }
+
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
       animationRef.current = null;
     }
 
-    const clearLine = () => {
-      const source = map.getSource("reveal-line");
-      if (source) source.setData({ type: "Feature", geometry: { type: "LineString", coordinates: [] } });
-    };
-
-    if (!revealed) { clearLine(); return; }
-
-    const latestGuess = guesses[guesses.length - 1];
     const source = map.getSource("reveal-line");
-    if (!latestGuess || !source) return;
+    if (source) source.setData(emptyLineData());
+
+    if (!revealed || !activeGuess || !currentAnswer || !source) return;
 
     answerMarkerRef.current = new mapboxgl.Marker({
       element: makeMarkerElement("answer-marker", "★")
-    }).setLngLat([currentAnswer.lng, currentAnswer.lat]).addTo(map);
+    })
+      .setLngLat([currentAnswer.lng, currentAnswer.lat])
+      .addTo(map);
 
-    map.easeTo({
-      center: [(latestGuess.guess.lng + currentAnswer.lng) / 2, (latestGuess.guess.lat + currentAnswer.lat) / 2],
-      zoom: Math.max(map.getZoom(), 13),
-      duration: 650
-    });
+    const bounds = new mapboxgl.LngLatBounds();
+    bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
+    bounds.extend([currentAnswer.lng, currentAnswer.lat]);
+
+    map.fitBounds(bounds, { padding: 95, maxZoom: 14.5, duration: 650 });
 
     const start = performance.now();
-    const duration = 900;
+    const duration = 1050;
+
     const animate = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const end = interpolatePoint(latestGuess.guess, currentAnswer, eased);
+      const end = interpolatePoint(activeGuess.guess, currentAnswer, eased);
+
       source.setData({
         type: "Feature",
-        geometry: { type: "LineString", coordinates: [[latestGuess.guess.lng, latestGuess.guess.lat], end] }
+        geometry: { type: "LineString", coordinates: [[activeGuess.guess.lng, activeGuess.guess.lat], end] }
       });
+
       if (progress < 1) animationRef.current = requestAnimationFrame(animate);
     };
+
     animationRef.current = requestAnimationFrame(animate);
-  }, [revealed, currentAnswer, guesses]);
+  }, [revealed, activeGuess, currentAnswer, mapReady]);
 
   if (!MAPBOX_TOKEN) {
-    return (
-      <div className="map-wrap">
-        <div className="map-message">
-          <div><strong>Mapbox token needed.</strong><br />Add VITE_MAPBOX_TOKEN in Vercel, then redeploy.</div>
-        </div>
-      </div>
-    );
+    return <div className="map-wrap"><div className="map-message"><div><strong>Mapbox token needed.</strong><br />Add VITE_MAPBOX_TOKEN in Vercel, then redeploy.</div></div></div>;
   }
 
   return <div className="map-wrap"><div ref={mapNodeRef} className="mapbox-map" /></div>;
@@ -182,8 +155,9 @@ export default function DistrictedPrototype() {
 
   const currentLocation = dailyLocations[round];
   const gameOver = round >= dailyLocations.length;
-  const totalMiles = guesses.reduce((sum, g) => sum + g.distance, 0);
-  const scoreLine = guesses.map((g) => scoreEmoji(g.distance)).join("");
+  const activeGuess = guesses[round];
+  const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
+  const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
   const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://districted.vercel.app/`;
 
   function handleGuess(guess) {
@@ -193,6 +167,7 @@ export default function DistrictedPrototype() {
     setRevealed(true);
     setShareStatus("");
   }
+
   function nextRound() {
     if (round < dailyLocations.length - 1) {
       setRound(round + 1);
@@ -200,12 +175,14 @@ export default function DistrictedPrototype() {
       setShareStatus("");
     } else setRound(dailyLocations.length);
   }
+
   function restart() {
     setRound(0);
     setGuesses([]);
     setRevealed(false);
     setShareStatus("");
   }
+
   async function shareGame() {
     try {
       if (navigator.share) {
@@ -223,16 +200,13 @@ export default function DistrictedPrototype() {
   return (
     <main className="app">
       <div className="shell">
-        <header className="header">
-          <h1>Districted</h1>
-          <p>Pin the DC location.</p>
-        </header>
+        <header className="header"><h1>Districted</h1><p>Pin the DC location.</p></header>
 
         {!gameOver && (
           <section className="card">
             <div className="meta"><span>Districted Daily</span><span>Round {round + 1} / 5</span></div>
             <div className="location-card"><div className="category">{currentLocation.category}</div><h2>{currentLocation.name}</h2></div>
-            <TileMap guesses={guesses} currentAnswer={currentLocation.answer} revealed={revealed} onGuess={handleGuess} />
+            <TileMap activeGuess={activeGuess} currentAnswer={currentLocation.answer} revealed={revealed} onGuess={handleGuess} />
             <p className="hint">Drag, pinch, scroll, or use the map controls to find your spot.</p>
           </section>
         )}
@@ -240,7 +214,7 @@ export default function DistrictedPrototype() {
         {revealed && guesses[round] && (
           <section className="card">
             <div className="score-boxes">
-              {[0, 1, 2, 3, 4].map((i) => <div key={i} className={`score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`} />)}
+              {[0,1,2,3,4].map((i)=><div key={i} className={`score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`} />)}
             </div>
             <div className="result-row"><strong>Distance Off</strong><span>{formatMiles(guesses[round].distance)}</span></div>
             <br />
@@ -250,15 +224,10 @@ export default function DistrictedPrototype() {
 
         {gameOver && (
           <section className="card final-score">
-            <div className="category">Final Score</div>
-            <h2>{totalMiles.toFixed(2)}</h2>
-            <p>Total miles off</p>
-            <div className="score-boxes">{guesses.map((g, i) => <div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}</div>
+            <div className="category">Final Score</div><h2>{totalMiles.toFixed(2)}</h2><p>Total miles off</p>
+            <div className="score-boxes">{guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}</div>
             <pre className="share">{shareText}</pre>
-            <div className="button-stack">
-              <button className="primary-button" onClick={shareGame}>Share Result</button>
-              <button className="secondary-button" onClick={restart}>Play Again</button>
-            </div>
+            <div className="button-stack"><button className="primary-button" onClick={shareGame}>Share Result</button><button className="secondary-button" onClick={restart}>Play Again</button></div>
             {shareStatus && <p className="share-status">{shareStatus}</p>}
           </section>
         )}
