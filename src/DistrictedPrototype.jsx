@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -18,24 +18,41 @@ function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${m
 function scoreClass(d){if(d<=0.15)return"green-dark";if(d<=0.5)return"green";if(d<=1.5)return"yellow";if(d<=3.5)return"orange";return"red";}
 function scoreEmoji(d){if(d<=0.15)return"🟩";if(d<=0.5)return"🟢";if(d<=1.5)return"🟨";if(d<=3.5)return"🟧";return"🟥";}
 function makeMarkerElement(className,label){const el=document.createElement("div");el.className=className;el.textContent=label;return el;}
-function emptyLineData(){return{type:"Feature",geometry:{type:"LineString",coordinates:[]}};}
-function interpolatePoint(from,to,t){return[from.lng+(to.lng-from.lng)*t,from.lat+(to.lat-from.lat)*t];}
 
-function TileMap({ activeGuess, currentAnswer, revealed, onGuess }) {
+function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess }) {
   const mapNodeRef = useRef(null);
   const mapRef = useRef(null);
   const guessMarkerRef = useRef(null);
   const answerMarkerRef = useRef(null);
-  const animationRef = useRef(null);
   const revealedRef = useRef(revealed);
-  const [mapReady, setMapReady] = useState(false);
+  const [linePoints, setLinePoints] = useState(null);
 
   useEffect(() => { revealedRef.current = revealed; }, [revealed]);
+
+  const updateLine = useCallback(() => {
+    const map = mapRef.current;
+    if (!map || !revealed || !activeGuess || !currentAnswer) {
+      setLinePoints(null);
+      return;
+    }
+
+    const guess = map.project([activeGuess.guess.lng, activeGuess.guess.lat]);
+    const answer = map.project([currentAnswer.lng, currentAnswer.lat]);
+
+    setLinePoints({
+      x1: guess.x,
+      y1: guess.y,
+      x2: answer.x,
+      y2: answer.y,
+      key: `${roundNumber}-${activeGuess.distance.toFixed(6)}`
+    });
+  }, [activeGuess, currentAnswer, revealed, roundNumber]);
 
   useEffect(() => {
     if (!MAPBOX_TOKEN || mapRef.current || !mapNodeRef.current) return;
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
+
     const map = new mapboxgl.Map({
       container: mapNodeRef.current,
       style: MAPBOX_STYLE,
@@ -49,65 +66,58 @@ function TileMap({ activeGuess, currentAnswer, revealed, onGuess }) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     map.addControl(new mapboxgl.AttributionControl({ compact: true }), "bottom-right");
 
-    map.on("load", () => {
-      if (!map.getSource("reveal-line")) map.addSource("reveal-line", { type: "geojson", data: emptyLineData() });
-      if (!map.getLayer("reveal-line")) {
-        map.addLayer({
-          id: "reveal-line",
-          type: "line",
-          source: "reveal-line",
-          layout: { "line-cap": "round", "line-join": "round" },
-          paint: { "line-color": "#020617", "line-width": 4, "line-opacity": 0.82, "line-dasharray": [1.5, 1.2] }
-        });
-      }
-      setMapReady(true);
-    });
-
     map.on("click", (event) => {
       if (revealedRef.current) return;
       onGuess({ lat: event.lngLat.lat, lng: event.lngLat.lng });
     });
 
+    map.on("move", updateLine);
+    map.on("zoom", updateLine);
+    map.on("resize", updateLine);
+
     mapRef.current = map;
-    return () => { map.remove(); mapRef.current = null; };
-  }, [onGuess]);
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, [onGuess, updateLine]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !mapReady) return;
+    if (!map) return;
 
     if (guessMarkerRef.current) {
       guessMarkerRef.current.remove();
       guessMarkerRef.current = null;
     }
 
-    if (!activeGuess) return;
+    if (!activeGuess) {
+      setLinePoints(null);
+      return;
+    }
 
     guessMarkerRef.current = new mapboxgl.Marker({
-      element: makeMarkerElement(`map-marker ${scoreClass(activeGuess.distance)}`, "1")
+      element: makeMarkerElement(`map-marker ${scoreClass(activeGuess.distance)}`, String(roundNumber))
     })
       .setLngLat([activeGuess.guess.lng, activeGuess.guess.lat])
       .addTo(map);
-  }, [activeGuess, mapReady]);
+
+    updateLine();
+  }, [activeGuess, roundNumber, updateLine]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !mapReady) return;
+    if (!map) return;
 
     if (answerMarkerRef.current) {
       answerMarkerRef.current.remove();
       answerMarkerRef.current = null;
     }
 
-    if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current);
-      animationRef.current = null;
-    }
+    setLinePoints(null);
 
-    const source = map.getSource("reveal-line");
-    if (source) source.setData(emptyLineData());
-
-    if (!revealed || !activeGuess || !currentAnswer || !source) return;
+    if (!revealed || !activeGuess || !currentAnswer) return;
 
     answerMarkerRef.current = new mapboxgl.Marker({
       element: makeMarkerElement("answer-marker", "★")
@@ -119,32 +129,42 @@ function TileMap({ activeGuess, currentAnswer, revealed, onGuess }) {
     bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
     bounds.extend([currentAnswer.lng, currentAnswer.lat]);
 
-    map.fitBounds(bounds, { padding: 95, maxZoom: 14.5, duration: 650 });
+    map.fitBounds(bounds, {
+      padding: 95,
+      maxZoom: 14.5,
+      duration: 650
+    });
 
-    const start = performance.now();
-    const duration = 1050;
-
-    const animate = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const end = interpolatePoint(activeGuess.guess, currentAnswer, eased);
-
-      source.setData({
-        type: "Feature",
-        geometry: { type: "LineString", coordinates: [[activeGuess.guess.lng, activeGuess.guess.lat], end] }
-      });
-
-      if (progress < 1) animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
-  }, [revealed, activeGuess, currentAnswer, mapReady]);
+    window.setTimeout(updateLine, 80);
+    window.setTimeout(updateLine, 720);
+  }, [revealed, activeGuess, currentAnswer, updateLine]);
 
   if (!MAPBOX_TOKEN) {
-    return <div className="map-wrap"><div className="map-message"><div><strong>Mapbox token needed.</strong><br />Add VITE_MAPBOX_TOKEN in Vercel, then redeploy.</div></div></div>;
+    return (
+      <div className="map-wrap">
+        <div className="map-message">
+          <div><strong>Mapbox token needed.</strong><br />Add VITE_MAPBOX_TOKEN in Vercel, then redeploy.</div>
+        </div>
+      </div>
+    );
   }
 
-  return <div className="map-wrap"><div ref={mapNodeRef} className="mapbox-map" /></div>;
+  return (
+    <div className="map-wrap">
+      <div ref={mapNodeRef} className="mapbox-map" />
+      {linePoints && (
+        <svg key={linePoints.key} className="reveal-overlay">
+          <line
+            x1={linePoints.x1}
+            y1={linePoints.y1}
+            x2={linePoints.x2}
+            y2={linePoints.y2}
+            pathLength="1000"
+          />
+        </svg>
+      )}
+    </div>
+  );
 }
 
 export default function DistrictedPrototype() {
@@ -162,8 +182,14 @@ export default function DistrictedPrototype() {
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
+
     const d = distance(guess, currentLocation.answer);
-    setGuesses([...guesses, { guess, answer: currentLocation.answer, distance: d, location: currentLocation }]);
+
+    setGuesses([
+      ...guesses,
+      { guess, answer: currentLocation.answer, distance: d, location: currentLocation }
+    ]);
+
     setRevealed(true);
     setShareStatus("");
   }
@@ -173,7 +199,9 @@ export default function DistrictedPrototype() {
       setRound(round + 1);
       setRevealed(false);
       setShareStatus("");
-    } else setRound(dailyLocations.length);
+    } else {
+      setRound(dailyLocations.length);
+    }
   }
 
   function restart() {
@@ -206,7 +234,7 @@ export default function DistrictedPrototype() {
           <section className="card">
             <div className="meta"><span>Districted Daily</span><span>Round {round + 1} / 5</span></div>
             <div className="location-card"><div className="category">{currentLocation.category}</div><h2>{currentLocation.name}</h2></div>
-            <TileMap activeGuess={activeGuess} currentAnswer={currentLocation.answer} revealed={revealed} onGuess={handleGuess} />
+            <TileMap activeGuess={activeGuess} currentAnswer={currentLocation.answer} revealed={revealed} roundNumber={round + 1} onGuess={handleGuess} />
             <p className="hint">Drag, pinch, scroll, or use the map controls to find your spot.</p>
           </section>
         )}
