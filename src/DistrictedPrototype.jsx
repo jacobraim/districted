@@ -58,6 +58,23 @@ function ensureLine(map) {
     });
   }
 
+  if (!map.getLayer("districted-reveal-line-casing")) {
+    map.addLayer({
+      id: "districted-reveal-line-casing",
+      type: "line",
+      source: "districted-reveal-line",
+      layout: {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      paint: {
+        "line-color": "#ffffff",
+        "line-width": 8,
+        "line-opacity": 0.95
+      }
+    });
+  }
+
   if (!map.getLayer("districted-reveal-line")) {
     map.addLayer({
       id: "districted-reveal-line",
@@ -70,13 +87,19 @@ function ensureLine(map) {
       paint: {
         "line-color": "#020617",
         "line-width": 4,
-        "line-opacity": 0.88,
-        "line-dasharray": [1.4, 1.1]
+        "line-opacity": 1,
+        "line-dasharray": [1.2, 1]
       }
     });
   }
-}
 
+  try {
+    map.moveLayer("districted-reveal-line-casing");
+    map.moveLayer("districted-reveal-line");
+  } catch (error) {
+    // Layer may not be ready yet. Safe to ignore.
+  }
+}
 function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess }) {
   const mapNodeRef = useRef(null);
   const mapRef = useRef(null);
@@ -162,9 +185,16 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
       .setLngLat([currentAnswer.lng, currentAnswer.lat])
       .addTo(map);
 
-    if (source) {
-      source.setData(revealLine(activeGuess.guess, currentAnswer));
-    }
+if (source) {
+  source.setData(revealLine(activeGuess.guess, currentAnswer));
+
+  try {
+    map.moveLayer("districted-reveal-line-casing");
+    map.moveLayer("districted-reveal-line");
+  } catch (error) {
+    // Safe to ignore if layers are already on top.
+  }
+}
 
     const bounds = new mapboxgl.LngLatBounds();
     bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
