@@ -90,7 +90,12 @@ button {
   line-height: 1.05;
   letter-spacing: -0.04em;
 }
-
+.location-prompt {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+}
 .map-wrap {
   position: relative;
   height: 420px;
