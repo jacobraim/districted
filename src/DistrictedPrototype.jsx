@@ -348,10 +348,9 @@ export default function DistrictedPrototype() {
         {!gameOver && (
           <section className="card">
             <div className="meta"><span>Districted</span><span>Round {round + 1} / 5</span></div>
-            <div className="location-card">
+<div className="location-card">
   <div className="category">{currentLocation.category}</div>
   <h2>{currentLocation.name}</h2>
-  <p className="location-prompt">Pin the DC location.</p>
 </div>
             <TileMap
               key={round}
