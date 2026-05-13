@@ -12,7 +12,7 @@ const dailyLocations = [
   { name: "The Phillips Collection", category: "Museum", answer: { lat: 38.911971, lng: -77.046739 } },
   { name: "Eastern Market", category: "Market", answer: { lat: 38.884316, lng: -76.995659 } },
   { name: "9:30 Club", category: "Music Venue", answer: { lat: 38.917999, lng: -77.023739 } },
-  { name: "Gravelly Point", category: "Park", answer: { lat: 38.864456, lng: -77.043419 } }
+  { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
 ];
 
 function distance(a,b){const R=3958.8;const toRad=(d)=>(d*Math.PI)/180;const dLat=toRad(b.lat-a.lat);const dLng=toRad(b.lng-a.lng);const lat1=toRad(a.lat);const lat2=toRad(b.lat);const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
