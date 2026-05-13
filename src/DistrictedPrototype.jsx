@@ -26,7 +26,7 @@ function scoreClass(d) {
 }
 
 function scoreEmoji(d) {
-  if (d <= 0.15) return "⬜";
+  if (d <= 0.15) return "⭐";
   if (d <= 0.5) return "🟩";
   if (d <= 1.5) return "🟨";
   if (d <= 3.5) return "🟧";
