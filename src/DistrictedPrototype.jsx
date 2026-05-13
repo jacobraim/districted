@@ -4,6 +4,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbox/streets-v12";
+const PUZZLE_ID = "001";
+const GAME_URL = "https://districted.vercel.app/";
 
 const dailyLocations = [
   { name: "The Lincoln Memorial", category: "Monument", answer: { lat: 38.889269, lng: -77.050176 } },
@@ -29,6 +31,14 @@ function scoreEmoji(d) {
   if (d <= 1.5) return "🟨";
   if (d <= 3.5) return "🟧";
   return "🟥";
+}
+
+function scoreLabel(d) {
+  if (d <= 0.15) return "Aced it";
+  if (d <= 0.5) return "Excellent";
+  if (d <= 1.5) return "Close";
+  if (d <= 3.5) return "Off";
+  return "Lost";
 }
 function makeMarker(className, label) {
   const el = document.createElement("div");
@@ -257,13 +267,22 @@ export default function DistrictedPrototype() {
   const [guesses, setGuesses] = useState([]);
   const [revealed, setRevealed] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
+  const [showHowToPlay, setShowHowToPlay] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("districted-how-to-play-seen") !== "true";
+  });
 
   const currentLocation = dailyLocations[round];
   const gameOver = round >= dailyLocations.length;
   const activeGuess = guesses[round];
   const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
   const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
-  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://districted.vercel.app/`;
+  const shareText = `Districted #${PUZZLE_ID}\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\n${GAME_URL}`;
+
+  function dismissHowToPlay() {
+    window.localStorage.setItem("districted-how-to-play-seen", "true");
+    setShowHowToPlay(false);
+  }
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
@@ -299,7 +318,7 @@ export default function DistrictedPrototype() {
   async function shareGame() {
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Districted", text: shareText, url: "https://districted.vercel.app/" });
+        await navigator.share({ title: "Districted", text: shareText, url: GAME_URL });
         setShareStatus("Shared");
       } else {
         await navigator.clipboard?.writeText(shareText);
@@ -312,6 +331,18 @@ export default function DistrictedPrototype() {
 
   return (
     <main className="app">
+      {showHowToPlay && (
+        <div className="modal-backdrop">
+          <div className="how-to-modal">
+            <div className="category">How to Play</div>
+            <h2>How well do you know DC?</h2>
+            <p>We’ll give you 5 DC places. Drop a pin where you think each one is. The closer you are, the better your score.</p>
+            <p>Come back Mondays, Wednesdays and Fridays for new sets.</p>
+            <button className="primary-button" onClick={dismissHowToPlay}>Start Playing</button>
+          </div>
+        </div>
+      )}
+
       <div className="shell">
         <header className="header"><h1>Districted</h1><p>Pin the DC location.</p></header>
 
@@ -344,10 +375,40 @@ export default function DistrictedPrototype() {
 
         {gameOver && (
           <section className="card final-score">
-            <div className="category">Final Score</div><h2>{totalMiles.toFixed(2)}</h2><p>Total miles off</p>
-            <div className="score-boxes">{guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}</div>
+            <div className="category">Final Score</div>
+            <h2>{totalMiles.toFixed(2)}</h2>
+            <p>Total miles off</p>
+
+            <div className="score-boxes">
+              {guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}
+            </div>
+
+            <div className="final-recap">
+              {guesses.map((g, i) => (
+                <div className="recap-row" key={g.location.name}>
+                  <div className={`recap-dot ${scoreClass(g.distance)}`}>{i + 1}</div>
+                  <div className="recap-main">
+                    <strong>{g.location.name}</strong>
+                    <span>{scoreLabel(g.distance)}</span>
+                  </div>
+                  <div className="recap-distance">{formatMiles(g.distance)}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="share-card">
+              <div className="share-title">Districted #{PUZZLE_ID}</div>
+              <div className="share-grid">{scoreLine}</div>
+              <div className="share-score">{totalMiles.toFixed(2)} total miles off</div>
+            </div>
+
             <pre className="share">{shareText}</pre>
-            <div className="button-stack"><button className="primary-button" onClick={shareGame}>Share Result</button><button className="secondary-button" onClick={restart}>Play Again</button></div>
+
+            <div className="button-stack">
+              <button className="primary-button" onClick={shareGame}>Share Result</button>
+              <button className="secondary-button" onClick={restart}>Play Again</button>
+            </div>
+
             {shareStatus && <p className="share-status">{shareStatus}</p>}
           </section>
         )}
