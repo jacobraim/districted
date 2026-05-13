@@ -25,6 +25,18 @@ function makeMarker(className, label) {
   return el;
 }
 
+function makeAnswerMarker() {
+  const outer = document.createElement("div");
+  outer.className = "answer-marker";
+
+  const inner = document.createElement("div");
+  inner.className = "answer-marker-inner";
+  inner.textContent = "★";
+
+  outer.appendChild(inner);
+  return outer;
+}
+
 function emptyLine() {
   return {
     type: "Feature",
@@ -51,22 +63,12 @@ function revealLine(guess, answer) {
 }
 
 function ensureLine(map) {
- if (!map.getLayer("districted-reveal-line")) {
-  map.addLayer({
-    id: "districted-reveal-line",
-    type: "line",
-    source: "districted-reveal-line",
-    layout: {
-      "line-cap": "round",
-      "line-join": "round"
-    },
-    paint: {
-      "line-color": "#2563eb",
-      "line-width": 7,
-      "line-opacity": 1
-    }
-  });
-}
+  if (!map.getSource("districted-reveal-line")) {
+    map.addSource("districted-reveal-line", {
+      type: "geojson",
+      data: emptyLine()
+    });
+  }
 
   if (!map.getLayer("districted-reveal-line")) {
     map.addLayer({
@@ -80,24 +82,46 @@ function ensureLine(map) {
       paint: {
         "line-color": "#020617",
         "line-width": 4,
-        "line-opacity": 1,
-        "line-dasharray": [1.2, 1]
+        "line-opacity": 0.88,
+        "line-dasharray": [1.4, 1.1]
       }
     });
   }
-
-  try {
-    map.moveLayer("districted-reveal-line-casing");
-    map.moveLayer("districted-reveal-line");
-  } catch (error) {
-    // Layer may not be ready yet. Safe to ignore.
-  }
 }
+
+function CountUpDistance({ miles }) {
+  const [displayMiles, setDisplayMiles] = useState(0);
+
+  useEffect(() => {
+    let animationFrame;
+    const duration = 850;
+    const start = performance.now();
+
+    function animate(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplayMiles(miles * eased);
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    }
+
+    setDisplayMiles(0);
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [miles]);
+
+  return <span className="distance-count">{formatMiles(displayMiles)}</span>;
+}
+
 function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess }) {
   const mapNodeRef = useRef(null);
   const mapRef = useRef(null);
   const guessMarkerRef = useRef(null);
   const answerMarkerRef = useRef(null);
+  const revealTimeoutRef = useRef(null);
   const revealedRef = useRef(revealed);
   const [loaded, setLoaded] = useState(false);
 
@@ -136,6 +160,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
     mapRef.current = map;
 
     return () => {
+      if (revealTimeoutRef.current) clearTimeout(revealTimeoutRef.current);
       if (guessMarkerRef.current) guessMarkerRef.current.remove();
       if (answerMarkerRef.current) answerMarkerRef.current.remove();
       map.remove();
@@ -146,6 +171,11 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !loaded) return;
+
+    if (revealTimeoutRef.current) {
+      clearTimeout(revealTimeoutRef.current);
+      revealTimeoutRef.current = null;
+    }
 
     if (guessMarkerRef.current) {
       guessMarkerRef.current.remove();
@@ -171,33 +201,30 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
 
     if (!revealed || !currentAnswer) return;
 
-    answerMarkerRef.current = new mapboxgl.Marker({
-      element: makeMarker("answer-marker", "★"),
-      anchor: "center"
-    })
-      .setLngLat([currentAnswer.lng, currentAnswer.lat])
-      .addTo(map);
+    revealTimeoutRef.current = setTimeout(() => {
+      if (!mapRef.current) return;
 
-if (source) {
-  source.setData(revealLine(activeGuess.guess, currentAnswer));
+      answerMarkerRef.current = new mapboxgl.Marker({
+        element: makeAnswerMarker(),
+        anchor: "center"
+      })
+        .setLngLat([currentAnswer.lng, currentAnswer.lat])
+        .addTo(map);
 
-  try {
-    map.moveLayer("districted-reveal-line-casing");
-    map.moveLayer("districted-reveal-line");
-  } catch (error) {
-    // Safe to ignore if layers are already on top.
-  }
-}
+      if (source) {
+        source.setData(revealLine(activeGuess.guess, currentAnswer));
+      }
 
-    const bounds = new mapboxgl.LngLatBounds();
-    bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
-    bounds.extend([currentAnswer.lng, currentAnswer.lat]);
+      const bounds = new mapboxgl.LngLatBounds();
+      bounds.extend([activeGuess.guess.lng, activeGuess.guess.lat]);
+      bounds.extend([currentAnswer.lng, currentAnswer.lat]);
 
-    map.fitBounds(bounds, {
-      padding: 95,
-      maxZoom: 14.5,
-      duration: 650
-    });
+      map.fitBounds(bounds, {
+        padding: 95,
+        maxZoom: 14.5,
+        duration: 650
+      });
+    }, 425);
   }, [activeGuess, currentAnswer, revealed, roundNumber, loaded]);
 
   if (!MAPBOX_TOKEN) {
@@ -297,7 +324,7 @@ export default function DistrictedPrototype() {
             <div className="score-boxes">
               {[0,1,2,3,4].map((i)=><div key={i} className={`score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`} />)}
             </div>
-            <div className="result-row"><strong>Distance Off</strong><span>{formatMiles(guesses[round].distance)}</span></div>
+            <div className="result-row"><strong>Distance Off</strong><CountUpDistance miles={guesses[round].distance} /></div>
             <br />
             <button className="primary-button" onClick={nextRound}>{round === dailyLocations.length - 1 ? "See Final Score" : "Next Location"}</button>
           </section>
