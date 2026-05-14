@@ -1,6 +1,6 @@
 export const puzzlesByDate = {
-"2026-05-15": {
-  id: "002",
+"2026-05-14": {
+  id: "001",
   locations: [
     {
       name: "Meridian Hill Park",
@@ -25,6 +25,17 @@ export const puzzlesByDate = {
     }
   ]
 },
+
+    "2026-05-15": {
+    id: "002",
+    locations: [
+      { name: "Union Market", category: "Food Hall", answer: { lat: 38.908635, lng: -76.997448 } },
+      { name: "The Phillips Collection", category: "Museum", answer: { lat: 38.911971, lng: -77.046739 } },
+      { name: "Eastern Market", category: "Market", answer: { lat: 38.884316, lng: -76.995659 } },
+      { name: "9:30 Club", category: "Music Venue", answer: { lat: 38.917999, lng: -77.023739 } },
+      { name: "Gravelly Point", category: "Park", answer: { lat: 38.864456, lng: -77.043419 } }
+    ]
+  },
   
   "2026-05-18": {
     id: "003",
