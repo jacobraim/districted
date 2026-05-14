@@ -432,3 +432,7 @@ button {
   font-size: 15px;
   font-weight: 900;
 }
+
+.answer-marker-inner svg {
+  display: block;
+}
