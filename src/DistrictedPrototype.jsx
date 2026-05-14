@@ -53,7 +53,14 @@ function makeAnswerMarker() {
 
   const inner = document.createElement("div");
   inner.className = "answer-marker-inner";
-  inner.textContent = "★";
+inner.innerHTML = `
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path
+      fill="white"
+      d="M12 2.5l2.9 6 6.6.9-4.8 4.7 1.1 6.6L12 17.6l-5.8 3.1 1.1-6.6-4.8-4.7 6.6-.9L12 2.5z"
+    />
+  </svg>
+`;
 
   outer.appendChild(inner);
   return outer;
