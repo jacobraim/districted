@@ -1,19 +1,47 @@
 import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { puzzlesByDate } from "./puzzles";
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbox/streets-v12";
-const PUZZLE_ID = "001";
 const GAME_URL = "https://districted.vercel.app/";
 
-const dailyLocations = [
-  { name: "Union Market", category: "Food Hall", answer: { lat: 38.908635, lng: -76.997448 } },
-  { name: "The Phillips Collection", category: "Museum", answer: { lat: 38.911971, lng: -77.046739 } },
-  { name: "Eastern Market", category: "Market", answer: { lat: 38.884316, lng: -76.995659 } },
-  { name: "9:30 Club", category: "Music Venue", answer: { lat: 38.917999, lng: -77.023739 } },
-  { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
-];
+function getEasternDateKey(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+
+  const year = parts.find((part) => part.type === "year").value;
+  const month = parts.find((part) => part.type === "month").value;
+  const day = parts.find((part) => part.type === "day").value;
+
+  return `${year}-${month}-${day}`;
+}
+
+function getCurrentPuzzle() {
+  const today = getEasternDateKey();
+  const availableDates = Object.keys(puzzlesByDate).sort();
+
+  if (puzzlesByDate[today]) {
+    return {
+      date: today,
+      ...puzzlesByDate[today]
+    };
+  }
+
+  const mostRecentDate = [...availableDates].reverse().find((date) => date <= today);
+  const fallbackDate = mostRecentDate || availableDates[0];
+
+  return {
+    date: fallbackDate,
+    ...puzzlesByDate[fallbackDate]
+  };
+}
+
 
 function distance(a,b){const R=3958.8;const toRad=(d)=>(d*Math.PI)/180;const dLat=toRad(b.lat-a.lat);const dLng=toRad(b.lng-a.lng);const lat1=toRad(a.lat);const lat2=toRad(b.lat);const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
 function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${miles.toFixed(2)} mi`;}
@@ -26,19 +54,11 @@ function scoreClass(d) {
 }
 
 function scoreEmoji(d) {
-  if (d <= 0.15) return "⭐";
+  if (d <= 0.15) return "⬜";
   if (d <= 0.5) return "🟩";
   if (d <= 1.5) return "🟨";
   if (d <= 3.5) return "🟧";
   return "🟥";
-}
-
-function scoreLabel(d) {
-  if (d <= 0.15) return "Aced it";
-  if (d <= 0.5) return "Excellent";
-  if (d <= 1.5) return "Close";
-  if (d <= 3.5) return "Off";
-  return "Lost";
 }
 function makeMarker(className, label) {
   const el = document.createElement("div");
@@ -53,14 +73,7 @@ function makeAnswerMarker() {
 
   const inner = document.createElement("div");
   inner.className = "answer-marker-inner";
-inner.innerHTML = `
-  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-    <path
-      fill="white"
-      d="M12 2.5l2.9 6 6.6.9-4.8 4.7 1.1 6.6L12 17.6l-5.8 3.1 1.1-6.6-4.8-4.7 6.6-.9L12 2.5z"
-    />
-  </svg>
-`;
+  inner.textContent = "★";
 
   outer.appendChild(inner);
   return outer;
@@ -274,22 +287,14 @@ export default function DistrictedPrototype() {
   const [guesses, setGuesses] = useState([]);
   const [revealed, setRevealed] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
-  const [showHowToPlay, setShowHowToPlay] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.localStorage.getItem("districted-how-to-play-seen") !== "true";
-  });
 
-  const currentLocation = dailyLocations[round];
-  const gameOver = round >= dailyLocations.length;
+  const currentPuzzle = getCurrentPuzzle();
+  const currentLocation = currentPuzzle.locations[round];
+  const gameOver = round >= currentPuzzle.locations.length;
   const activeGuess = guesses[round];
   const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
   const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
-  const shareText = `Districted #${PUZZLE_ID}\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\n${GAME_URL}`;
-
-  function dismissHowToPlay() {
-    window.localStorage.setItem("districted-how-to-play-seen", "true");
-    setShowHowToPlay(false);
-  }
+  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://districted.vercel.app/`;
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
@@ -306,12 +311,12 @@ export default function DistrictedPrototype() {
   }
 
   function nextRound() {
-    if (round < dailyLocations.length - 1) {
+    if (round < currentPuzzle.locations.length - 1) {
       setRound(round + 1);
       setRevealed(false);
       setShareStatus("");
     } else {
-      setRound(dailyLocations.length);
+      setRound(currentPuzzle.locations.length);
     }
   }
 
@@ -325,7 +330,7 @@ export default function DistrictedPrototype() {
   async function shareGame() {
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Districted", text: shareText, url: GAME_URL });
+        await navigator.share({ title: "Districted", text: shareText, url: "https://districted.vercel.app/" });
         setShareStatus("Shared");
       } else {
         await navigator.clipboard?.writeText(shareText);
@@ -338,27 +343,13 @@ export default function DistrictedPrototype() {
 
   return (
     <main className="app">
-      {showHowToPlay && (
-        <div className="modal-backdrop">
-          <div className="how-to-modal">
-            <div className="category">How to Play</div>
-            <h2>How well do you know DC?</h2>
-            <p>We’ll give you 5 DC places. Drop a pin where you think each one is. The closer you are, the better your score.</p>
-            <p>Come back Mondays, Wednesdays and Fridays for new sets.</p>
-            <button className="primary-button" onClick={dismissHowToPlay}>Start Playing</button>
-          </div>
-        </div>
-      )}
-
       <div className="shell">
+        <header className="header"><h1>Districted</h1><p>Pin the DC location.</p></header>
 
         {!gameOver && (
           <section className="card">
-            <div className="meta"><span>Districted</span><span>Round {round + 1} / 5</span></div>
-<div className="location-card">
-  <div className="category">{currentLocation.category}</div>
-  <h2>{currentLocation.name}</h2>
-</div>
+            <div className="meta"><span>Districted Daily</span><span>Round {round + 1} / 5</span></div>
+            <div className="location-card"><div className="category">{currentLocation.category}</div><h2>{currentLocation.name}</h2></div>
             <TileMap
               key={round}
               activeGuess={activeGuess}
@@ -378,46 +369,16 @@ export default function DistrictedPrototype() {
             </div>
             <div className="result-row"><strong>Distance Off</strong><CountUpDistance miles={guesses[round].distance} /></div>
             <br />
-            <button className="primary-button" onClick={nextRound}>{round === dailyLocations.length - 1 ? "See Final Score" : "Next Location"}</button>
+            <button className="primary-button" onClick={nextRound}>{round === currentPuzzle.locations.length - 1 ? "See Final Score" : "Next Location"}</button>
           </section>
         )}
 
         {gameOver && (
           <section className="card final-score">
-            <div className="category">Final Score</div>
-            <h2>{totalMiles.toFixed(2)}</h2>
-            <p>Total miles off</p>
-
-            <div className="score-boxes">
-              {guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}
-            </div>
-
-            <div className="final-recap">
-              {guesses.map((g, i) => (
-                <div className="recap-row" key={g.location.name}>
-                  <div className={`recap-dot ${scoreClass(g.distance)}`}>{i + 1}</div>
-                  <div className="recap-main">
-                    <strong>{g.location.name}</strong>
-                    <span>{scoreLabel(g.distance)}</span>
-                  </div>
-                  <div className="recap-distance">{formatMiles(g.distance)}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="share-card">
-              <div className="share-title">Districted #{PUZZLE_ID}</div>
-              <div className="share-grid">{scoreLine}</div>
-              <div className="share-score">{totalMiles.toFixed(2)} total miles off</div>
-            </div>
-
+            <div className="category">Final Score</div><h2>{totalMiles.toFixed(2)}</h2><p>Total miles off</p>
+            <div className="score-boxes">{guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}</div>
             <pre className="share">{shareText}</pre>
-
-            <div className="button-stack">
-              <button className="primary-button" onClick={shareGame}>Share Result</button>
-              <button className="secondary-button" onClick={restart}>Play Again</button>
-            </div>
-
+            <div className="button-stack"><button className="primary-button" onClick={shareGame}>Share Result</button><button className="secondary-button" onClick={restart}>Play Again</button></div>
             {shareStatus && <p className="share-status">{shareStatus}</p>}
           </section>
         )}
