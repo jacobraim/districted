@@ -8,12 +8,29 @@ const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbo
 const GAME_URL = "https://districted.vercel.app/";
 
 function getEasternDateKey(date = new Date()) {
+  const easternParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hour12: false
+  }).formatToParts(date);
+
+  const hour = Number(easternParts.find((part) => part.type === "hour").value);
+
+  const adjustedDate = new Date(date);
+
+  if (hour < 6) {
+    adjustedDate.setDate(adjustedDate.getDate() - 1);
+  }
+
   const parts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
     year: "numeric",
     month: "2-digit",
     day: "2-digit"
-  }).formatToParts(date);
+  }).formatToParts(adjustedDate);
 
   const year = parts.find((part) => part.type === "year").value;
   const month = parts.find((part) => part.type === "month").value;
