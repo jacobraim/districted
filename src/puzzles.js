@@ -1,6 +1,6 @@
 export const puzzlesByDate = {
 "2026-05-15": {
-  id: "001",
+  id: "002",
   locations: [
     {
       name: "Meridian Hill Park",
@@ -27,7 +27,7 @@ export const puzzlesByDate = {
 },
   
   "2026-05-18": {
-    id: "002",
+    id: "003",
     locations: [
       { name: "Union Market", category: "Food Hall", answer: { lat: 38.908635, lng: -76.997448 } },
       { name: "The Phillips Collection", category: "Museum", answer: { lat: 38.911971, lng: -77.046739 } },
@@ -38,7 +38,7 @@ export const puzzlesByDate = {
   },
 
   "2026-05-19": {
-    id: "003",
+    id: "004",
     locations: [
       { name: "The Lincoln Memorial", category: "Monument", answer: { lat: 38.889269, lng: -77.050176 } },
       { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
@@ -49,7 +49,7 @@ export const puzzlesByDate = {
   },
 
   "2026-05-20": {
-    id: "004",
+    id: "005",
     locations: [
 { name: "National Theatre", category: "Theater", answer: { lat: 38.896339, lng: -77.030517 } },
       { name: "Florida Avenue Grill", category: "Restaurant", answer: { lat: 38.917488, lng: -77.026373 } },
@@ -60,7 +60,7 @@ export const puzzlesByDate = {
   },
 
   "2026-05-21": {
-    id: "005",
+    id: "006",
     locations: [
       { name: "Rock Creek Park Nature Center", category: "Park", answer: { lat: 38.959006, lng: -77.052162 } },
       { name: "Supreme Court of the United States", category: "Civic Landmark", answer: { lat: 38.890642, lng: -77.004439 } },
@@ -71,7 +71,7 @@ export const puzzlesByDate = {
   },
 
   "2026-05-22": {
-    id: "006",
+    id: "007",
     locations: [
       { name: "Library of Congress", category: "Civic Landmark", answer: { lat: 38.888684, lng: -77.004719 } },
       { name: "Bluejacket", category: "Brewery", answer: { lat: 38.875333, lng: -77.000614 } },
