@@ -85,7 +85,7 @@ export const puzzlesByDate = {
     {
       name: "Hirshhorn Museum",
       category: "Museum",
-      answer: { lat: 38.888997, lng: -77.022858 }
+      answer: { lat: 38.88813, lng: -77.02292 }
     },
     {
       name: "Audi Field",
@@ -95,7 +95,7 @@ export const puzzlesByDate = {
     {
       name: "Exorcist Stairs",
       category: "Landmark",
-      answer: { lat: 38.905690, lng: -77.070410 }
+      answer: { lat: 38.90563, lng: -77.07018 }
     },
     {
       name: "Howard University",
