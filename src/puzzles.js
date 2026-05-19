@@ -49,36 +49,65 @@ export const puzzlesByDate = {
   },
 
   "2026-05-19": {
-    id: "000",
-    locations: [
-      { name: "The Lincoln Memorial", category: "Monument", answer: { lat: 38.889269, lng: -77.050176 } },
-      { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
-      { name: "Nationals Park", category: "Sports", answer: { lat: 38.872987, lng: -77.007435 } },
-      { name: "The Anthem", category: "Music Venue", answer: { lat: 38.881954, lng: -77.026972 } },
-      { name: "Dan's Cafe", category: "Dive Bar", answer: { lat: 38.9201186, lng: -77.0415860 } }
-    ]
-  },
-
-  "2026-05-20": {
     id: "001",
-    locations: [
-{ name: "National Theatre", category: "Theater", answer: { lat: 38.896339, lng: -77.030517 } },
-      { name: "Florida Avenue Grill", category: "Restaurant", answer: { lat: 38.917488, lng: -77.026373 } },
-      { name: "Meridian Hill Park", category: "Park", answer: { lat: 38.920536, lng: -77.035902 } },
-      { name: "Union Station", category: "Transit", answer: { lat: 38.897095, lng: -77.006332 } },
-      { name: "The Wonderland Ballroom", category: "Bar", answer: { lat: 38.931991, lng: -77.032500 } }
-    ]
+      locations: [
+    {
+      name: "The Anthem",
+      category: "Music Venue",
+      answer: { lat: 38.881954, lng: -77.026972 }
+    },
+    {
+      name: "Farragut Square",
+      category: "Park",
+      answer: { lat: 38.901164, lng: -77.036717 }
+    },
+    {
+      name: "National Zoo",
+      category: "Zoo",
+      answer: { lat: 38.930000, lng: -77.049000 }
+    },
+    {
+      name: "Renwick Gallery",
+      category: "Museum",
+      answer: { lat: 38.899140, lng: -77.039032 }
+    },
+    {
+      name: "Union Station",
+      category: "Transit",
+      answer: { lat: 38.897095, lng: -77.006332 }
+    }
+  ]
   },
 
   "2026-05-21": {
     id: "002",
     locations: [
-      { name: "Rock Creek Park Nature Center", category: "Park", answer: { lat: 38.959006, lng: -77.052162 } },
-      { name: "Supreme Court of the United States", category: "Civic Landmark", answer: { lat: 38.890642, lng: -77.004439 } },
-      { name: "Le Diplomate", category: "Restaurant", answer: { lat: 38.911359, lng: -77.031954 } },
-      { name: "Howard Theatre", category: "Theater", answer: { lat: 38.915315, lng: -77.021909 } },
-      { name: "Dumbarton Oaks", category: "Museum/Garden", answer: { lat: 38.913968, lng: -77.063386 } }
-    ]
+    {
+      name: "Hirshhorn Museum",
+      category: "Museum",
+      answer: { lat: 38.888997, lng: -77.022858 }
+    },
+    {
+      name: "Audi Field",
+      category: "Stadium",
+      answer: { lat: 38.868408, lng: -77.012878 }
+    },
+    {
+      name: "Exorcist Stairs",
+      category: "Landmark",
+      answer: { lat: 38.905690, lng: -77.070410 }
+    },
+    {
+      name: "Howard University",
+      category: "University",
+      answer: { lat: 38.919700, lng: -77.018700 }
+    },
+    {
+      name: "Capital One Arena",
+      category: "Arena",
+      answer: { lat: 38.898129, lng: -77.021172 }
+    }
+  ]
   },
 
   "2026-05-22": {
