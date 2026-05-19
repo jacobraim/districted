@@ -57,9 +57,9 @@ export const puzzlesByDate = {
       answer: { lat: 38.881954, lng: -77.026972 }
     },
     {
-      name: "Farragut Square",
-      category: "Park",
-      answer: { lat: 38.901164, lng: -77.036717 }
+      name: "Washington Monument",
+      category: "Monument",
+      answer: { lat: 38.889484, lng: -77.035278 }
     },
     {
       name: "National Zoo",
@@ -72,9 +72,9 @@ export const puzzlesByDate = {
       answer: { lat: 38.899140, lng: -77.039032 }
     },
     {
-      name: "Union Station",
-      category: "Transit",
-      answer: { lat: 38.897095, lng: -77.006332 }
+      name: "Gemini",
+      category: "Restaurant",
+      answer: { lat: 38.9101, lng: -77.0383 }
     }
   ]
   },
