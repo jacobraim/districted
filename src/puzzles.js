@@ -79,7 +79,7 @@ export const puzzlesByDate = {
   ]
   },
 
-  "2026-05-19": {
+  "2026-05-21": {
     id: "002",
     locations: [
     {
@@ -110,14 +110,14 @@ export const puzzlesByDate = {
   ]
   },
 
-  "2026-05-22": {
+  "2026-05-19": {
     id: "003",
     locations: [
-      { name: "Library of Congress", category: "Civic Landmark", answer: { lat: 38.888684, lng: -77.004719 } },
-      { name: "Bluejacket", category: "Brewery", answer: { lat: 38.875333, lng: -77.000614 } },
-      { name: "Cathedral of St. Matthew the Apostle", category: "Church", answer: { lat: 38.906333, lng: -77.036556 } },
-      { name: "The Mansion on O Street", category: "Museum/Hotel", answer: { lat: 38.908364, lng: -77.047557 } },
-      { name: "Baked & Wired", category: "Bakery", answer: { lat: 38.903860, lng: -77.060504 } }
+      { name: "Thompson Boat Center at the Georgetown Waterfront", category: "Park", answer: { lat: 38.9029, lng: -77.0653 } },
+      { name: "9:30 Club", category: "Music Venue", answer: { lat: 38.9179480, lng: -77.0237227 } },
+      { name: "The Lincoln Memorial", category: "Monument", answer: { lat: 38.889248, lng: -77.050636 } },
+      { name: "Metrobar", category: "Restaurant and Bar", answer: { lat: 38.9217946, lng: -76.9977994 } },
+      { name: "United States Botanic Garden", category: "Landmark", answer: { lat: 38.8881, lng: -77.0129 } }
     ]
   }
 };
