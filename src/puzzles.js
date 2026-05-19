@@ -48,7 +48,7 @@ export const puzzlesByDate = {
     ]
   },
 
-  "2026-05-20": {
+  "2026-05-19": {
     id: "001",
       locations: [
     {
@@ -110,7 +110,7 @@ export const puzzlesByDate = {
   ]
   },
 
-  "2026-05-19": {
+  "2026-05-22": {
     id: "003",
     locations: [
       { name: "Thompson Boat Center at the Georgetown Waterfront", category: "Park", answer: { lat: 38.9029, lng: -77.0653 } },
