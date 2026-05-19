@@ -55,7 +55,7 @@ export const puzzlesByDate = {
       { name: "Ben's Chili Bowl", category: "Restaurant", answer: { lat: 38.917025, lng: -77.03145 } },
       { name: "Nationals Park", category: "Sports", answer: { lat: 38.872987, lng: -77.007435 } },
       { name: "The Anthem", category: "Music Venue", answer: { lat: 38.881954, lng: -77.026972 } },
-      { name: "Dan's Cafe", category: "Dive Bar", answer: { lat: 38.914139, lng: -77.042258 } }
+      { name: "Dan's Cafe", category: "Dive Bar", answer: { lat: 38.9201186, lng: -77.0415860 } }
     ]
   },
 
