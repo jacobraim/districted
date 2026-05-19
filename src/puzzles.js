@@ -48,7 +48,7 @@ export const puzzlesByDate = {
     ]
   },
 
-  "2026-05-19": {
+  "2026-05-20": {
     id: "001",
       locations: [
     {
@@ -79,7 +79,7 @@ export const puzzlesByDate = {
   ]
   },
 
-  "2026-05-21": {
+  "2026-05-19": {
     id: "002",
     locations: [
     {
