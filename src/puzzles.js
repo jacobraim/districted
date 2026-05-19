@@ -54,7 +54,7 @@ export const puzzlesByDate = {
     {
       name: "The Anthem",
       category: "Music Venue",
-      answer: { lat: 38.881954, lng: -77.026972 }
+      answer: { lat: 38.8801, lng: -77.0260 }
     },
     {
       name: "Washington Monument",
