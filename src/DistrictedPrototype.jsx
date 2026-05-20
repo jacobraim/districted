@@ -373,26 +373,44 @@ export default function DistrictedPrototype() {
   <span>Round {round + 1} / 5</span>
 </div>
             <div className="location-card"><div className="category">{currentLocation.category}</div><h2>{currentLocation.name}</h2></div>
-            <TileMap
-              key={round}
-              activeGuess={activeGuess}
-              currentAnswer={currentLocation.answer}
-              revealed={revealed}
-              roundNumber={round + 1}
-              onGuess={handleGuess}
-            />
-            <p className="hint">Drag, pinch, scroll, or use the map controls to find your spot.</p>
-          </section>
-        )}
+            <div className="map-stack">
+  <TileMap
+    key={round}
+    activeGuess={activeGuess}
+    currentAnswer={currentLocation.answer}
+    revealed={revealed}
+    roundNumber={round + 1}
+    onGuess={handleGuess}
+  />
 
-        {revealed && guesses[round] && (
-          <section className="card">
-            <div className="score-boxes">
-              {[0,1,2,3,4].map((i)=><div key={i} className={`score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`} />)}
-            </div>
-            <div className="result-row"><strong>Distance Off</strong><CountUpDistance miles={guesses[round].distance} /></div>
-            <br />
-            <button className="primary-button" onClick={nextRound}>{round === currentPuzzle.locations.length - 1 ? "See Final Score" : "Next Location"}</button>
+  {!revealed && (
+    <div className="map-instruction">
+      Tap the map to guess
+    </div>
+  )}
+
+  {revealed && guesses[round] && (
+    <div className="map-result-overlay">
+      <div className="overlay-score-boxes">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <div
+            key={i}
+            className={`overlay-score-box ${guesses[i] ? scoreClass(guesses[i].distance) : ""}`}
+          />
+        ))}
+      </div>
+
+      <div className="overlay-result-row">
+        <strong>Distance Off</strong>
+        <CountUpDistance miles={guesses[round].distance} />
+      </div>
+
+      <button className="primary-button" onClick={nextRound}>
+        {round === currentPuzzle.locations.length - 1 ? "See Final Score" : "Next Location"}
+      </button>
+    </div>
+  )}
+</div>
           </section>
         )}
 
