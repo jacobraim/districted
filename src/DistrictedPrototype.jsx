@@ -311,7 +311,7 @@ export default function DistrictedPrototype() {
   const activeGuess = guesses[round];
   const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
   const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
-  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://districted.vercel.app/`;
+  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://washingtonian.com/districted/`;
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
@@ -347,7 +347,7 @@ export default function DistrictedPrototype() {
   async function shareGame() {
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Districted", text: shareText, url: "https://districted.vercel.app/" });
+        await navigator.share({ title: "Districted", text: shareText, url: "https://washingtonian.com/districted/" });
         setShareStatus("Shared");
       } else {
         await navigator.clipboard?.writeText(shareText);
