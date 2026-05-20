@@ -6,6 +6,7 @@ import { puzzlesByDate } from "./puzzles";
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbox/streets-v12";
 const GAME_URL = "https://washingtonian.com/districted/";
+const DISPLAY_URL = "washingtonian.com/districted/";
 
 function getEasternDateKey(date = new Date()) {
   const easternParts = new Intl.DateTimeFormat("en-US", {
@@ -311,7 +312,7 @@ export default function DistrictedPrototype() {
   const activeGuess = guesses[round];
   const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
   const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
-  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nhttps://washingtonian.com/districted/`;
+  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nwashingtonian.com/districted/`;
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
