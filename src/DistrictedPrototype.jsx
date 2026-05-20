@@ -347,7 +347,10 @@ export default function DistrictedPrototype() {
   async function shareGame() {
     try {
       if (navigator.share) {
-        await navigator.share({ title: "Districted", text: shareText, url: "https://washingtonian.com/districted/" });
+        await navigator.share({
+  title: "Districted",
+  text: shareText
+});
         setShareStatus("Shared");
       } else {
         await navigator.clipboard?.writeText(shareText);
