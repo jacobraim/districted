@@ -5,7 +5,7 @@ import { puzzlesByDate } from "./puzzles";
 
 const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbox/streets-v12";
-const GAME_URL = "https://districted.vercel.app/";
+const GAME_URL = "https://washingtonian.com/districted/";
 
 function getEasternDateKey(date = new Date()) {
   const easternParts = new Intl.DateTimeFormat("en-US", {
