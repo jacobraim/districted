@@ -102,7 +102,7 @@ export const puzzlesByDate = {
       answer: { lat: 38.88757, lng: -77.02208 }
     }
   ]
-}
+};
 
   "2026-05-26": {
     id: "005",
@@ -133,7 +133,7 @@ export const puzzlesByDate = {
       answer: { lat: 38.913338, lng: -77.063089 }
     }
   ]
-}
+};
 
   "2026-05-27": {
     id: "006",
@@ -164,7 +164,7 @@ export const puzzlesByDate = {
       answer: { lat: 38.88982, lng: -77.00277 }
     }
   ]
-}
+};
 
   "2026-05-28": {
     id: "007",
@@ -195,7 +195,7 @@ export const puzzlesByDate = {
       answer: { lat: 38.90857, lng: -77.04585 }
     }
   ]
-}
+};
 
   "2026-05-29": {
     id: "008",
@@ -226,4 +226,4 @@ export const puzzlesByDate = {
       answer: { lat: 38.90922, lng: -77.02295 }
     }
   ]
-}
+};
