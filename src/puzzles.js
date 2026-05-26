@@ -129,7 +129,7 @@ export const puzzlesByDate = {
       {
         name: "Albi",
         category: "Restaurant",
-        answer: { lat: 38.88473, lng: -77.000267 }
+        answer: { lat: 38.874302, lng: -76.999798 }
       },
       {
         name: "National Building Museum",
