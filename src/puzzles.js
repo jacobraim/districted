@@ -388,7 +388,7 @@ export const puzzlesByDate = {
   name: "National Gallery of Art Sculpture Garden",
   category: "Garden",
   answer: { lat: 38.8923745, lng: -77.0220694 }
-}
+},
       {
         name: "Friendship Archway",
         category: "Landmark",
@@ -398,7 +398,7 @@ export const puzzlesByDate = {
   name: "GALA Hispanic Theatre",
   category: "Theater",
   answer: { lat: 38.9309279, lng: -77.0324431 }
-}
+},
     ]
   },
 };
