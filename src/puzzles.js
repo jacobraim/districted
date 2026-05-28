@@ -245,7 +245,7 @@ export const puzzlesByDate = {
         answer: { lat: 38.90922, lng: -77.02295 }
       }
     ]
-  }
+  },
 
    "2026-06-01": {
     id: "009",
