@@ -246,4 +246,159 @@ export const puzzlesByDate = {
       }
     ]
   }
+
+   "2026-06-01": {
+    id: "009",
+    locations: [
+      {
+        name: "The Dabney",
+        category: "Restaurant",
+        answer: { lat: 38.9063777, lng: -77.0245704 }
+      },
+      {
+        name: "Martin Luther King, Jr. Memorial",
+        category: "Memorial",
+        answer: { lat: 38.8893951, lng: -77.040308 }
+      },
+      {
+        name: "Dupont Circle",
+        category: "Circle/Park",
+        answer: { lat: 38.9109436, lng: -77.0427259 }
+      },
+      {
+        name: "National Museum of Women in the Arts",
+        category: "Museum",
+        answer: { lat: 38.9000261, lng: -77.0292709 }
+      },
+      {
+        name: "Atlas Performing Arts Center",
+        category: "Theater",
+        answer: { lat: 38.900019, lng: -76.9872195 }
+      }
+    ]
+  },
+
+  "2026-06-02": {
+    id: "010",
+    locations: [
+      {
+        name: "Maydan",
+        category: "Restaurant",
+        answer: { lat: 38.9198963, lng: -77.0311849 }
+      },
+      {
+        name: "Ford's Theatre",
+        category: "Theater",
+        answer: { lat: 38.896678, lng: -77.0258178 }
+      },
+      {
+        name: "Rock Creek Park Nature Center",
+        category: "Park",
+        answer: { lat: 38.9600035, lng: -77.0516825 }
+      },
+      {
+        name: "Eastern Market",
+        category: "Market",
+        answer: { lat: 38.8865874, lng: -76.9964703 }
+      },
+      {
+        name: "Library of Congress",
+        category: "Library",
+        answer: { lat: 38.8867409, lng: -77.0047055 }
+      }
+    ]
+  },
+
+  "2026-06-03": {
+    id: "011",
+    locations: [
+      {
+        name: "Fiola",
+        category: "Restaurant",
+        answer: { lat: 38.89476, lng: -77.02176 }
+      },
+      {
+        name: "National Museum of the American Indian",
+        category: "Museum",
+        answer: { lat: 38.88892, lng: -77.01639 }
+      },
+      {
+        name: "Logan Circle",
+        category: "Circle/Park",
+        answer: { lat: 38.90961, lng: -77.02970 }
+      },
+      {
+        name: "DC War Memorial",
+        category: "Memorial",
+        answer: { lat: 38.88927, lng: -77.04100 }
+      },
+      {
+        name: "Lincoln Theatre",
+        category: "Theater",
+        answer: { lat: 38.91685, lng: -77.02765 }
+      }
+    ]
+  },
+
+  "2026-06-04": {
+    id: "012",
+    locations: [
+      {
+        name: "Anju",
+        category: "Restaurant",
+        answer: { lat: 38.91020, lng: -77.04502 }
+      },
+      {
+        name: "Smithsonian Castle",
+        category: "Museum",
+        answer: { lat: 38.88880, lng: -77.02600 }
+      },
+      {
+        name: "Congressional Cemetery",
+        category: "Cemetery",
+        answer: { lat: 38.88110, lng: -76.97730 }
+      },
+      {
+        name: "Sixth & I",
+        category: "Synagogue/Venue",
+        answer: { lat: 38.90062, lng: -77.02072 }
+      },
+      {
+        name: "President Lincoln's Cottage",
+        category: "Historic Site",
+        answer: { lat: 38.94156, lng: -77.01148 }
+      }
+    ]
+  },
+
+  "2026-06-05": {
+    id: "013",
+    locations: [
+      {
+        name: "Lutèce",
+        category: "Restaurant",
+        answer: { lat: 38.91135, lng: -77.06505 }
+      },
+      {
+        name: "National Museum of African American History and Culture",
+        category: "Museum",
+        answer: { lat: 38.89130, lng: -77.03200 }
+      },
+      {
+        name: "Rock Creek Cemetery",
+        category: "Cemetery",
+        answer: { lat: 38.94900, lng: -77.01290 }
+      },
+      {
+        name: "Friendship Archway",
+        category: "Landmark",
+        answer: { lat: 38.90042, lng: -77.02116 }
+      },
+      {
+        name: "Tivoli Theatre",
+        category: "Theater",
+        answer: { lat: 38.92804, lng: -77.03266 }
+      }
+    ]
+  },
 };
