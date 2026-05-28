@@ -315,27 +315,27 @@ export const puzzlesByDate = {
       {
         name: "Fiola",
         category: "Restaurant",
-        answer: { lat: 38.89476, lng: -77.02176 }
+        answer: { lat: 38.8932991, lng: -77.0205014 }
       },
       {
         name: "National Museum of the American Indian",
         category: "Museum",
-        answer: { lat: 38.88892, lng: -77.01639 }
+        answer: { lat: 38.8889838, lng: -77.0175584 }
       },
       {
         name: "Logan Circle",
         category: "Circle/Park",
-        answer: { lat: 38.90961, lng: -77.02970 }
+        answer: { lat: 38.9097778, lng: -77.0296259 }
       },
       {
         name: "DC War Memorial",
         category: "Memorial",
-        answer: { lat: 38.88927, lng: -77.04100 }
+        answer: { lat: 38.887624, lng: -77.0426199 }
       },
       {
         name: "Lincoln Theatre",
         category: "Theater",
-        answer: { lat: 38.91685, lng: -77.02765 }
+        answer: { lat: 38.9173973, lng: -77.028986 }
       }
     ]
   },
@@ -346,27 +346,27 @@ export const puzzlesByDate = {
       {
         name: "Anju",
         category: "Restaurant",
-        answer: { lat: 38.91020, lng: -77.04502 }
+        answer: { lat: 38.91436, lng: -77.041489 }
       },
       {
         name: "Smithsonian Castle",
         category: "Museum",
-        answer: { lat: 38.88880, lng: -77.02600 }
+        answer: { lat: 38.8887945, lng: -77.0259381 }
       },
       {
         name: "Congressional Cemetery",
         category: "Cemetery",
-        answer: { lat: 38.88110, lng: -76.97730 }
+        answer: { lat: 38.8826554, lng: -76.9788787 }
       },
       {
         name: "Sixth & I",
         category: "Synagogue/Venue",
-        answer: { lat: 38.90062, lng: -77.02072 }
+        answer: { lat: 38.900785, lng: -77.020067 }
       },
       {
         name: "President Lincoln's Cottage",
         category: "Historic Site",
-        answer: { lat: 38.94156, lng: -77.01148 }
+        answer: { lat: 38.9375947, lng: -77.0124 }
       }
     ]
   },
@@ -377,28 +377,28 @@ export const puzzlesByDate = {
       {
         name: "Lutèce",
         category: "Restaurant",
-        answer: { lat: 38.91135, lng: -77.06505 }
+        answer: { lat: 38.9094031, lng: -77.0646054 }
       },
       {
         name: "National Museum of African American History and Culture",
         category: "Museum",
-        answer: { lat: 38.89130, lng: -77.03200 }
+        answer: { lat: 38.891067, lng: -77.032704 }
       },
-      {
-        name: "Rock Creek Cemetery",
-        category: "Cemetery",
-        answer: { lat: 38.94900, lng: -77.01290 }
-      },
+{
+  name: "National Gallery of Art Sculpture Garden",
+  category: "Garden",
+  answer: { lat: 38.8923745, lng: -77.0220694 }
+}
       {
         name: "Friendship Archway",
         category: "Landmark",
-        answer: { lat: 38.90042, lng: -77.02116 }
+        answer: { lat: 38.8994373, lng: -77.0221058 }
       },
-      {
-        name: "Tivoli Theatre",
-        category: "Theater",
-        answer: { lat: 38.92804, lng: -77.03266 }
-      }
+{
+  name: "GALA Hispanic Theatre",
+  category: "Theater",
+  answer: { lat: 38.9309279, lng: -77.0324431 }
+}
     ]
   },
 };
