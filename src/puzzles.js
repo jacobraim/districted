@@ -258,12 +258,12 @@ export const puzzlesByDate = {
       {
         name: "Martin Luther King, Jr. Memorial",
         category: "Memorial",
-        answer: { lat: 38.8893951, lng: -77.040308 }
+        answer: { lat: 38.88614307866772, lng: -77.04398074874878 }
       },
       {
         name: "Dupont Circle",
         category: "Circle/Park",
-        answer: { lat: 38.9109436, lng: -77.0427259 }
+        answer: { lat: 38.909643846095754, lng: -77.0434443069458 }
       },
       {
         name: "National Museum of Women in the Arts",
