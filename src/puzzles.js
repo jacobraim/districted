@@ -401,4 +401,159 @@ export const puzzlesByDate = {
 },
     ]
   },
+
+    "2026-06-08": {
+    id: "014",
+    locations: [
+      {
+        name: "Causa",
+        category: "Restaurant",
+        answer: { lat: 38.9065532, lng: -77.0247508 }
+      },
+      {
+        name: "National Gallery of Art",
+        category: "Museum",
+        answer: { lat: 38.89120566462183, lng: -77.01990931509705 }
+      },
+      {
+        name: "Navy Memorial",
+        category: "Memorial",
+        answer: { lat: 38.8936824, lng: -77.0219151 }
+      },
+      {
+        name: "Hill Center at the Old Naval Hospital",
+        category: "Historic Site",
+        answer: { lat: 38.8830167, lng: -76.9931347 }
+      },
+{
+  name: "Warner Theatre",
+  category: "Theater",
+  answer: { lat: 38.8963656, lng: -77.0295277 }
+}
+    ]
+  },
+
+  "2026-06-09": {
+    id: "015",
+    locations: [
+      {
+        name: "Rooster & Owl",
+        category: "Restaurant",
+        answer: { lat: 38.92149, lng: -77.032167 }
+      },
+      {
+        name: "Frederick Douglass National Historic Site",
+        category: "Historic Site",
+        answer: { lat: 38.8633881, lng: -76.9851713 }
+      },
+      {
+        name: "Martin Luther King Jr. Memorial Library",
+        category: "Library",
+        answer: { lat: 38.8986914, lng: -77.0247662 }
+      },
+      {
+        name: "Anacostia Park Skating Pavilion",
+        category: "Park",
+        answer: { lat: 38.876744, lng: -76.972875 }
+      },
+      {
+        name: "St. John's Church Lafayette Square",
+        category: "Church",
+        answer: { lat: 38.9004097, lng: -77.0361063 }
+      }
+    ]
+  },
+
+  "2026-06-10": {
+    id: "016",
+    locations: [
+      {
+        name: "Tail Up Goat",
+        category: "Restaurant",
+        answer: { lat: 38.92232, lng: -77.04252 }
+      },
+      {
+        name: "Gallaudet University",
+        category: "University",
+        answer: { lat: 38.90761, lng: -76.99348 }
+      },
+      {
+        name: "Korean War Veterans Memorial",
+        category: "Memorial",
+        answer: { lat: 38.88779, lng: -77.04779 }
+      },
+      {
+        name: "National Geographic Museum",
+        category: "Museum",
+        answer: { lat: 38.90508, lng: -77.03749 }
+      },
+      {
+        name: "Langdon Park Recreation Center",
+        category: "Recreation Center",
+        answer: { lat: 38.92436, lng: -76.98576 }
+      }
+    ]
+  },
+
+  "2026-06-11": {
+    id: "017",
+    locations: [
+      {
+        name: "Queen's English",
+        category: "Restaurant",
+        answer: { lat: 38.93186, lng: -77.02868 }
+      },
+      {
+        name: "Franciscan Monastery of the Holy Land",
+        category: "Monastery/Garden",
+        answer: { lat: 38.93989, lng: -76.98446 }
+      },
+      {
+        name: "U.S. Marine Barracks",
+        category: "Military Landmark",
+        answer: { lat: 38.88085, lng: -76.99478 }
+      },
+      {
+        name: "Heurich House Museum",
+        category: "Museum",
+        answer: { lat: 38.90855, lng: -77.04673 }
+      },
+      {
+        name: "Fort Dupont Park",
+        category: "Park",
+        answer: { lat: 38.88485, lng: -76.94804 }
+      }
+    ]
+  },
+
+  "2026-06-12": {
+    id: "018",
+    locations: [
+      {
+        name: "Duck & the Peach",
+        category: "Restaurant",
+        answer: { lat: 38.88478, lng: -76.99605 }
+      },
+      {
+        name: "Mexican Cultural Institute",
+        category: "Cultural Center",
+        answer: { lat: 38.91760, lng: -77.04541 }
+      },
+      {
+        name: "Oxon Run Park",
+        category: "Park",
+        answer: { lat: 38.83356, lng: -76.99685 }
+      },
+      {
+        name: "National Law Enforcement Memorial",
+        category: "Memorial",
+        answer: { lat: 38.89587, lng: -77.02408 }
+      },
+      {
+        name: "Saint Anselm",
+        category: "Restaurant",
+        answer: { lat: 38.90910, lng: -76.99659 }
+      }
+    ]
+  },
 };
