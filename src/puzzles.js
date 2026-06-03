@@ -468,29 +468,29 @@ export const puzzlesByDate = {
     id: "016",
     locations: [
       {
-        name: "Tail Up Goat",
+        name: "Old Ebbitt Grill",
         category: "Restaurant",
-        answer: { lat: 38.92232, lng: -77.04252 }
+        answer: { lat: 38.898056, lng: -77.0333288 }
       },
       {
         name: "Gallaudet University",
         category: "University",
-        answer: { lat: 38.90761, lng: -76.99348 }
+        answer: { lat: 38.9083288, lng: -76.9916857 }
       },
       {
         name: "Korean War Veterans Memorial",
         category: "Memorial",
-        answer: { lat: 38.88779, lng: -77.04779 }
+        answer: { lat: 38.88754613441309, lng: -77.04716436915588 }
       },
       {
-        name: "National Geographic Museum",
+        name: "National Geographic Museum of Exploration",
         category: "Museum",
-        answer: { lat: 38.90508, lng: -77.03749 }
+        answer: { lat: 38.9053449, lng: -77.0372106 }
       },
       {
         name: "Langdon Park Recreation Center",
         category: "Recreation Center",
-        answer: { lat: 38.92436, lng: -76.98576 }
+        answer: { lat: 38.9268435, lng: -76.9758109 }
       }
     ]
   },
@@ -501,27 +501,27 @@ export const puzzlesByDate = {
       {
         name: "Queen's English",
         category: "Restaurant",
-        answer: { lat: 38.93186, lng: -77.02868 }
+        answer: { lat: 38.9321569, lng: -77.0285712 }
       },
       {
         name: "Franciscan Monastery of the Holy Land",
         category: "Monastery/Garden",
-        answer: { lat: 38.93989, lng: -76.98446 }
+        answer: { lat: 38.9374187, lng: -76.9851312 }
       },
       {
         name: "U.S. Marine Barracks",
         category: "Military Landmark",
-        answer: { lat: 38.88085, lng: -76.99478 }
+        answer: { lat: 38.87954001406915, lng: -76.99421042380371 }
       },
       {
         name: "Heurich House Museum",
         category: "Museum",
-        answer: { lat: 38.90855, lng: -77.04673 }
+        answer: { lat: 38.9080364, lng: -77.044512 }
       },
       {
         name: "Fort Dupont Park",
         category: "Park",
-        answer: { lat: 38.88485, lng: -76.94804 }
+        answer: { lat: 38.88285568711412, lng: -76.94943925180664 }
       }
     ]
   },
@@ -532,27 +532,27 @@ export const puzzlesByDate = {
       {
         name: "Duck & the Peach",
         category: "Restaurant",
-        answer: { lat: 38.88478, lng: -76.99605 }
+        answer: { lat: 38.8857256, lng: -76.9959451 }
       },
       {
         name: "Mexican Cultural Institute",
         category: "Cultural Center",
-        answer: { lat: 38.91760, lng: -77.04541 }
+        answer: { lat: 38.9255284, lng: -77.0361015 }
       },
       {
         name: "Oxon Run Park",
         category: "Park",
-        answer: { lat: 38.83356, lng: -76.99685 }
+        answer: { lat: 38.84002307990461, lng: -76.98179403575135 }
       },
       {
         name: "National Law Enforcement Memorial",
         category: "Memorial",
-        answer: { lat: 38.89587, lng: -77.02408 }
+        answer: { lat: 38.8972468, lng: -77.0175783 }
       },
       {
         name: "Saint Anselm",
         category: "Restaurant",
-        answer: { lat: 38.90910, lng: -76.99659 }
+        answer: { lat: 38.907638, lng: -76.9990396 }
       }
     ]
   },
