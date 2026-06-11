@@ -562,27 +562,27 @@ export const puzzlesByDate = {
       {
         name: "Elmina",
         category: "Restaurant",
-        answer: { lat: 38.91977, lng: -77.03101 }
+        answer: { lat: 38.919542, lng: -77.0322058 }
       },
       {
         name: "National Postal Museum",
         category: "Museum",
-        answer: { lat: 38.89823, lng: -77.00831 }
+        answer: { lat: 38.8980746, lng: -77.0082108 }
       },
       {
         name: "Albert Einstein Memorial",
         category: "Memorial",
-        answer: { lat: 38.89262, lng: -77.04818 }
+        answer: { lat: 38.8922529023432, lng: -77.04856816791755 }
       },
       {
         name: "U.S. Capitol",
         category: "Civic Landmark",
-        answer: { lat: 38.88994, lng: -77.00905 }
+        answer: { lat: 38.889813, lng: -77.0090208 }
       },
       {
         name: "The LINE DC",
         category: "Hotel",
-        answer: { lat: 38.92235, lng: -77.04231 }
+        answer: { lat: 38.9227722, lng: -77.04171 }
       }
     ]
   },
@@ -593,27 +593,27 @@ export const puzzlesByDate = {
       {
         name: "Barbouzard",
         category: "Restaurant",
-        answer: { lat: 38.90269, lng: -77.03916 }
+        answer: { lat: 38.9022658, lng: -77.039723 }
       },
       {
         name: "Old Stone House",
         category: "Historic Site",
-        answer: { lat: 38.90595, lng: -77.05980 }
+        answer: { lat: 38.9054188, lng: -77.060379 }
       },
       {
         name: "National Museum of Asian Art",
         category: "Museum",
-        answer: { lat: 38.88795, lng: -77.02730 }
+        answer: { lat: 38.8881222, lng: -77.0276002 }
       },
       {
         name: "Theodore Roosevelt Memorial",
         category: "Memorial",
-        answer: { lat: 38.89729, lng: -77.06443 }
+        answer: { lat: 38.89738610985933, lng: -77.06398537630506 }
       },
       {
         name: "Spanish Steps",
         category: "Landmark",
-        answer: { lat: 38.91350, lng: -77.04685 }
+        answer: { lat: 38.913487, lng: -77.0486829 }
       }
     ]
   },
@@ -624,27 +624,27 @@ export const puzzlesByDate = {
       {
         name: "Ellē",
         category: "Restaurant",
-        answer: { lat: 38.93028, lng: -77.03824 }
+        answer: { lat: 38.93180506588793, lng: -77.03824 }
       },
       {
         name: "National Bonsai & Penjing Museum",
         category: "Museum/Garden",
-        answer: { lat: 38.91225, lng: -76.96739 }
+        answer: { lat: 38.9125368, lng: -76.9695548 }
       },
       {
         name: "Mary McLeod Bethune Council House",
         category: "Historic Site",
-        answer: { lat: 38.90862, lng: -77.02857 }
+        answer: { lat: 38.9081889, lng: -77.0309106 }
       },
       {
         name: "The Kreeger Museum",
         category: "Museum",
-        answer: { lat: 38.92524, lng: -77.10526 }
+        answer: { lat: 38.9218554, lng: -77.0887526 }
       },
       {
         name: "McPherson Square",
         category: "Park",
-        answer: { lat: 38.90144, lng: -77.03381 }
+        answer: { lat: 38.90192762755221, lng: -77.03409769328306 }
       }
     ]
   },
@@ -653,29 +653,29 @@ export const puzzlesByDate = {
     id: "022",
     locations: [
       {
-        name: "Arrels",
+        name: "Le Diplomate",
         category: "Restaurant",
-        answer: { lat: 38.89860, lng: -77.01690 }
+        answer: { lat: 38.9113725, lng: -77.0315963 }
       },
       {
-        name: "National Museum of the American Latino Gallery",
+        name: "National Museum of American History",
         category: "Museum",
-        answer: { lat: 38.89191, lng: -77.03004 }
+        answer: { lat: 38.8912397, lng: -77.0300205 }
       },
       {
         name: "Lafayette Square",
         category: "Park",
-        answer: { lat: 38.89961, lng: -77.03654 }
+        answer: { lat: 38.8994994, lng: -77.0365402 }
       },
       {
-        name: "National World War I Memorial",
+        name: "Jefferson Memorial",
         category: "Memorial",
-        answer: { lat: 38.89675, lng: -77.03360 }
+        answer: { lat: 38.8814182, lng: -77.0365506 }
       },
       {
         name: "Planet Word",
         category: "Museum",
-        answer: { lat: 38.90207, lng: -77.02976 }
+        answer: { lat: 38.901619, lng: -77.029547 }
       }
     ]
   },
@@ -686,27 +686,27 @@ export const puzzlesByDate = {
       {
         name: "Shia",
         category: "Restaurant",
-        answer: { lat: 38.90792, lng: -77.00010 }
+        answer: { lat: 38.9081807, lng: -77.0001568 }
       },
       {
-        name: "Anacostia Arts Center",
-        category: "Arts Center",
-        answer: { lat: 38.86650, lng: -76.98959 }
+        name: "Audi Field",
+        category: "Stadium",
+        answer: { lat: 38.8682612, lng: -77.0126092 }
       },
       {
         name: "Tudor Place",
         category: "Historic House",
-        answer: { lat: 38.91064, lng: -77.06279 }
+        answer: { lat: 38.9114666, lng: -77.063043 }
       },
       {
         name: "Rock Creek Tennis Center",
         category: "Sports",
-        answer: { lat: 38.95383, lng: -77.03992 }
+        answer: { lat: 38.95411582078685, lng: -77.0382443921679 }
       },
       {
         name: "Franklin Park",
         category: "Park",
-        answer: { lat: 38.90152, lng: -77.03143 }
+        answer: { lat: 38.901908178033665, lng: -77.030803968612 }
       }
     ]
   },
