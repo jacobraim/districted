@@ -556,4 +556,158 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-06-15": {
+    id: "019",
+    locations: [
+      {
+        name: "Elmina",
+        category: "Restaurant",
+        answer: { lat: 38.91977, lng: -77.03101 }
+      },
+      {
+        name: "National Postal Museum",
+        category: "Museum",
+        answer: { lat: 38.89823, lng: -77.00831 }
+      },
+      {
+        name: "Albert Einstein Memorial",
+        category: "Memorial",
+        answer: { lat: 38.89262, lng: -77.04818 }
+      },
+      {
+        name: "U.S. Capitol",
+        category: "Civic Landmark",
+        answer: { lat: 38.88994, lng: -77.00905 }
+      },
+      {
+        name: "The LINE DC",
+        category: "Hotel",
+        answer: { lat: 38.92235, lng: -77.04231 }
+      }
+    ]
+  },
+
+  "2026-06-16": {
+    id: "020",
+    locations: [
+      {
+        name: "Barbouzard",
+        category: "Restaurant",
+        answer: { lat: 38.90269, lng: -77.03916 }
+      },
+      {
+        name: "Old Stone House",
+        category: "Historic Site",
+        answer: { lat: 38.90595, lng: -77.05980 }
+      },
+      {
+        name: "National Museum of Asian Art",
+        category: "Museum",
+        answer: { lat: 38.88795, lng: -77.02730 }
+      },
+      {
+        name: "Theodore Roosevelt Memorial",
+        category: "Memorial",
+        answer: { lat: 38.89729, lng: -77.06443 }
+      },
+      {
+        name: "Spanish Steps",
+        category: "Landmark",
+        answer: { lat: 38.91350, lng: -77.04685 }
+      }
+    ]
+  },
+
+  "2026-06-17": {
+    id: "021",
+    locations: [
+      {
+        name: "Ellē",
+        category: "Restaurant",
+        answer: { lat: 38.93028, lng: -77.03824 }
+      },
+      {
+        name: "National Bonsai & Penjing Museum",
+        category: "Museum/Garden",
+        answer: { lat: 38.91225, lng: -76.96739 }
+      },
+      {
+        name: "Mary McLeod Bethune Council House",
+        category: "Historic Site",
+        answer: { lat: 38.90862, lng: -77.02857 }
+      },
+      {
+        name: "The Kreeger Museum",
+        category: "Museum",
+        answer: { lat: 38.92524, lng: -77.10526 }
+      },
+      {
+        name: "McPherson Square",
+        category: "Park",
+        answer: { lat: 38.90144, lng: -77.03381 }
+      }
+    ]
+  },
+
+  "2026-06-18": {
+    id: "022",
+    locations: [
+      {
+        name: "Arrels",
+        category: "Restaurant",
+        answer: { lat: 38.89860, lng: -77.01690 }
+      },
+      {
+        name: "National Museum of the American Latino Gallery",
+        category: "Museum",
+        answer: { lat: 38.89191, lng: -77.03004 }
+      },
+      {
+        name: "Lafayette Square",
+        category: "Park",
+        answer: { lat: 38.89961, lng: -77.03654 }
+      },
+      {
+        name: "National World War I Memorial",
+        category: "Memorial",
+        answer: { lat: 38.89675, lng: -77.03360 }
+      },
+      {
+        name: "Planet Word",
+        category: "Museum",
+        answer: { lat: 38.90207, lng: -77.02976 }
+      }
+    ]
+  },
+
+  "2026-06-19": {
+    id: "023",
+    locations: [
+      {
+        name: "Shia",
+        category: "Restaurant",
+        answer: { lat: 38.90792, lng: -77.00010 }
+      },
+      {
+        name: "Anacostia Arts Center",
+        category: "Arts Center",
+        answer: { lat: 38.86650, lng: -76.98959 }
+      },
+      {
+        name: "Tudor Place",
+        category: "Historic House",
+        answer: { lat: 38.91064, lng: -77.06279 }
+      },
+      {
+        name: "Rock Creek Tennis Center",
+        category: "Sports",
+        answer: { lat: 38.95383, lng: -77.03992 }
+      },
+      {
+        name: "Franklin Park",
+        category: "Park",
+        answer: { lat: 38.90152, lng: -77.03143 }
+      }
+    ]
+  },
 };
