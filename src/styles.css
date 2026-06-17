@@ -369,3 +369,34 @@ button {
   color: #020617;
   border-color: #ffffff;
 }
+
+.rank-card {
+  margin: 18px 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f7f1e8;
+  border: 1px solid rgba(80, 55, 35, 0.18);
+  text-align: center;
+}
+
+.rank-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #7a5d42;
+  margin-bottom: 6px;
+}
+
+.rank-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #24180f;
+  line-height: 1.1;
+}
+
+.rank-description {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #5d4938;
+}
