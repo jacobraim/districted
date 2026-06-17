@@ -300,6 +300,41 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
   return <div className="map-wrap"><div ref={mapNodeRef} className="mapbox-map" /></div>;
 }
 
+function getDistrictedRank(totalMiles) {
+  if (totalMiles <= 1.5) {
+    return {
+      title: "DC Native",
+      description: "You know the city block by block."
+    };
+  }
+
+  if (totalMiles <= 4) {
+    return {
+      title: "Neighborhood Regular",
+      description: "You’ve clearly spent some time around here."
+    };
+  }
+
+  if (totalMiles <= 8) {
+    return {
+      title: "Metro-Proficient",
+      description: "You know the city, but a few transfers got messy."
+    };
+  }
+
+  if (totalMiles <= 15) {
+    return {
+      title: "Weekend Visitor",
+      description: "You found the right quadrant… eventually."
+    };
+  }
+
+  return {
+    title: "Tourist",
+    description: "Welcome to Washington. The monuments are that way."
+  };
+}
+
 export default function DistrictedPrototype() {
   const [round, setRound] = useState(0);
   const [guesses, setGuesses] = useState([]);
@@ -310,9 +345,14 @@ export default function DistrictedPrototype() {
   const currentLocation = currentPuzzle.locations[round];
   const gameOver = round >= currentPuzzle.locations.length;
   const activeGuess = guesses[round];
-  const totalMiles = guesses.reduce((sum,g)=>sum+g.distance,0);
-  const scoreLine = guesses.map((g)=>scoreEmoji(g.distance)).join("");
-  const shareText = `Districted\n${scoreLine}\n${totalMiles.toFixed(2)} total miles off\nwashingtonian.com/districted/`;
+const totalMiles = guesses.reduce((sum, guess) => sum + guess.distance, 0);
+const rank = getDistrictedRank(totalMiles);
+const scoreLine = guesses.map((guess) => scoreEmoji(guess.distance)).join("");
+const shareText = `Districted #${currentPuzzle.id}
+${scoreLine}
+${totalMiles.toFixed(2)} total miles off
+${rank.title}
+${GAME_URL}`;
 
   function handleGuess(guess) {
     if (revealed || gameOver) return;
@@ -414,15 +454,34 @@ export default function DistrictedPrototype() {
           </section>
         )}
 
-        {gameOver && (
-          <section className="card final-score">
-            <div className="category">Final Score</div><h2>{totalMiles.toFixed(2)}</h2><p>Total miles off</p>
-            <div className="score-boxes">{guesses.map((g,i)=><div key={i} className={`score-box ${scoreClass(g.distance)}`} />)}</div>
-            <pre className="share">{shareText}</pre>
-            <div className="button-stack"><button className="primary-button" onClick={shareGame}>Share Result</button><button className="secondary-button" onClick={restart}>Play Again</button></div>
-            {shareStatus && <p className="share-status">{shareStatus}</p>}
-          </section>
-        )}
+{gameOver && (
+  <section className="card final-score">
+    <div className="category">Final Score</div>
+    <h2>{totalMiles.toFixed(2)}</h2>
+    <p>Total miles off</p>
+
+    <div className="rank-card">
+      <div className="rank-label">Your Districted rank</div>
+      <div className="rank-title">{rank.title}</div>
+      <div className="rank-description">{rank.description}</div>
+    </div>
+
+    <div className="score-boxes">
+      {guesses.map((g, i) => (
+        <div key={i} className={`score-box ${scoreClass(g.distance)}`} />
+      ))}
+    </div>
+
+    <pre className="share">{shareText}</pre>
+
+    <div className="button-stack">
+      <button className="primary-button" onClick={shareGame}>Share Result</button>
+      <button className="secondary-button" onClick={restart}>Play Again</button>
+    </div>
+
+    {shareStatus && <p className="share-status">{shareStatus}</p>}
+  </section>
+)}
       </div>
     </main>
   );
