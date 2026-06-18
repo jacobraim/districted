@@ -710,4 +710,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-06-22": {
+    id: "024",
+    locations: [
+      {
+        name: "Anacostia Community Museum",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.8565357, lng: -76.9768339 }
+      },
+      {
+        name: "National Postal Museum",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.88797, lng: -77.0082108 }
+      },
+      {
+        name: "National Museum of African Art",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.8880093, lng: -77.0255044 }
+      },
+      {
+        name: "Freer Gallery of Art",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.8881222, lng: -77.0276002 }
+      },
+      {
+      name: "National Air and Space Museum",
+      category: "Smithsonian Museum",
+      answer: { lat: 38.8886847, lng: -77.0197731 }
+      }
+    ]
+  },
 };
