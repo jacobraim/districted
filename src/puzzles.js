@@ -740,4 +740,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-06-23": {
+    id: "025",
+    locations: [
+      {
+        name: "Arena Stage",
+        category: "Theater",
+        answer: { lat: 38.8772991, lng: -77.0204611 }
+      },
+      {
+        name: "CareFirst Arena",
+        category: "Arena",
+        answer: { lat: 38.847135110187196, lng: -76.99154434313198 }
+      },
+      {
+        name: "Dumbarton Oaks",
+        category: "Museum/Garden",
+        answer: { lat: 38.914187839592586, lng: -77.06283043611766 }
+      },
+      {
+        name: "Rumi's Kitchen",
+        category: "Restaurant",
+        answer: { lat: 38.9040129, lng: -77.020809 }
+      },
+      {
+        name: "REI Co-op",
+        category: "Store",
+        answer: { lat: 38.90543597887059, lng: -77.00299272094539 }
+      }
+    ]
+  },
 };
