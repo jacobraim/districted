@@ -770,4 +770,96 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-06-26": {
+    id: "028",
+    locations: [
+      {
+        name: "Moon Rabbit",
+        category: "Restaurant",
+        answer: { lat: 38.89754178777718, lng: -77.02522546494167 }
+      },
+      {
+        name: "John F. Kennedy Center for the Performing Arts",
+        category: "Performing Arts Center",
+        answer: { lat: 38.895881333555, lng: -77.05558853347334 }
+      },
+      {
+        name: "National Archives",
+        category: "Museum",
+        answer: { lat: 38.89280480863477, lng: -77.02294507987553 }
+      },
+      {
+        name: "Washington Monument",
+        category: "Monument",
+        answer: { lat: 38.8894754, lng: -77.0352426 }
+      },
+      {
+        name: "Union Market",
+        category: "Market",
+        answer: { lat: 38.9086101, lng: -76.9974046 }
+      }
+    ]
+  },
+
+  "2026-06-29": {
+    id: "029",
+    locations: [
+      {
+        name: "La' Shukran",
+        category: "Restaurant",
+        answer: { lat: 38.907293, lng: -76.999504 }
+      },
+      {
+        name: "The Phillips Collection",
+        category: "Museum",
+        answer: { lat: 38.91175532820086, lng: -77.04682140743702 }
+      },
+      {
+        name: "DAR Constitution Hall",
+        category: "Music Venue",
+        answer: { lat: 38.893942, lng: -77.0405865 }
+      },
+      {
+        name: "Tregaron Conservancy",
+        category: "Park",
+        answer: { lat: 38.933063912071304, lng: -77.0619659818402 }
+      },
+      {
+        name: "Fort Reno Park",
+        category: "Park",
+        answer: { lat: 38.95199995597085, lng: -77.07592526284 }
+      }
+    ]
+  },
+
+  "2026-06-30": {
+    id: "030",
+    locations: [
+      {
+        name: "Pascual",
+        category: "Restaurant",
+        answer: { lat: 38.8956372, lng: -76.9951658 }
+      },
+      {
+        name: "Basilica of the National Shrine of the Immaculate Conception",
+        category: "Basilica",
+        answer: { lat: 38.9333518, lng: -77.0006493 }
+      },
+      {
+        name: "Culture House DC",
+        category: "Arts Center",
+        answer: { lat: 38.8804534, lng: -77.0119151 }
+      },
+{
+  name: "Woolly Mammoth Theatre Company",
+  category: "Theater",
+  answer: { lat: 38.8949849, lng: -77.0215312 }
+},
+      {
+        name: "Cleveland Park Library",
+        category: "Library",
+        answer: { lat: 38.9338425, lng: -77.0579128 }
+      }
+    ]
+  },
 };
