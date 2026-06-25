@@ -770,7 +770,7 @@ export const puzzlesByDate = {
       }
     ]
   },
-    "2026-06-26": {
+    "2026-06-25": {
     id: "028",
     locations: [
       {
@@ -801,7 +801,7 @@ export const puzzlesByDate = {
     ]
   },
 
-  "2026-06-29": {
+  "2026-06-26": {
     id: "029",
     locations: [
       {
@@ -832,7 +832,7 @@ export const puzzlesByDate = {
     ]
   },
 
-  "2026-06-30": {
+  "2026-06-29": {
     id: "030",
     locations: [
       {
