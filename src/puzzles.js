@@ -893,33 +893,33 @@ export const puzzlesByDate = {
     ]
   },
 
-  "2026-07-01": {
+ "2026-07-01": {
     id: "032",
     locations: [
       {
         name: "Bresca",
         category: "Restaurant",
-        answer: { lat: 38.91662, lng: -77.03184 }
+        answer: { lat: 38.91672, lng: -77.03182 }
       },
       {
-        name: "Kennedy Center",
-        category: "Performing Arts Center",
-        answer: { lat: 38.89594, lng: -77.05590 }
+        name: "National Museum of Natural History",
+        category: "Museum",
+        answer: { lat: 38.89127, lng: -77.02607 }
       },
       {
-        name: "African American Civil War Memorial",
-        category: "Memorial",
-        answer: { lat: 38.91631, lng: -77.02605 }
+        name: "Supreme Court of the United States",
+        category: "Civic Landmark",
+        answer: { lat: 38.89064, lng: -77.00471 }
+      },
+      {
+        name: "Peirce Mill",
+        category: "Historic Site",
+        answer: { lat: 38.94130, lng: -77.05249 }
       },
       {
         name: "Union Market",
         category: "Market",
-        answer: { lat: 38.90898, lng: -76.99758 }
-      },
-      {
-        name: "Cleveland Park Library",
-        category: "Library",
-        answer: { lat: 38.93495, lng: -77.05836 }
+        answer: { lat: 38.90861, lng: -76.99740 }
       }
     ]
   },
@@ -933,24 +933,24 @@ export const puzzlesByDate = {
         answer: { lat: 38.89473, lng: -77.02161 }
       },
       {
-        name: "National Museum of American History",
+        name: "National Museum of the American Latino Gallery",
         category: "Museum",
-        answer: { lat: 38.89128, lng: -77.03001 }
+        answer: { lat: 38.89191, lng: -77.03004 }
       },
       {
-        name: "The Howard Theatre",
-        category: "Theater",
-        answer: { lat: 38.91543, lng: -77.02111 }
+        name: "U.S. Holocaust Memorial Museum",
+        category: "Museum",
+        answer: { lat: 38.88671, lng: -77.03261 }
       },
       {
-        name: "Bartholdi Fountain",
-        category: "Fountain/Garden",
-        answer: { lat: 38.88763, lng: -77.01269 }
+        name: "Fords Theatre Center for Education and Leadership",
+        category: "Museum",
+        answer: { lat: 38.89643, lng: -77.02545 }
       },
       {
-        name: "Fort Stevens",
-        category: "Historic Site",
-        answer: { lat: 38.96603, lng: -77.02973 }
+        name: "Garfield Park",
+        category: "Park",
+        answer: { lat: 38.88392, lng: -77.00851 }
       }
     ]
   },
@@ -964,24 +964,24 @@ export const puzzlesByDate = {
         answer: { lat: 38.90891, lng: -77.02700 }
       },
       {
-        name: "Belmont-Paul Women's Equality National Monument",
+        name: "U.S. Botanic Garden Bartholdi Fountain and Gardens",
+        category: "Garden",
+        answer: { lat: 38.88763, lng: -77.01269 }
+      },
+      {
+        name: "D.C. Armory",
+        category: "Arena",
+        answer: { lat: 38.88988, lng: -76.97274 }
+      },
+      {
+        name: "Carnegie Library at Mount Vernon Square",
         category: "Historic Site",
-        answer: { lat: 38.89209, lng: -77.00390 }
+        answer: { lat: 38.90249, lng: -77.02293 }
       },
       {
-        name: "The Reach at the Kennedy Center",
-        category: "Arts Center",
-        answer: { lat: 38.89455, lng: -77.05723 }
-      },
-      {
-        name: "St. Matthew's Cathedral",
-        category: "Cathedral",
-        answer: { lat: 38.90672, lng: -77.03867 }
-      },
-      {
-        name: "Seward Square",
-        category: "Park",
-        answer: { lat: 38.88680, lng: -77.00115 }
+        name: "Petworth Neighborhood Library",
+        category: "Library",
+        answer: { lat: 38.94054, lng: -77.02661 }
       }
     ]
   },
