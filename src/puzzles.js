@@ -862,4 +862,127 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-06-30": {
+    id: "031",
+    locations: [
+      {
+        name: "Occidental",
+        category: "Restaurant",
+        answer: { lat: 38.89640808105469, lng: -77.03319549560547 }
+      },
+     {
+  name: "Studio Theatre",
+  category: "Theater",
+  answer: { lat: 38.9100314, lng: -77.0316604 }
+},
+      {
+        name: "Vietnam Veterans Memorial",
+        category: "Memorial",
+        answer: { lat: 38.89129407785265, lng: -77.04772324583988 }
+      },
+      {
+        name: "Fort Stevens",
+        category: "Historic Site",
+        answer: { lat: 38.964326838419986, lng: -77.02936590099756 }
+      },
+      {
+        name: "National Museum of American History",
+        category: "Museum",
+        answer: { lat: 38.8912397, lng: -77.0300205 }
+      }
+    ]
+  },
+
+  "2026-07-01": {
+    id: "032",
+    locations: [
+      {
+        name: "Bresca",
+        category: "Restaurant",
+        answer: { lat: 38.91662, lng: -77.03184 }
+      },
+      {
+        name: "Kennedy Center",
+        category: "Performing Arts Center",
+        answer: { lat: 38.89594, lng: -77.05590 }
+      },
+      {
+        name: "African American Civil War Memorial",
+        category: "Memorial",
+        answer: { lat: 38.91631, lng: -77.02605 }
+      },
+      {
+        name: "Union Market",
+        category: "Market",
+        answer: { lat: 38.90898, lng: -76.99758 }
+      },
+      {
+        name: "Cleveland Park Library",
+        category: "Library",
+        answer: { lat: 38.93495, lng: -77.05836 }
+      }
+    ]
+  },
+
+  "2026-07-02": {
+    id: "033",
+    locations: [
+      {
+        name: "Rania",
+        category: "Restaurant",
+        answer: { lat: 38.89473, lng: -77.02161 }
+      },
+      {
+        name: "National Museum of American History",
+        category: "Museum",
+        answer: { lat: 38.89128, lng: -77.03001 }
+      },
+      {
+        name: "The Howard Theatre",
+        category: "Theater",
+        answer: { lat: 38.91543, lng: -77.02111 }
+      },
+      {
+        name: "Bartholdi Fountain",
+        category: "Fountain/Garden",
+        answer: { lat: 38.88763, lng: -77.01269 }
+      },
+      {
+        name: "Fort Stevens",
+        category: "Historic Site",
+        answer: { lat: 38.96603, lng: -77.02973 }
+      }
+    ]
+  },
+
+  "2026-07-03": {
+    id: "034",
+    locations: [
+      {
+        name: "Nina May",
+        category: "Restaurant",
+        answer: { lat: 38.90891, lng: -77.02700 }
+      },
+      {
+        name: "Belmont-Paul Women's Equality National Monument",
+        category: "Historic Site",
+        answer: { lat: 38.89209, lng: -77.00390 }
+      },
+      {
+        name: "The Reach at the Kennedy Center",
+        category: "Arts Center",
+        answer: { lat: 38.89455, lng: -77.05723 }
+      },
+      {
+        name: "St. Matthew's Cathedral",
+        category: "Cathedral",
+        answer: { lat: 38.90672, lng: -77.03867 }
+      },
+      {
+        name: "Seward Square",
+        category: "Park",
+        answer: { lat: 38.88680, lng: -77.00115 }
+      }
+    ]
+  },
 };
