@@ -899,7 +899,99 @@ export const puzzlesByDate = {
       {
         name: "Bresca",
         category: "Restaurant",
-        answer: { lat: 38.91672, lng: -77.03182 }
+        answer: { lat: 38.9157574, lng: -77.0321871 }
+      },
+      {
+        name: "National Museum of Natural History",
+        category: "Museum",
+        answer: { lat: 38.89098195376762, lng: -77.02598323912815 }
+      },
+      {
+        name: "Supreme Court of the United States",
+        category: "Civic Landmark",
+        answer: { lat: 38.89064, lng: -77.00471 }
+      },
+      {
+        name: "Peirce Mill",
+        category: "Historic Site",
+        answer: { lat: 38.94023014128644, lng: -77.05187622227558 }
+      },
+      {
+        name: "Union Market",
+        category: "Market",
+        answer: { lat: 38.90861, lng: -76.99740 }
+      }
+    ]
+  },
+
+  "2026-07-02": {
+    id: "033",
+    locations: [
+      {
+        name: "Rania",
+        category: "Restaurant",
+        answer: { lat: 38.89576358958447, lng: -77.0267929275465 }
+      },
+      {
+        name: "National Museum of the American Latino Gallery",
+        category: "Museum",
+        answer: { lat: 38.891029205401836, lng: -77.02960123926518 }
+      },
+      {
+        name: "U.S. Holocaust Memorial Museum",
+        category: "Museum",
+        answer: { lat: 38.88671, lng: -77.03261 }
+      },
+      {
+        name: "Fords Theatre Center for Education and Leadership",
+        category: "Museum",
+        answer: { lat: 38.89643, lng: -77.02545 }
+      },
+      {
+        name: "Garfield Park",
+        category: "Park",
+        answer: { lat: 38.881569152795414, lng: -77.00437749567506 }
+      }
+    ]
+  },
+
+  "2026-07-03": {
+    id: "034",
+    locations: [
+      {
+        name: "Nina May",
+        category: "Restaurant",
+        answer: { lat: 38.9084187, lng: -77.0266874 }
+      },
+      {
+        name: "U.S. Botanic Garden Bartholdi Fountain and Gardens",
+        category: "Garden",
+        answer: { lat: 38.887913456683094, lng: -77.01291999811947 }
+      },
+      {
+        name: "D.C. Armory",
+        category: "Arena",
+        answer: { lat: 38.888523802477486, lng: -76.97552223000588 }
+      },
+      {
+        name: "Carnegie Library at Mount Vernon Square",
+        category: "Historic Site",
+        answer: { lat: 38.87869277310744, lng: -77.01582840243425 }
+      },
+      {
+  name: "Southwest Library",
+  category: "Library",
+  answer: { lat: 38.87869277310744, lng: -77.01582840243425 }
+}
+    ]
+  },
+   "2026-07-06": {
+    id: "035",
+    locations: [
+      {
+        name: "Mita",
+        category: "Restaurant",
+        answer: { lat: 38.91765, lng: -77.02319 }
       },
       {
         name: "National Museum of Natural History",
@@ -917,71 +1009,39 @@ export const puzzlesByDate = {
         answer: { lat: 38.94130, lng: -77.05249 }
       },
       {
-        name: "Union Market",
-        category: "Market",
-        answer: { lat: 38.90861, lng: -76.99740 }
-      }
-    ]
-  },
-
-  "2026-07-02": {
-    id: "033",
-    locations: [
-      {
-        name: "Rania",
-        category: "Restaurant",
-        answer: { lat: 38.89473, lng: -77.02161 }
-      },
-      {
-        name: "National Museum of the American Latino Gallery",
-        category: "Museum",
-        answer: { lat: 38.89191, lng: -77.03004 }
-      },
-      {
-        name: "U.S. Holocaust Memorial Museum",
-        category: "Museum",
-        answer: { lat: 38.88671, lng: -77.03261 }
-      },
-      {
-        name: "Fords Theatre Center for Education and Leadership",
-        category: "Museum",
-        answer: { lat: 38.89643, lng: -77.02545 }
-      },
-      {
-        name: "Garfield Park",
+        name: "Canal Park",
         category: "Park",
-        answer: { lat: 38.88392, lng: -77.00851 }
+        answer: { lat: 38.87669, lng: -77.00066 }
       }
     ]
   },
-
-  "2026-07-03": {
-    id: "034",
+    "2026-07-06": {
+    id: "035",
     locations: [
-      {
-        name: "Nina May",
-        category: "Restaurant",
-        answer: { lat: 38.90891, lng: -77.02700 }
+       {
+        name: "Gallaudet University",
+        category: "University",
+        answer: { lat: 38.90819237418454, lng: -76.992906490754 }
       },
       {
-        name: "U.S. Botanic Garden Bartholdi Fountain and Gardens",
-        category: "Garden",
-        answer: { lat: 38.88763, lng: -77.01269 }
+        name: "American University",
+        category: "University",
+        answer: { lat: 38.93737416471445, lng: -77.08917953767012 }
       },
       {
-        name: "D.C. Armory",
-        category: "Arena",
-        answer: { lat: 38.88988, lng: -76.97274 }
+        name: "Georgetown University",
+        category: "University",
+        answer: { lat: 38.91005019680731, lng: -77.07459645074758 }
       },
       {
-        name: "Carnegie Library at Mount Vernon Square",
-        category: "Historic Site",
-        answer: { lat: 38.90249, lng: -77.02293 }
+        name: "George Washington University",
+        category: "University",
+        answer: { lat: 38.89713521316021, lng: -77.04432032194141 }
       },
       {
-        name: "Petworth Neighborhood Library",
-        category: "Library",
-        answer: { lat: 38.94054, lng: -77.02661 }
+        name: "University of the District of Columbia",
+        category: "University",
+        answer: { lat: 38.944432604454256, lng: -77.06523516130768 }
       }
     ]
   },
