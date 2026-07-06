@@ -1045,4 +1045,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+   "2026-07-07": {
+    id: "036",
+    locations: [
+      {
+        name: "Capital One Arena",
+        category: "Arena",
+        answer: { lat: 38.8981883, lng: -77.0209378 }
+      },
+      {
+        name: "Nationals Park",
+        category: "Stadium",
+        answer: { lat: 38.8727332, lng: -77.0074815 }
+      },
+      {
+        name: "Audi Field",
+        category: "Stadium",
+        answer: { lat: 38.8682612, lng: -77.0126092 }
+      },
+      {
+        name: "CareFirst Arena",
+        category: "Arena",
+        answer: { lat: 38.8469919, lng: -76.9913193 }
+      },
+      {
+        name: "D.C. Armory",
+        category: "Arena",
+        answer: { lat: 38.88849862303065, lng: -76.97547889090359 }
+      }
+    ]
+  },
 };
