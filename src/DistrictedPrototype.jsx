@@ -183,11 +183,16 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
   const answerMarkerRef = useRef(null);
   const revealTimeoutRef = useRef(null);
   const revealedRef = useRef(revealed);
+  const onGuessRef = useRef(onGuess);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     revealedRef.current = revealed;
   }, [revealed]);
+
+  useEffect(() => {
+    onGuessRef.current = onGuess;
+  }, [onGuess]);
 
   useEffect(() => {
     if (!MAPBOX_TOKEN || !mapNodeRef.current || mapRef.current) return;
@@ -214,7 +219,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
 
     map.on("click", (event) => {
       if (revealedRef.current) return;
-      onGuess({ lat: event.lngLat.lat, lng: event.lngLat.lng });
+      onGuessRef.current({ lat: event.lngLat.lat, lng: event.lngLat.lng });
     });
 
     mapRef.current = map;
@@ -226,7 +231,7 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
       map.remove();
       mapRef.current = null;
     };
-  }, [onGuess]);
+  }, []);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -414,14 +419,13 @@ ${GAME_URL}`;
 </div>
             <div className="location-card"><div className="category">{currentLocation.category}</div><h2>{currentLocation.name}</h2></div>
             <div className="map-stack">
-  <TileMap
-    key={round}
-    activeGuess={activeGuess}
-    currentAnswer={currentLocation.answer}
-    revealed={revealed}
-    roundNumber={round + 1}
-    onGuess={handleGuess}
-  />
+<TileMap
+  activeGuess={activeGuess}
+  currentAnswer={currentLocation.answer}
+  revealed={revealed}
+  roundNumber={round + 1}
+  onGuess={handleGuess}
+/>
 
   {!revealed && (
     <div className="map-instruction">
