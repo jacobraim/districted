@@ -199,6 +199,8 @@ function TileMap({ activeGuess, currentAnswer, revealed, roundNumber, onGuess })
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
+    console.log("Mapbox map initialized");
+
     const map = new mapboxgl.Map({
       container: mapNodeRef.current,
       style: MAPBOX_STYLE,
