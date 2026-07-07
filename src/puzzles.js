@@ -1015,36 +1015,7 @@ export const puzzlesByDate = {
       }
     ]
   },
-    "2026-07-06": {
-    id: "035",
-    locations: [
-       {
-        name: "Gallaudet University",
-        category: "University",
-        answer: { lat: 38.90819237418454, lng: -76.992906490754 }
-      },
-      {
-        name: "American University",
-        category: "University",
-        answer: { lat: 38.93737416471445, lng: -77.08917953767012 }
-      },
-      {
-        name: "Georgetown University",
-        category: "University",
-        answer: { lat: 38.91005019680731, lng: -77.07459645074758 }
-      },
-      {
-        name: "George Washington University",
-        category: "University",
-        answer: { lat: 38.89713521316021, lng: -77.04432032194141 }
-      },
-      {
-        name: "University of the District of Columbia",
-        category: "University",
-        answer: { lat: 38.944432604454256, lng: -77.06523516130768 }
-      }
-    ]
-  },
+
    "2026-07-07": {
     id: "036",
     locations: [
@@ -1072,6 +1043,36 @@ export const puzzlesByDate = {
         name: "D.C. Armory",
         category: "Arena",
         answer: { lat: 38.88849862303065, lng: -76.97547889090359 }
+      }
+    ]
+  },
+      "2026-07-08": {
+    id: "037",
+    locations: [
+       {
+        name: "Gallaudet University",
+        category: "University",
+        answer: { lat: 38.90819237418454, lng: -76.992906490754 }
+      },
+      {
+        name: "American University",
+        category: "University",
+        answer: { lat: 38.93737416471445, lng: -77.08917953767012 }
+      },
+      {
+        name: "Georgetown University",
+        category: "University",
+        answer: { lat: 38.91005019680731, lng: -77.07459645074758 }
+      },
+      {
+        name: "George Washington University",
+        category: "University",
+        answer: { lat: 38.89713521316021, lng: -77.04432032194141 }
+      },
+      {
+        name: "University of the District of Columbia",
+        category: "University",
+        answer: { lat: 38.944432604454256, lng: -77.06523516130768 }
       }
     ]
   },
