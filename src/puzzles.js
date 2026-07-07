@@ -1046,33 +1046,63 @@ export const puzzlesByDate = {
       }
     ]
   },
-  "2026-07-08": {
+ "2026-07-08": {
     id: "037",
     locations: [
       {
-        name: "Mita",
+        name: "The Atlantis",
+        category: "Music Venue",
+        answer: { lat: 38.91810611012115, lng: -77.02375336704038 }
+      },
+      {
+        name: "Songbyrd Music House",
+        category: "Music Venue",
+        answer: { lat: 38.91021531295745, lng: -76.99647120941022 }
+      },
+      {
+        name: "Pie Shop",
+        category: "Music Venue",
+        answer: { lat: 38.90006282315961, lng: -76.98692662581693 }
+      },
+      {
+        name: "The Pocket",
+        category: "Music Venue",
+        answer: { lat: 38.909981262887435, lng: -77.00946620475894 }
+      },
+      {
+        name: "Pearl Street Warehouse",
+        category: "Music Venue",
+        answer: { lat: 38.878854944579196, lng: -77.02403297703049 }
+      }
+    ]
+  },
+   "2026-07-09": {
+    id: "038",
+    locations: [
+      {
+        name: "2 Amys",
         category: "Restaurant",
-        answer: { lat: 38.91765, lng: -77.02319 }
+        answer: { lat: 38.93361874867361, lng: -77.07307395163386 }
       },
       {
-        name: "National Museum of Natural History",
-        category: "Museum",
-        answer: { lat: 38.89127, lng: -77.02607 }
+        name: "Rose's Luxury",
+        category: "Restaurant",
+        answer: { lat: 38.88057428498285, lng: -76.99521694509833 }
       },
       {
-        name: "Supreme Court of the United States",
-        category: "Civic Landmark",
-        answer: { lat: 38.89064, lng: -77.00471 }
+        name: "Sushi Taro",
+        category: "Restaurant",
+        answer: { lat: 38.909944, lng: -77.0382421 }
       },
       {
-        name: "Peirce Mill",
-        category: "Historic Site",
-        answer: { lat: 38.94130, lng: -77.05249 }
+        name: "Casa Teresa",
+        category: "Restaurant",
+        answer: { lat: 38.901892727044284, lng: -77.04312525824056 }
       },
       {
-        name: "Canal Park",
-        category: "Park",
-        answer: { lat: 38.87669, lng: -77.00066 }
+        name: "My Little Chamomile",
+        category: "Restaurant",
+        answer: { lat: 38.90377508071701, lng: -77.06350839349972 }
       }
     ]
   },
