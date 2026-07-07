@@ -1106,4 +1106,64 @@ export const puzzlesByDate = {
       }
     ]
   },
+   "2026-07-10": {
+    id: "039",
+    locations: [
+      {
+        name: "Thomas Jefferson Memorial",
+        category: "Presidential Memorial",
+        answer: { lat: 38.881377028096736, lng: -77.03656347454043 }
+      },
+      {
+        name: "Dwight D. Eisenhower Memorial",
+        category: "Presidential Memorial",
+        answer: { lat: 38.887008326516145, lng: -77.01867445099145 }
+      },
+      {
+        name: "Franklin Delano Roosevelt Memorial",
+        category: "Presidential Memorial",
+        answer: { lat: 38.883503511391396, lng: -77.04330917536412 }
+      },
+      {
+        name: "Lincoln Memorial",
+        category: "Presidential Memorial",
+        answer: { lat: 38.8892803, lng: -77.0502109 }
+      },
+      {
+        name: "Ulysses S. Grant Memorial",
+        category: "Presidential Memorial",
+        answer: { lat: 38.88977913923845, lng: -77.01292676352085 }
+      }
+    ]
+  },
+    "2026-07-13": {
+    id: "040",
+    locations: [
+      {
+        name: "National Museum of Natural History",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.890984810657315, lng: -77.02602700129641 }
+      },
+      {
+        name: "National Museum of American History",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.89124037066106, lng: -77.03003691966497 }
+      },
+      {
+        name: "National Museum of African American History and Culture",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.89107171950239, lng: -77.03273468279465 }
+      },
+      {
+        name: "National Museum of Asian Art",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.88796214057086, lng: -77.02644808218437 }
+      },
+      {
+        name: "Renwick Gallery",
+        category: "Smithsonian Museum",
+        answer: { lat: 38.8991259914141, lng: -77.0390773365021 }
+      }
+    ]
+  },
 };
