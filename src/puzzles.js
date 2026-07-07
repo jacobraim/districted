@@ -1046,33 +1046,33 @@ export const puzzlesByDate = {
       }
     ]
   },
-      "2026-07-08": {
+  "2026-07-08": {
     id: "037",
     locations: [
-       {
-        name: "Gallaudet University",
-        category: "University",
-        answer: { lat: 38.90819237418454, lng: -76.992906490754 }
+      {
+        name: "Mita",
+        category: "Restaurant",
+        answer: { lat: 38.91765, lng: -77.02319 }
       },
       {
-        name: "American University",
-        category: "University",
-        answer: { lat: 38.93737416471445, lng: -77.08917953767012 }
+        name: "National Museum of Natural History",
+        category: "Museum",
+        answer: { lat: 38.89127, lng: -77.02607 }
       },
       {
-        name: "Georgetown University",
-        category: "University",
-        answer: { lat: 38.91005019680731, lng: -77.07459645074758 }
+        name: "Supreme Court of the United States",
+        category: "Civic Landmark",
+        answer: { lat: 38.89064, lng: -77.00471 }
       },
       {
-        name: "George Washington University",
-        category: "University",
-        answer: { lat: 38.89713521316021, lng: -77.04432032194141 }
+        name: "Peirce Mill",
+        category: "Historic Site",
+        answer: { lat: 38.94130, lng: -77.05249 }
       },
       {
-        name: "University of the District of Columbia",
-        category: "University",
-        answer: { lat: 38.944432604454256, lng: -77.06523516130768 }
+        name: "Canal Park",
+        category: "Park",
+        answer: { lat: 38.87669, lng: -77.00066 }
       }
     ]
   },
