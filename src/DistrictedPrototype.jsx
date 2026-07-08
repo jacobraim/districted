@@ -341,10 +341,11 @@ function getDistrictedRank(totalMiles) {
 }
 
 export default function DistrictedPrototype() {
-  const [round, setRound] = useState(0);
-  const [guesses, setGuesses] = useState([]);
-  const [revealed, setRevealed] = useState(false);
-  const [shareStatus, setShareStatus] = useState("");
+const [round, setRound] = useState(0);
+const [guesses, setGuesses] = useState([]);
+const [revealed, setRevealed] = useState(false);
+const [shareStatus, setShareStatus] = useState("");
+const [started, setStarted] = useState(false);
 
   const currentPuzzle = getCurrentPuzzle();
   const currentLocation = currentPuzzle.locations[round];
@@ -383,12 +384,13 @@ ${GAME_URL}`;
     }
   }
 
-  function restart() {
-    setRound(0);
-    setGuesses([]);
-    setRevealed(false);
-    setShareStatus("");
-  }
+function restart() {
+  setRound(0);
+  setGuesses([]);
+  setRevealed(false);
+  setShareStatus("");
+  setStarted(true);
+}
 
   async function shareGame() {
     try {
@@ -408,11 +410,30 @@ ${GAME_URL}`;
   }
 
   return (
-    <main className="app">
-      <div className="shell">
+<main className="app">
+  <div className="shell">
 
-        {!gameOver && (
-          <section className="card">
+    {!started && !gameOver && (
+      <section className="card">
+        <div className="meta">
+          <span>Districted #{currentPuzzle.id}</span>
+          <span>5 locations</span>
+        </div>
+
+        <div className="location-card">
+          <div className="category">Washingtonian’s DC map game</div>
+          <h2>Can you pinpoint DC?</h2>
+          <p>We’ll give you five places. Drop a pin for each one and see how close you get.</p>
+        </div>
+
+        <button className="primary-button" onClick={() => setStarted(true)}>
+          Start Game
+        </button>
+      </section>
+    )}
+
+    {started && !gameOver && (
+      <section className="card">
             <div className="meta">
   <span>Districted #{currentPuzzle.id}</span>
   <span>Round {round + 1} / 5</span>
