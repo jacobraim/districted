@@ -1160,9 +1160,70 @@ export const puzzlesByDate = {
         answer: { lat: 38.88796214057086, lng: -77.02644808218437 }
       },
       {
-        name: "Renwick Gallery",
+        name: "National Museum of the American Indian",
         category: "Smithsonian Museum",
+        answer: { lat: 38.88825282730243, lng: -77.01645222988587 }
+      }
+    ]
+  },
+   "2026-07-14": {
+    id: "041",
+    locations: [
+      {
+        name: "Meridian International Center",
+        category: "Cultural Center",
+        answer: { lat: 38.920219, lng: -77.0381823 }
+      },
+      {
+        name: "Hillwood Estate, Museum & Gardens",
+        category: "Museum/Garden",
+        answer: { lat: 38.9436529, lng: -77.0526526 }
+      },
+      {
+        name: "Congressional Cemetery",
+        category: "Cemetery",
+        answer: { lat: 38.8810120440721, lng: -76.97843148426972 }
+      },
+      {
+        name: "Echostage",
+        category: "Music Venue",
+        answer: { lat: 38.9199011, lng: -76.9724241 }
+      },
+      {
+        name: "Mt. Desert Island Ice Cream",
+        category: "Ice Cream Shop",
+        answer: { lat: 38.929221106851934, lng: -77.0377367723873 }
+      }
+    ]
+  },
+
+  "2026-07-15": {
+    id: "042",
+    locations: [
+      {
+        name: "Tudor Place",
+        category: "Historic House",
+        answer: { lat: 38.9114666, lng: -77.063043 }
+      },
+      {
+        name: "Renwick Gallery",
+        category: "Museum",
         answer: { lat: 38.8991259914141, lng: -77.0390773365021 }
+      },
+      {
+        name: "Embassy of Belize",
+        category: "Embassy",
+        answer: { lat: 38.91661740907891, lng: -77.05624579508915 }
+      },
+      {
+        name: "Suns Cinema",
+        category: "Movie Theater",
+        answer: { lat: 38.92894686757835, lng: -77.03727564970283 }
+      },
+      {
+        name: "The Anthem",
+        category: "Music Venue",
+        answer: { lat: 38.879985421076476, lng: -77.02591071104507 }
       }
     ]
   },
