@@ -1227,4 +1227,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+"2026-07-16": {
+    id: "043",
+    locations: [
+      {
+        name: "Hirshhorn Museum",
+        category: "Museum",
+        answer: { lat: 38.887916914804876, lng: -77.02297421814266 }
+      },
+      {
+        name: "The Phillips Collection",
+        category: "Museum",
+        answer: { lat: 38.91175532820086, lng: -77.04682140743702 }
+      },
+      {
+        name: "Le Diplomate",
+        category: "Restaurant",
+        answer: { lat: 38.91125075114748, lng: -77.03174728118458 }
+      },
+      {
+        name: "Toki Underground",
+        category: "Restaurant",
+        answer: { lat: 38.90042468342388, lng: -76.9890333929918 }
+      },
+      {
+        name: "The Kreeger Museum",
+        category: "Museum",
+        answer: { lat: 38.9218554, lng: -77.0887526 }
+      }
+    ]
+  },
 };
