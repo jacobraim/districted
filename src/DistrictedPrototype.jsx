@@ -8,6 +8,9 @@ const MAPBOX_STYLE = import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbo
 const GAME_URL = "https://washingtonian.com/districted/";
 const DISPLAY_URL = "washingtonian.com/districted/";
 
+const FEET_PER_MILE = 5280;
+const DEFAULT_PERFECT_FEET = 25;
+
 function getEasternDateKey(date = new Date()) {
   const easternParts = new Intl.DateTimeFormat("en-US", {
     timeZone: "America/New_York",
@@ -62,9 +65,22 @@ function getCurrentPuzzle() {
 
 
 function distance(a,b){const R=3958.8;const toRad=(d)=>(d*Math.PI)/180;const dLat=toRad(b.lat-a.lat);const dLng=toRad(b.lng-a.lng);const lat1=toRad(a.lat);const lat2=toRad(b.lat);const h=Math.sin(dLat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLng/2)**2;return 2*R*Math.asin(Math.sqrt(h));}
-function formatMiles(miles){return miles<0.1?`${Math.round(miles*5280)} ft`:`${miles.toFixed(2)} mi`;}
+
+function formatMiles(miles) {
+  return miles < 0.1 ? `${Math.round(miles * FEET_PER_MILE)} ft` : `${miles.toFixed(2)} mi`;
+}
+
+function getPerfectFeet(location) {
+  return location?.perfectFeet || DEFAULT_PERFECT_FEET;
+}
+
+function normalizeDistanceForPerfect(distanceMiles, location) {
+  const perfectMiles = getPerfectFeet(location) / FEET_PER_MILE;
+  return distanceMiles <= perfectMiles ? 0 : distanceMiles;
+}
+
 function scoreClass(d) {
-  if (d <= 0.15) return "silver";
+  if (d === 0) return "perfect";
   if (d <= 0.5) return "green";
   if (d <= 1.5) return "yellow";
   if (d <= 3.5) return "orange";
@@ -72,12 +88,21 @@ function scoreClass(d) {
 }
 
 function scoreEmoji(d) {
-  if (d <= 0.15) return "⭐";
+  if (d === 0) return "⭐";
   if (d <= 0.5) return "🟩";
   if (d <= 1.5) return "🟨";
   if (d <= 3.5) return "🟧";
   return "🟥";
 }
+
+function resultFeedback(distanceMiles) {
+  if (distanceMiles === 0) return "Perfect!";
+  if (distanceMiles <= 0.5) return "Nice!";
+  if (distanceMiles <= 1.5) return "Getting Close";
+  if (distanceMiles <= 3.5) return "A Little Off";
+  return "Way Off";
+}
+
 function makeMarker(className, label) {
   const el = document.createElement("div");
   el.className = className;
@@ -360,19 +385,26 @@ ${totalMiles.toFixed(2)} total miles off
 ${rank.title}
 ${GAME_URL}`;
 
-  function handleGuess(guess) {
-    if (revealed || gameOver) return;
+function handleGuess(guess) {
+  if (revealed || gameOver) return;
 
-    const d = distance(guess, currentLocation.answer);
+  const rawDistance = distance(guess, currentLocation.answer);
+  const d = normalizeDistanceForPerfect(rawDistance, currentLocation);
 
-    setGuesses([
-      ...guesses,
-      { guess, answer: currentLocation.answer, distance: d, location: currentLocation }
-    ]);
+  setGuesses([
+    ...guesses,
+    {
+      guess,
+      answer: currentLocation.answer,
+      distance: d,
+      rawDistance,
+      location: currentLocation
+    }
+  ]);
 
-    setRevealed(true);
-    setShareStatus("");
-  }
+  setRevealed(true);
+  setShareStatus("");
+}
 
   function nextRound() {
     if (round < currentPuzzle.locations.length - 1) {
@@ -465,10 +497,12 @@ function restart() {
         ))}
       </div>
 
-      <div className="overlay-result-row">
-        <strong>Distance Off</strong>
-        <CountUpDistance miles={guesses[round].distance} />
-      </div>
+<div className="overlay-result-row">
+  <strong>{resultFeedback(guesses[round].distance)}</strong>
+  <span>
+    <CountUpDistance miles={guesses[round].distance} /> Off
+  </span>
+</div>
 
       <button className="primary-button" onClick={nextRound}>
         {round === currentPuzzle.locations.length - 1 ? "See Final Score" : "Next Location"}
