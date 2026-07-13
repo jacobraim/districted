@@ -1257,4 +1257,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-07-17": {
+    id: "044",
+    locations: [
+      {
+        name: "Old Ebbitt Grill",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.89795092028309, lng: -77.03344314364654 }
+      },
+      {
+        name: "Ben's Chili Bowl",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.91713260893703, lng: -77.02877697196719 }
+      },
+      {
+        name: "Martin's Tavern",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.90559, lng: -77.06363 }
+      },
+      {
+        name: "Florida Avenue Grill",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.92018, lng: -77.02727 }
+      },
+      {
+        name: "The Monocle",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.89514, lng: -77.00549 }
+      }
+    ]
+  },
 };
