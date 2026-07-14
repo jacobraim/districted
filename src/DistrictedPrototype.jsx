@@ -99,7 +99,7 @@ function resultFeedback(distanceMiles) {
   if (distanceMiles === 0) return "Perfect!";
   if (distanceMiles <= 0.5) return "Nice!";
   if (distanceMiles <= 1.5) return "Getting Close";
-  if (distanceMiles <= 3.5) return "A Little Off";
+  if (distanceMiles <= 3.5) return "Not quite";
   return "Way Off";
 }
 
