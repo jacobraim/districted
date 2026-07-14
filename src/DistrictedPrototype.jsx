@@ -9,7 +9,7 @@ const GAME_URL = "https://washingtonian.com/districted/";
 const DISPLAY_URL = "washingtonian.com/districted/";
 
 const FEET_PER_MILE = 5280;
-const DEFAULT_PERFECT_FEET = 25;
+const DEFAULT_PERFECT_FEET = 75;
 
 function getEasternDateKey(date = new Date()) {
   const easternParts = new Intl.DateTimeFormat("en-US", {
