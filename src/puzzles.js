@@ -1287,4 +1287,65 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-07-20": {
+    id: "045",
+    locations: [
+      {
+        name: "Folger Shakespeare Library",
+        category: "Library/Theater",
+        answer: { lat: 38.88938044218265, lng: -77.0027849530033 }
+      },
+      {
+        name: "A. Litteri",
+        category: "Italian Market",
+        answer: { lat: 38.906927817148, lng: -76.99850167093696 }
+      },
+      {
+        name: "Anacostia Park Skating Pavilion",
+        category: "Park",
+        answer: { lat: 38.87795236809959, lng: -76.96994159354618 }
+      },
+      {
+        name: "DC Improv Comedy Club",
+        category: "Comedy Club",
+        answer: { lat: 38.90499493860596, lng: -77.0410324064391 }
+      },
+      {
+        name: "Congressional Cemetery",
+        category: "Cemetery",
+        answer: { lat: 38.88266, lng: -76.97888 },
+        perfectFeet: 5000
+      }
+    ]
+  },
+    "2026-07-21": {
+    id: "046",
+    locations: [
+      {
+        name: "The Mirror",
+        category: "Cocktail Bar",
+        answer: { lat: 38.902919932512454, lng: -77.03271127505022 }
+      },
+      {
+        name: "Code Red",
+        category: "Cocktail Bar",
+        answer: { lat: 38.92169084142681, lng: -77.04271127074259 }
+      },
+      {
+        name: "OKPB",
+        category: "Cocktail Bar",
+        answer: { lat: 38.93075358360315, lng: -77.03788499645322 }
+      },
+      {
+        name: "Left Door",
+        category: "Cocktail Bar",
+        answer: { lat: 38.91429007887636, lng: -77.03148383415531 }
+      },
+      {
+        name: "Allegory",
+        category: "Cocktail Bar",
+        answer: { lat: 38.902862907095916, lng: -77.02839549907928 }
+      }
+    ]
+  },
 };
