@@ -1273,7 +1273,7 @@ export const puzzlesByDate = {
       {
         name: "Martin's Tavern",
         category: "Classic DC Restaurant",
-        answer: { lat: 38.90559, lng: -77.06363 }
+        answer: { lat: 38.90676031293084, lng: -77.06314209384843 }
       },
       {
         name: "Florida Avenue Grill",
