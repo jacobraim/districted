@@ -1454,7 +1454,7 @@ export const puzzlesByDate = {
         category: "Park",
         answer: { lat: 38.896462479218584, lng: -77.06267416453503 },
         perfectFeet: 2000
-      }
+      },
       {
         name: "National Portrait Gallery",
         category: "Museum",
