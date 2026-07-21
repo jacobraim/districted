@@ -1348,4 +1348,64 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-07-22": {
+    id: "047",
+    locations: [
+      {
+        name: "Rodman's",
+        category: "Specialty Market",
+        answer: { lat: 38.95622, lng: -77.08438 }
+      },
+      {
+        name: "Costco",
+        category: "Warehouse Store",
+        answer: { lat: 38.92152, lng: -76.97081 }
+      },
+      {
+        name: "Odd Provisions",
+        category: "Corner Market",
+        answer: { lat: 38.93020, lng: -77.02743 }
+      },
+      {
+        name: "Social Safeway",
+        category: "Grocery Store",
+        answer: { lat: 38.91606, lng: -77.06792 }
+      },
+      {
+        name: "Calvert Woodley",
+        category: "Wine & Specialty Market",
+        answer: { lat: 38.94617, lng: -77.06457 }
+      }
+    ]
+  },
+    "2026-07-23": {
+    id: "048",
+    locations: [
+      {
+        name: "Albi",
+        category: "Top 5 Restaurant",
+        answer: { lat: 38.87430, lng: -76.99980 }
+      },
+      {
+        name: "Jônt",
+        category: "Top 5 Restaurant",
+        answer: { lat: 38.91617, lng: -77.03177 }
+      },
+      {
+        name: "Moon Rabbit",
+        category: "Top 5 Restaurant",
+        answer: { lat: 38.89754, lng: -77.02523 }
+      },
+      {
+        name: "Omakase @ Barracks Row",
+        category: "Top 5 Restaurant",
+        answer: { lat: 38.88074, lng: -76.99624 }
+      },
+      {
+        name: "Lutèce",
+        category: "Top 5 Restaurant",
+        answer: { lat: 38.90940, lng: -77.06461 }
+      }
+    ]
+  },
 };
