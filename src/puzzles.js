@@ -1354,27 +1354,28 @@ export const puzzlesByDate = {
       {
         name: "Rodman's",
         category: "Specialty Market",
-        answer: { lat: 38.95622, lng: -77.08438 }
+        answer: { lat: 38.95625527812798, lng: -77.0836886212301 }
       },
       {
         name: "Costco",
         category: "Warehouse Store",
-        answer: { lat: 38.92152, lng: -76.97081 }
+        answer: { lat: 38.92036146541577, lng: -76.95037230361218 },
+        perfectFeet: 150
       },
       {
         name: "Odd Provisions",
         category: "Corner Market",
-        answer: { lat: 38.93020, lng: -77.02743 }
+        answer: { lat: 38.93085277555408, lng: -77.0278278363435 }
       },
       {
         name: "Social Safeway",
         category: "Grocery Store",
-        answer: { lat: 38.91606, lng: -77.06792 }
+        answer: { lat: 38.916124510152265, lng: -77.06729508555122 }
       },
       {
         name: "Calvert Woodley",
         category: "Wine & Specialty Market",
-        answer: { lat: 38.94617, lng: -77.06457 }
+        answer: { lat: 38.94514897433918, lng: -77.06382763582273 }
       }
     ]
   },
@@ -1383,28 +1384,92 @@ export const puzzlesByDate = {
     locations: [
       {
         name: "Albi",
-        category: "Top 5 Restaurant",
-        answer: { lat: 38.87430, lng: -76.99980 }
+        category: "2026 Top 5 Restaurant",
+        answer: { lat: 38.87406583827658, lng: -77.00039250579559 }
       },
       {
         name: "Jônt",
-        category: "Top 5 Restaurant",
-        answer: { lat: 38.91617, lng: -77.03177 }
+        category: "2026 Top 5 Restaurant",
+        answer: { lat: 38.915840401281976, lng: -77.03229459045639 }
       },
       {
         name: "Moon Rabbit",
-        category: "Top 5 Restaurant",
-        answer: { lat: 38.89754, lng: -77.02523 }
+        category: "2026 Top 5 Restaurant",
+        answer: { lat: 38.897541668993554, lng: -77.02521311667473 }
       },
       {
         name: "Omakase @ Barracks Row",
-        category: "Top 5 Restaurant",
-        answer: { lat: 38.88074, lng: -76.99624 }
+        category: "2026 Top 5 Restaurant",
+        answer: { lat: 38.88190007939855, lng: -76.99466052442146 }
       },
       {
         name: "Lutèce",
-        category: "Top 5 Restaurant",
-        answer: { lat: 38.90940, lng: -77.06461 }
+        category: "2026 Top 5 Restaurant",
+        answer: { lat: 38.909427581005886, lng: -77.06453636679693 }
+      }
+    ]
+  },
+    "2026-07-24": {
+    id: "049",
+    locations: [
+      {
+        name: "Fort Reno Stage",
+        category: "Music Venue",
+        answer: { lat: 38.95120823205445, lng: -77.07679107227635 }
+      },
+      {
+        name: "Battery Kemble Park",
+        category: "Park",
+        answer: { lat: 38.92958232583347, lng: -77.09506764025645 },
+        perfectFeet: 500
+      },
+      {
+        name: "Fort DeRussy",
+        category: "Historic Site",
+        answer: { lat: 38.963636552180176, lng: -77.0508936503193 }
+      },
+      {
+        name: "Peirce Mill",
+        category: "Historic Site",
+        answer: { lat: 38.94024666291268, lng: -77.05188535875054 }
+      },
+      {
+        name: "National Cathedral's Bishop's Garden",
+        category: "Garden",
+        answer: { lat: 38.92974923452821, lng: -77.07086831640856 },
+        perfectFeet: 200
+      }
+    ]
+  },
+   "2026-07-27": {
+    id: "050",
+    locations: [
+      {
+        name: "Rasika West End",
+        category: "Restaurant",
+        answer: { lat: 38.90509479194057, lng: -77.0479649397421 }
+      },
+      {
+        name: "Theodore Roosevelt Island",
+        category: "Park",
+        answer: { lat: 38.896462479218584, lng: -77.06267416453503 },
+        perfectFeet: 2000
+      }
+      {
+        name: "National Portrait Gallery",
+        category: "Museum",
+        answer: { lat: 38.897875, lng: -77.022898 }
+      },
+      {
+        name: "Albert Einstein Memorial",
+        category: "Memorial",
+        answer: { lat: 38.8924153386184, lng: -77.04843514931898 }
+      },
+      {
+        name: "Jackson-Reed High School",
+        category: "High School",
+        answer: { lat: 38.949987838148914, lng: -77.07760983970122 },
+        perfectFeet: 200
       }
     ]
   },
