@@ -1528,6 +1528,7 @@ export const puzzlesByDate = {
         category: "Capitol Hill/H Street Anchor",
         answer: { lat: 38.88661686503549, lng: -76.99601399695894 }
       },
+      {
         name: "Atlas Performing Arts Center",
         category: "Capitol Hill/H Street Anchor",
         answer: { lat: 38.900049463702324, lng: -76.9875362386698 }
