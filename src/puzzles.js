@@ -1473,4 +1473,162 @@ export const puzzlesByDate = {
       }
     ]
   },
+  "2026-07-28": {
+    id: "051",
+    locations: [
+      {
+        name: "Rubell Museum DC",
+        category: "Museum",
+        answer: { lat: 38.87943704538966, lng: -77.01094438280334 }
+      },
+      {
+        name: "Museum of the Bible",
+        category: "Museum",
+        answer: { lat: 38.884768399456696, lng: -77.0172281995098 }
+      },
+      {
+        name: "Clara Barton Missing Soldiers Office Museum",
+        category: "Museum",
+        answer: { lat: 38.89586363444467, lng: -77.02169292390784 }
+      },
+      {
+        name: "DAR Museum",
+        category: "Museum",
+        answer: { lat: 38.894015420555476, lng: -77.0403111227539 }
+      },
+      {
+        name: "President Woodrow Wilson House",
+        category: "Museum",
+        answer: { lat: 38.91392817239834, lng: -77.05168918287279 }
+      }
+    ]
+  },
+    "2026-07-29": {
+    id: "052",
+    locations: [
+      {
+        name: "Lincoln Park",
+        category: "Capitol Hill/H Street Anchor",
+        answer: { lat: 38.8897938, lng: -76.9899166 }
+        perfectFeet: 300
+      },
+      {
+        name: "The Miracle Theatre",
+        category: "Capitol Hill/H Street Anchor",
+        answer: { lat: 38.88172385491181, lng: -76.99511459444275 }
+      },
+      {
+        name: "Stanton Park",
+        category: "Capitol Hill/H Street Anchor",
+        answer: { lat: 38.8935837, lng: -76.999511 }
+        perfectFeet: 300
+      },
+      {
+        name: "Tunnicliff's Tavern",
+        category: "Capitol Hill/H Street Anchor",
+        answer: { lat: 38.88661686503549, lng: -76.99601399695894 }
+      },
+        name: "Atlas Performing Arts Center",
+        category: "Capitol Hill/H Street Anchor",
+        answer: { lat: 38.900049463702324, lng: -76.9875362386698 }
+      },
+    ]
+  },
+   "2026-07-30": {
+    id: "053",
+    locations: [
+      {
+        name: "Temperance Fountain",
+        category: "Tiny Landmark",
+        answer: { lat: 38.89378180696104, lng: -77.02164038353655 }
+      },
+      {
+        name: "Titanic Memorial",
+        category: "Tiny Landmark",
+        answer: { lat: 38.87193212841506, lng: -77.01931759052965 }
+      },
+      {
+        name: "Nuns of the Battlefield Monument",
+        category: "Tiny Landmark",
+        answer: { lat: 38.905801647681805, lng: -77.040066251779749 }
+      },
+      {
+        name: "Joan of Arc Statue",
+        category: "Tiny Landmark",
+        answer: { lat: 38.920605148567276, lng: -77.035729445998 }
+      },
+      {
+        name: "Adams Memorial",
+        category: "Tiny Landmark",
+        answer: { lat: 38.94761101834705, lng: -77.01025356195395 }
+      }
+    ]
+  },
+    "2026-07-31": {
+    id: "054",
+    locations: [
+      {
+        name: "The Willard InterContinental",
+        category: "Historic Hotel",
+        answer: { lat: 38.89663844718195, lng: -77.03225484966812 }
+      },
+      {
+        name: "The Hay-Adams",
+        category: "Historic Hotel",
+        answer: { lat: 38.90042671768081, lng: -77.03696426325135 }
+      },
+      {
+        name: "Riggs Washington DC",
+        category: "Historic Hotel",
+        answer: { lat: 38.89706664267941, lng: -77.02434999695892 }
+      },
+      {
+        name: "The Watergate Hotel",
+        category: "Historic Hotel",
+        answer: { lat: 38.89957082203303, lng: -77.05539412999 }
+        perfectFeet: 500
+      },
+      {
+        name: "Eaton DC",
+        category: "Hotel",
+        answer: { lat: 38.90279209225542, lng: -77.02884689699364 }
+        perfectFeet: 300
+      }
+    ]
+  },
+    "2026-08-03": {
+    id: "055",
+    locations: [
+      {
+        name: "Embassy of Canada",
+        category: "Embassy",
+        answer: { lat: 38.89326322647266, lng: -77.01857048895492 }
+        perfectFeet: 300
+      },
+      {
+        name: "Embassy of France",
+        category: "Embassy",
+        answer: { lat: 38.914107324778435, lng: -77.07867591842003 }
+        perfectFeet: 300
+      },
+      {
+        name: "Embassy of Italy",
+        category: "Embassy",
+        answer: { lat: 38.9177942, lng: -77.0604614 }
+        perfectFeet: 300
+      },
+      {
+        name: "Embassy of Japan",
+        category: "Embassy",
+        answer: { lat: 38.915558026132516, lng: -77.05623136193658 }
+        perfectFeet: 300
+      },
+      {
+        name: "Embassy of South Africa",
+        category: "Embassy",
+        answer: { lat: 38.91993301800854, lng: -77.06073858283804 }
+        perfectFeet: 300
+      }
+    ]
+  },
 };
