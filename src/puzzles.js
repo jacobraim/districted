@@ -1531,7 +1531,7 @@ export const puzzlesByDate = {
         name: "Atlas Performing Arts Center",
         category: "Capitol Hill/H Street Anchor",
         answer: { lat: 38.900049463702324, lng: -76.9875362386698 }
-      },
+      }
     ]
   },
    "2026-07-30": {
