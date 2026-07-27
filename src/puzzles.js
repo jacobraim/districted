@@ -1509,7 +1509,7 @@ export const puzzlesByDate = {
       {
         name: "Lincoln Park",
         category: "Capitol Hill/H Street Anchor",
-        answer: { lat: 38.8897938, lng: -76.9899166 }
+        answer: { lat: 38.8897938, lng: -76.9899166 },
         perfectFeet: 300
       },
       {
@@ -1520,7 +1520,7 @@ export const puzzlesByDate = {
       {
         name: "Stanton Park",
         category: "Capitol Hill/H Street Anchor",
-        answer: { lat: 38.8935837, lng: -76.999511 }
+        answer: { lat: 38.8935837, lng: -76.999511 },
         perfectFeet: 300
       },
       {
@@ -1585,13 +1585,13 @@ export const puzzlesByDate = {
       {
         name: "The Watergate Hotel",
         category: "Historic Hotel",
-        answer: { lat: 38.89957082203303, lng: -77.05539412999 }
+        answer: { lat: 38.89957082203303, lng: -77.05539412999 },
         perfectFeet: 500
       },
       {
         name: "Eaton DC",
         category: "Hotel",
-        answer: { lat: 38.90279209225542, lng: -77.02884689699364 }
+        answer: { lat: 38.90279209225542, lng: -77.02884689699364 },
         perfectFeet: 300
       }
     ]
@@ -1602,31 +1602,31 @@ export const puzzlesByDate = {
       {
         name: "Embassy of Canada",
         category: "Embassy",
-        answer: { lat: 38.89326322647266, lng: -77.01857048895492 }
+        answer: { lat: 38.89326322647266, lng: -77.01857048895492 },
         perfectFeet: 300
       },
       {
         name: "Embassy of France",
         category: "Embassy",
-        answer: { lat: 38.914107324778435, lng: -77.07867591842003 }
+        answer: { lat: 38.914107324778435, lng: -77.07867591842003 },
         perfectFeet: 300
       },
       {
         name: "Embassy of Italy",
         category: "Embassy",
-        answer: { lat: 38.9177942, lng: -77.0604614 }
+        answer: { lat: 38.9177942, lng: -77.0604614 },
         perfectFeet: 300
       },
       {
         name: "Embassy of Japan",
         category: "Embassy",
-        answer: { lat: 38.915558026132516, lng: -77.05623136193658 }
+        answer: { lat: 38.915558026132516, lng: -77.05623136193658 },
         perfectFeet: 300
       },
       {
         name: "Embassy of South Africa",
         category: "Embassy",
-        answer: { lat: 38.91993301800854, lng: -77.06073858283804 }
+        answer: { lat: 38.91993301800854, lng: -77.06073858283804 },
         perfectFeet: 300
       }
     ]
