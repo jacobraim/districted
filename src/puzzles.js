@@ -1632,4 +1632,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+  "2026-08-04": {
+    id: "056",
+    locations: [
+      {
+        name: "Elmina",
+        category: "Restaurant",
+        answer: { lat: 38.91954055050371, lng: -77.03234565524383 }
+      },
+      {
+        name: "Isla",
+        category: "Restaurant",
+        answer: { lat: 38.9042959275342, lng: -77.03528334914242 }
+      },
+      {
+        name: "Lucky Danger",
+        category: "Restaurant",
+        answer: { lat: 38.89498464798639, lng: -77.02249057327181 }
+      },
+      {
+        name: "Chai Pani",
+        category: "Restaurant",
+        answer: { lat: 38.909047875813364, lng: -76.99718218390457 }
+      },
+      {
+        name: "Cana",
+        category: "Restaurant",
+        answer: { lat: 38.92112583532855, lng: -77.0424496047372 }
+      }
+    ]
+  }
 };
