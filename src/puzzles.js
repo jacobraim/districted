@@ -1661,7 +1661,7 @@ export const puzzlesByDate = {
         answer: { lat: 38.92112583532855, lng: -77.0424496047372 }
       }
     ]
-  }
+  },
     "2026-08-05": {
     id: "057",
     locations: [
