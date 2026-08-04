@@ -1662,4 +1662,134 @@ export const puzzlesByDate = {
       }
     ]
   }
+    "2026-08-05": {
+    id: "057",
+    locations: [
+      {
+        name: "Exorcist Stairs",
+        category: "DC Landmark",
+        answer: { lat: 38.90547260047716, lng: -77.07018527008631 }
+      },
+      {
+        name: "Spanish Steps",
+        category: "DC Landmark",
+        answer: { lat: 38.91374203518766, lng: -77.04878939551456 }
+      },
+      {
+        name: "Friendship Archway",
+        category: "DC Landmark",
+        answer: { lat: 38.8998163, lng: -77.0216466 }
+      },
+      {
+        name: "Dupont Underground",
+        category: "DC Landmark",
+        answer: { lat: 38.91052119709198, lng: -77.04366260559576 }
+      },
+      {
+        name: "C&O Canal Lock 3",
+        category: "DC Landmark",
+        answer: { lat: 38.904143792500676, lng: -77.05957220642787 },
+        perfectFeet: 200
+      }
+    ]
+  },
+ "2026-08-06": {
+    id: "058",
+    locations: [
+      {
+        name: "Kramers",
+        category: "Bookstore",
+        answer: { lat: 38.91083085042753, lng: -77.04377137641993 }
+      },
+      {
+        name: "Lost City Books",
+        category: "Bookstore",
+        answer: { lat: 38.92220161223189, lng: -77.04219198736952 }
+      },
+      {
+        name: "Solid State Books",
+        category: "Bookstore",
+        answer: { lat: 38.9144722386042, lng: -77.03167339273068 }
+      },
+      {
+        name: "East City Bookshop",
+        category: "Bookstore",
+        answer: { lat: 38.88470092134303, lng: -76.99689505084042 }
+      },
+      {
+        name: "Capitol Hill Books",
+        category: "Bookstore",
+        answer: { lat: 38.8859136, lng: -76.9965652 }
+      }
+    ]
+  },
+  "2026-08-07": {
+    id: "059",
+    locations: [
+      {
+        name: "Municipal Fish Market",
+        category: "Waterfront DC",
+        answer: { lat: 38.88118818841076, lng: -77.0279955565874 },
+        perfectFeet: 500
+      },
+      {
+        name: "The Salt Line",
+        category: "Waterfront DC",
+        answer: { lat: 38.87123959142674, lng: -77.00653924922952 }
+      },
+      {
+        name: "Georgetown Waterfront Park",
+        category: "Waterfront DC",
+        answer: { lat: 38.90264777794921, lng: -77.0644026591284 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Diamond Teague Park",
+        category: "Waterfront DC",
+        answer: { lat: 38.87183825755175, lng: -77.00546679110109 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Thompson Boat Center",
+        category: "Waterfront DC",
+        answer: { lat: 38.9004605951938, lng: -77.05818329144809 },
+        perfectFeet: 300
+      }
+    ]
+  },
+  "2026-08-10": {
+    id: "060",
+    locations: [
+      {
+        name: "Dumbarton Oaks Gardens",
+        category: "Garden",
+        answer: { lat: 38.91415870554263, lng: -77.06251569965299 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Kenilworth Aquatic Gardens",
+        category: "Garden",
+        answer: { lat: 38.9126113, lng: -76.9418953 },
+        perfectFeet: 1500
+      },
+      {
+        name: "Franciscan Monastery Garden",
+        category: "Garden",
+        answer: { lat: 38.9367584, lng: -76.983788 }.
+          perfectFeet: 1500
+      },
+      {
+        name: "National Cathedral's Bishop's Garden",
+        category: "Garden",
+        answer: { lat: 38.92973505793504, lng: -77.07085600508944 },
+        perfectFeet: 1300
+      },
+      {
+        name: "Tregaron Conservancy",
+        category: "Garden/Park",
+        answer: { lat: 38.9316737950033, lng: -77.0604746827827 },
+        perfectFeet: 1000
+      }
+    ]
+  }
 };
