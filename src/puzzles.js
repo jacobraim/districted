@@ -1775,7 +1775,7 @@ export const puzzlesByDate = {
       {
         name: "Franciscan Monastery Garden",
         category: "Garden",
-        answer: { lat: 38.9367584, lng: -76.983788 }.
+        answer: { lat: 38.9367584, lng: -76.983788 },
           perfectFeet: 1500
       },
       {
