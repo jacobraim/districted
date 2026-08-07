@@ -1791,5 +1791,167 @@ export const puzzlesByDate = {
         perfectFeet: 1000
       }
     ]
+  },
+    "2026-08-11": {
+    id: "061",
+    locations: [
+      {
+        name: "Yellow Union Market",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90738696241146, lng: -76.99947869813721 }
+      },
+      {
+        name: "Casa Teresa",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90189643582524, lng: -77.04312676438381 }
+      },
+      {
+        name: "Eunoia",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.908028900597685, lng: -77.00178686898353 }
+      },
+      {
+        name: "Perry's",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.922119, lng: -77.04354 }
+      },
+      {
+        name: "Chai Pani",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90904739449644, lng: -76.99718031880673 }
+      }
+    ]
+  },
+ "2026-08-12": {
+    id: "062",
+    locations: [
+      {
+        name: "Union Market",
+        category: "Market/Food Hall",
+        answer: { lat: 38.9086101, lng: -76.9974046 },
+        perfectFeet: 500
+      },
+      {
+        name: "Eastern Market",
+        category: "Market/Food Hall",
+        answer: { lat: 38.88639656293355, lng: -76.99643794982023 },
+        perfectFeet: 500
+      },
+      {
+        name: "La Cosecha",
+        category: "Market/Food Hall",
+        answer: { lat: 38.908668747566665, lng: -76.99958958806228 },
+        perfectFeet: 200
+      },
+      {
+        name: "The Square",
+        category: "Market/Food Hall",
+        answer: { lat: 38.90219960312589, lng: -77.0433018476651 },
+        perfectFeet: 400
+      },
+      {
+        name: "Western Market",
+        category: "Market/Food Hall",
+        answer: { lat: 38.90029653438165, lng: -77.04571773926075 },
+        perfectFeet: 300
+      }
+    ]
+  },
+   "2026-08-13": {
+    id: "063",
+    locations: [
+      {
+        name: "Shakespeare Theatre Company's Harman Hall",
+        category: "Theater",
+        answer: { lat: 38.8971296965364, lng: -77.02036480703828 }
+      },
+      {
+        name: "Keegan Theatre",
+        category: "Theater",
+        answer: { lat: 38.91031306333255, lng: -77.03997844993523 }
+      },
+      {
+        name: "Theater J",
+        category: "Theater",
+        answer: { lat: 38.91090470848427, lng: -77.03623370362821 }
+      },
+      {
+        name: "Mosaic Theater Company",
+        category: "Theater",
+        answer: { lat: 38.90006224504857, lng: -76.98754282403455 }
+      },
+      {
+        name: "Woolly Mammoth Theatre Company",
+        category: "Theater",
+        answer: { lat: 38.89506235415128, lng: -77.02134041871552 }
+      }
+    ]
+  },
+    "2026-08-14": {
+    id: "064",
+    locations: [
+      {
+        name: "Las 3 Hermanas",
+        category: "Hidden Eats",
+        answer: { lat: 38.90219251782314, lng: -77.04319558816498 }, 
+        perfectFeet: 200
+      },
+      {
+        name: "Saints Paradise Cafeteria",
+        category: "Hidden Eats",
+        answer: { lat: 38.905781897131305, lng: -77.02070660368862 }
+      },
+      {
+        name: "Mom's Uyghur Cuisine",
+        category: "Hidden Eats",
+        answer: { lat: 38.9127535, lng: -77.0178292 },
+        perfectFeet: 200
+      },
+      {
+        name: "Minya's Pizza",
+        category: "Hidden Eats",
+        answer: { lat: 38.91652213698905, lng: -77.02411963537172 }
+      },
+      {
+        name: "Keren",
+        category: "Hidden Eats",
+        answer: { lat: 38.91673555772587, lng: -77.04128049383557 }
+      }
+    ]
+  },
+  "2026-08-17": {
+    id: "065",
+    locations: [
+      {
+        name: "Washington Circle",
+        category: "Circle/Square Park",
+        answer: { lat: 38.9025276, lng: -77.0501107 },
+        perfectFeet: 300
+      },
+      {
+        name: "Thomas Circle",
+        category: "Circle/Square Park",
+        answer: { lat: 38.90565344720708, lng: -77.03196743579974 },
+        perfectFeet: 300
+      },
+      {
+        name: "Mount Vernon Square",
+        category: "Circle/Square Park",
+        answer: { lat: 38.9026545, lng: -77.0229476 },
+        perfectFeet: 300
+      },
+      {
+        name: "Farragut Square",
+        category: "Circle/Square Park",
+        answer: { lat: 38.9019651, lng: -77.0389677 },
+        perfectFeet: 300
+      },
+      {
+        name: "Sheridan Circle",
+        category: "Circle/Square Park",
+        answer: { lat: 38.9121714, lng: -77.0506587 },
+        perfectFeet: 300
+      }
+    ]
   }
 };
