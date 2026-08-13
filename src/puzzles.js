@@ -1953,5 +1953,164 @@ export const puzzlesByDate = {
         perfectFeet: 300
       }
     ]
+  },
+    "2026-08-18": {
+    id: "066",
+    locations: [
+      {
+        name: "Marcus",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.9061030228081, lng: -77.00229493551473 }
+      },
+      {
+        name: "Providencia",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.899456866562126, lng: -76.98729861341921 }
+      },
+      {
+        name: "Baan Mae",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.91139002406561, lng: -77.0221244620319 }
+      },
+      {
+        name: "Martha Dear",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.929186081827176, lng: -77.0378189075089 }
+      },
+      {
+        name: "Baan Siam",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90158610610574, lng: -77.01638024754368 }
+      }
+    ]
+  },
+
+  "2026-08-19": {
+    id: "067",
+    locations: [
+      {
+        name: "Bazaar Meat",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.894217922145266, lng: -77.02743731669858 }
+      },
+      {
+        name: "Brasero Atlántico",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.90465346021389, lng: -77.06315487116426 }
+      },
+      {
+        name: "Canton Disco",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.87792801668583, lng: -77.00612353856309 }
+      },
+      {
+        name: "Catahoula",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.87116187173529, lng: -77.00680514596392 }
+      },
+      {
+        name: "The Grace",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.910713623344286, lng: -77.02162427479786 }
+      }
+    ]
+  },
+
+  "2026-08-20": {
+    id: "068",
+    locations: [
+      {
+        name: "Key Bridge",
+        category: "DC Bridge",
+        answer: { lat: 38.90238019577458, lng: -77.06996086130542 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Frederick Douglass Memorial Bridge",
+        category: "DC Bridge",
+        answer: { lat: 38.86839028834241, lng: -77.005499345964 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Duke Ellington Bridge",
+        category: "DC Bridge",
+        answer: { lat: 38.92334277172432, lng: -77.048512103633 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Taft Bridge",
+        category: "DC Bridge",
+        answer: { lat: 38.921229109577126, lng: -77.05007818829016 },
+        perfectFeet: 1000
+      },
+      {
+        name: "11th Street Bridge",
+        category: "DC Bridge",
+        answer: { lat: 38.87146129818209, lng: -76.99011949145083 },
+        perfectFeet: 1000
+      }
+    ]
+  },
+
+  "2026-08-21": {
+    id: "069",
+    locations: [
+      {
+        name: "Ingle Korean Steakhouse",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.91644397172569, lng: -77.03237254596189 }
+      },
+      {
+        name: "KAYU",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.91226092712785, lng: -77.03826021712635 }
+      },
+      {
+        name: "Malabar",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.947178315812245, lng: -77.06483461712477 }
+      },
+      {
+        name: "Rosselli",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.899908421383465, lng: -77.02727101712689 }
+      },
+      {
+        name: "Rye Bunny",
+        category: "New Dining Spot to Try for Summer Restaurant Week",
+        answer: { lat: 38.92363097172426, lng: -77.04326357479731 }
+      }
+    ]
+  },
+
+  "2026-08-24": {
+    id: "070",
+    locations: [
+      {
+        name: "National Press Club",
+        category: "Media DC",
+        answer: { lat: 38.89708809670903, lng: -77.03131100363426 }
+      },
+      {
+        name: "NPR Headquarters",
+        category: "Media DC",
+        answer: { lat: 38.90419989885861, lng: -77.00847384596243 }
+      },
+      {
+        name: "C-SPAN",
+        category: "Media DC",
+        answer: { lat: 38.89551899664545, lng: -77.00925318829127 }
+      },
+      {
+        name: "The Washington Post",
+        category: "Media DC",
+        answer: { lat: 38.902748495709446, lng: -77.0307555459625 }
+      },
+      {
+        name: "Voice of America",
+        category: "Media DC",
+        answer: { lat: 38.88637507173221, lng: -77.01633974596321 }
+      }
+    ]
   }
 };
