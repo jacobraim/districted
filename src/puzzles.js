@@ -2112,5 +2112,38 @@ export const puzzlesByDate = {
         answer: { lat: 38.88637507173221, lng: -77.01633974596321 }
       }
     ]
+  },
+    "2026-08-25": {
+    id: "071",
+    locations: [
+      {
+        name: "The Willard InterContinental",
+        category: "Historic Hotel",
+        answer: { lat: 38.89663844718195, lng: -77.03225484966812 }
+      },
+      {
+        name: "Lincoln Memorial Reflecting Pool",
+        category: "Landmark",
+        answer: { lat: 38.88937927518835, lng: -77.04470497496412 },
+        perfectFeet: 700
+      },
+      {
+        name: "Glover-Archbold Park",
+        category: "Park",
+        answer: { lat: 38.92321466543337, lng: -77.08376554612735 },
+        perfectFeet: 2000
+      },
+      {
+        name: "Ivy City",
+        category: "Neighborhood",
+        answer: { lat: 38.91514942654778, lng: -76.98568587590738 },
+        perfectFeet: 2500
+      },
+      {
+        name: "Cafe Milano",
+        category: "Restaurant",
+        answer: { lat: 38.906133499308844, lng: -77.06353792403985 }
+      }
+    ]
   }
 };
