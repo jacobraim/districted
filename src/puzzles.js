@@ -2145,5 +2145,69 @@ export const puzzlesByDate = {
         answer: { lat: 38.906133499308844, lng: -77.06353792403985 }
       }
     ]
+  },
+    "2026-08-26": {
+    id: "072",
+    locations: [
+      {
+        name: "Signers' Island",
+        category: "Landmark",
+        answer: { lat: 38.89107777161328, lng: -77.04293060379938 },
+        perfectFeet: 500
+      },
+      {
+        name: "Black Cat",
+        category: "Music Venue",
+        answer: { lat: 38.91458247160824, lng: -77.03169611729241 }
+      },
+      {
+        name: "Katzen Arts Center",
+        category: "Arts Center",
+        answer: { lat: 38.93920737160302, lng: -77.0871592172913 }
+      },
+      {
+        name: "Crate & Barrel",
+        category: "Store",
+        answer: { lat: 38.94452117160172, lng: -77.09553350379696 }
+      },
+      {
+        name: "Avalon Theatre",
+        category: "Movie Theater",
+        answer: { lat: 38.96531094572857, lng: -77.07607081729003 }
+      }
+    ]
+  },
+    "2026-08-27": {
+    id: "073",
+    locations: [
+      {
+        name: "Washington Circle",
+        category: "Circle/Park",
+        answer: { lat: 38.90251198351293, lng: -77.05014886018702 },
+        perfectFeet: 300
+      },
+      {
+        name: "U.S. Department of Agriculture",
+        category: "Civic Landmark",
+        answer: { lat: 38.88774468750596, lng: -77.03145843891144 },
+        perfectFeet: 300
+      },
+      {
+        name: "The Bullpen",
+        category: "Bar/Event Venue",
+        answer: { lat: 38.87612936682728, lng: -77.00785699149709 }
+      },
+      {
+        name: "Chain Bridge",
+        category: "Bridge",
+        answer: { lat: 38.929525302276225, lng: -77.11650383632703 },
+        perfectFeet: 1000
+      },
+      {
+        name: "President Woodrow Wilson House",
+        category: "Historic House",
+        answer: { lat: 38.9139517116316, lng: -77.0516587461277 }
+      }
+    ]
   }
 };
