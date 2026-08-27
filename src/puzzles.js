@@ -2209,5 +2209,69 @@ export const puzzlesByDate = {
         answer: { lat: 38.9139517116316, lng: -77.0516587461277 }
       }
     ]
+  },
+    "2026-08-28": {
+    id: "074",
+    locations: [
+      {
+        name: "Purple Patch",
+        category: "Restaurant",
+        answer: { lat: 38.93055547160494, lng: -77.03765787496222 }
+      },
+      {
+        name: "National Capitol Columns",
+        category: "Landmark",
+        answer: { lat: 38.91026446848288, lng: -76.96735262893974 },
+        perfectFeet: 500
+      },
+      {
+        name: "Dumbarton House",
+        category: "Historic House",
+        answer: { lat: 38.910803629758924, lng: -77.05587393263373 }
+      },
+      {
+        name: "Mount Pleasant Library",
+        category: "Library",
+        answer: { lat: 38.930629308373035, lng: -77.03727066146817 }
+      },
+      {
+        name: "Edgewood Recreation Center",
+        category: "Recreation Center",
+        answer: { lat: 38.92478180944205, lng: -77.00186539148379 }
+      }
+    ]
+  },
+
+  "2026-08-31": {
+    id: "075",
+    locations: [
+      {
+        name: "Bluejacket",
+        category: "Restaurant/Brewery",
+        answer: { lat: 38.87511662418535, lng: -77.00080277496482 }
+      },
+      {
+        name: "Fort Totten Park",
+        category: "Park",
+        answer: { lat: 38.94839047160106, lng: -77.00533517496144 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Howard Theatre",
+        category: "Music Venue",
+        answer: { lat: 38.91545718774864, lng: -77.02105693381574 }
+      },
+      {
+        name: "East Potomac Golf Links",
+        category: "Golf Course",
+        answer: { lat: 38.87458671898692, lng: -77.02677393263544 },
+        perfectFeet: 3000
+      },
+      {
+        name: "Carter Barron Amphitheatre",
+        category: "Performance Venue",
+        answer: { lat: 38.95047437160055, lng: -77.0421628749614 }
+      }
+    ]
   }
 };
