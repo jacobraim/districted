@@ -2273,5 +2273,66 @@ export const puzzlesByDate = {
         answer: { lat: 38.95047437160055, lng: -77.0421628749614 }
       }
     ]
+  },
+    "2026-09-01": {
+    id: "076",
+    locations: [
+      {
+        name: "Boogy & Peel",
+        category: "Cheat Eats",
+        answer: { lat: 38.90882932311748, lng: -77.04448257462023 }
+      },
+      {
+        name: "Eggholic",
+        category: "Cheat Eats",
+        answer: { lat: 38.90551175502845, lng: -77.0444926372443 }
+      },
+      {
+        name: "Fava Pot",
+        category: "Cheat Eats",
+        answer: { lat: 38.905851938069134, lng: -77.04247302224829 }
+      },
+      {
+        name: "Habesha Market Carry Out & Restaurant",
+        category: "Cheat Eats",
+        answer: { lat: 38.91635551944006, lng: -77.02378320530765 }
+      },
+      {
+        name: "Honeymoon Chicken",
+        category: "Cheat Eats",
+        answer: { lat: 38.9420330270169, lng: -77.02528614578266 }
+      }
+    ]
+  },
+
+  "2026-09-02": {
+    id: "077",
+    locations: [
+      {
+        name: "Keren",
+        category: "Cheat Eats",
+        answer: { lat: 38.91684460537733, lng: -77.04126207461988 }
+      },
+      {
+        name: "La Tejana",
+        category: "Cheat Eats",
+        answer: { lat: 38.931510025780696, lng: -77.03816948811124 }
+      },
+      {
+        name: "Marv's Dogs",
+        category: "Cheat Eats",
+        answer: { lat: 38.95438082846787, lng: -77.082822574618 }
+      },
+      {
+        name: "Mélange",
+        category: "Cheat Eats",
+        answer: { lat: 38.91815837171976, lng: -77.02306997461976 }
+      },
+      {
+        name: "Saints Paradise Cafeteria",
+        category: "Cheat Eats",
+        answer: { lat: 38.9058465925607, lng: -77.02067176562942 }
+      }
+    ]
   }
 };
