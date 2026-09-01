@@ -2334,5 +2334,101 @@ export const puzzlesByDate = {
         answer: { lat: 38.9058465925607, lng: -77.02067176562942 }
       }
     ]
+  },
+    "2026-09-03": {
+    id: "078",
+    locations: [
+      {
+        name: "The Riggsby",
+        category: "New Restaurant",
+        answer: { lat: 38.90986557475786, lng: -77.04756860345617 }
+      },
+      {
+        name: "The Oak Room",
+        category: "New Restaurant",
+        answer: { lat: 38.90570577172224, lng: -77.06302897462045 }
+      },
+      {
+        name: "La Merna",
+        category: "New Restaurant",
+        answer: { lat: 38.90980532323208, lng: -77.04834121694833 }
+      },
+      {
+        name: "Croix Rooftop",
+        category: "New Restaurant",
+        answer: { lat: 38.87086204721553, lng: -77.01128534578608 }
+      },
+      {
+        name: "Rye Bunny",
+        category: "New Restaurant",
+        answer: { lat: 38.9235308092851, lng: -77.04314555742378 }
+      }
+    ]
+  },
+    "2026-09-04": {
+    id: "079",
+    locations: [
+      {
+        name: "Ben's Chili Bowl",
+        category: "Restaurant",
+        answer: { lat: 38.91713260893703, lng: -77.02877697196719 }
+      },
+      {
+        name: "Hill Center at the Old Naval Hospital",
+        category: "Historic Site",
+        answer: { lat: 38.88298432008415, lng: -76.9931086457855 }
+      },
+      {
+        name: "Dupont Circle Fountain",
+        category: "Landmark",
+        answer: { lat: 38.909598420236115, lng: -77.04363201694831 },
+        perfectFeet: 300
+      },
+      {
+        name: "The Phillips Collection",
+        category: "Museum",
+        answer: { lat: 38.91175532820086, lng: -77.04682140743702 }
+      },
+      {
+        name: "Fort Stevens Battleground",
+        category: "Historic Site",
+        answer: { lat: 38.964326838419986, lng: -77.02936590099756 },
+        perfectFeet: 500
+      }
+    ]
+  },
+
+  "2026-09-07": {
+    id: "080",
+    locations: [
+      {
+        name: "Union Station Main Hall",
+        category: "Transit Landmark",
+        answer: { lat: 38.89735622108148, lng: -77.00632553229279 },
+        perfectFeet: 500
+      },
+      {
+        name: "Blagden Alley",
+        category: "Landmark",
+        answer: { lat: 38.90644852283797, lng: -77.02496757462038 },
+        perfectFeet: 300
+      },
+      {
+        name: "Pearl Street Warehouse",
+        category: "Music Venue",
+        answer: { lat: 38.878863028116086, lng: -77.0239460457857 }
+      },
+      {
+        name: "Franciscan Monastery Garden",
+        category: "Garden",
+        answer: { lat: 38.9367584, lng: -76.983788 },
+        perfectFeet: 500
+      },
+      {
+        name: "Capitol Hill Books",
+        category: "Bookstore",
+        answer: { lat: 38.8859528282115, lng: -76.9965479457854 }
+      }
+    ]
   }
 };
