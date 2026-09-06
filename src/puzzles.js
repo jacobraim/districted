@@ -2443,7 +2443,7 @@ export const puzzlesByDate = {
         name: "Touchstone Gallery",
         category: "Art Gallery",
         answer: { lat: 38.901991372795266, lng: -77.02502734617602 }
-      }
+      },
       {
         name: "Mount Pleasant Library",
         category: "Library",
