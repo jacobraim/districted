@@ -2430,5 +2430,36 @@ export const puzzlesByDate = {
         answer: { lat: 38.8859528282115, lng: -76.9965479457854 }
       }
     ]
+  },
+   "2026-09-08": {
+    id: "081",
+    locations: [
+      {
+        name: "The Occidental",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.896635471612164, lng: -77.03277304617622 }
+      },
+      {
+        name: "Touchstone Gallery",
+        category: "Art Gallery",
+        answer: { lat: 38.901991372795266, lng: -77.02502734617602 }
+      }
+      {
+        name: "Mount Pleasant Library",
+        category: "Library",
+        answer: { lat: 38.930629308373035, lng: -77.03727066146817 }
+      },
+      {
+        name: "Sheridan Circle",
+        category: "Circle/Park",
+        answer: { lat: 38.9121714, lng: -77.0506587 },
+        perfectFeet: 300
+      },
+      {
+        name: "Keegan Theatre",
+        category: "Theater",
+        answer: { lat: 38.91031306333255, lng: -77.03997844993523 }
+      }
+    ]
   }
 };
