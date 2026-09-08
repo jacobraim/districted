@@ -2461,5 +2461,133 @@ export const puzzlesByDate = {
         answer: { lat: 38.91031306333255, lng: -77.03997844993523 }
       }
     ]
+  },
+    "2026-09-09": {
+    id: "082",
+    locations: [
+      {
+        name: "Barbouzard",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90212814642364, lng: -77.04010927361695 }
+      },
+      {
+        name: "Glover Archbold Park",
+        category: "Park",
+        answer: { lat: 38.92319797171853, lng: -77.08376554638342 },
+        perfectFeet: 1500
+      },
+      {
+        name: "Cleveland Park Library",
+        category: "Library",
+        answer: { lat: 38.93381264340069, lng: -77.0577367696618 }
+      },
+      {
+        name: "King-Greenleaf Recreation Center",
+        category: "Recreation Center",
+        answer: { lat: 38.875016676890645, lng: -77.01275634638618 },
+        perfectFeet: 300
+      }
+      {
+        name: "Rosedale Conservancy",
+        category: "Garden/Park",
+        answer: { lat: 38.935051571715995, lng: -77.06889837521871 },
+        perfectFeet: 500
+      }
+    ]
+  },
+  "2026-09-10": {
+    id: "083",
+    locations: [
+      {
+        name: "Albi",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.87406583827658, lng: -77.00039250579559 }
+      },
+      {
+        name: "The Yards Marina",
+        category: "Waterfront",
+        answer: { lat: 38.87313233574851, lng: -77.00094007522235 },
+        perfectFeet: 1000
+      },
+      {
+        name: "The Mansion on O Street",
+        category: "Museum/Hotel",
+        answer: { lat: 38.90842849611357, lng: -77.04582782744882 }
+      },
+      {
+        name: "Hirshhorn Sculpture Garden",
+        category: "Garden",
+        answer: { lat: 38.887916914804876, lng: -77.02297421814266 },
+        perfectFeet: 300
+      },
+      {
+        name: "Arena Stage",
+        category: "Theater",
+        answer: { lat: 38.8772991, lng: -77.0204611 }
+      }
+    ]
+  },
+ "2026-09-11": {
+    id: "084",
+    locations: [
+      {
+        name: "Lutèce",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.909427581005886, lng: -77.06453636679693 }
+      },
+      {
+        name: "Tudor Place Garden",
+        category: "Garden",
+        answer: { lat: 38.91148102342865, lng: -77.0629465040562 },
+        perfectFeet: 500
+      },
+      {
+        name: "Book Hill Park",
+        category: "Park",
+        answer: { lat: 38.91286197172076, lng: -77.06568734638401 },
+        perfectFeet: 500
+      },
+      {
+        name: "Georgetown Library",
+        category: "Library",
+        answer: { lat: 38.913395767857814, lng: -77.06595821754786 }
+      },
+      {
+        name: "Martin's Tavern",
+        category: "Classic DC Restaurant",
+        answer: { lat: 38.90676031293084, lng: -77.06314209384843 }
+      }
+    ]
+  },
+    "2026-09-14": {
+    id: "085",
+    locations: [
+      {
+        name: "Moon Rabbit",
+        category: "100 Best Restaurant",
+       answer: { lat: 38.897541668993554, lng: -77.02521311667473 }
+      },
+      {
+        name: "National Archives",
+        category: "Museum/Landmark",
+        answer: { lat: 38.89280480863477, lng: -77.02294507987553 }
+        perfectFeet: 300
+      },
+      {
+        name: "Franklin School",
+        category: "Historic Site",
+        answer: { lat: 38.90217074576369, lng: -77.02940931581186 }
+      },
+      {
+        name: "National Theatre",
+        category: "Theater",
+        answer: { lat: 38.89637197201046, lng: -77.03051720405702 }
+      },
+      {
+        name: "Sitar Arts Center",
+        category: "Arts Center",
+        answer: { lat: 38.921115260364914, lng: -77.03913871754749 }
+      }
+    ]
   }
 };
