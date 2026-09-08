@@ -2486,7 +2486,7 @@ export const puzzlesByDate = {
         category: "Recreation Center",
         answer: { lat: 38.875016676890645, lng: -77.01275634638618 },
         perfectFeet: 300
-      }
+      },
       {
         name: "Rosedale Conservancy",
         category: "Garden/Park",
