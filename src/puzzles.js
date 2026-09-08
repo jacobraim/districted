@@ -2570,7 +2570,7 @@ export const puzzlesByDate = {
       {
         name: "National Archives",
         category: "Museum/Landmark",
-        answer: { lat: 38.89280480863477, lng: -77.02294507987553 }
+        answer: { lat: 38.89280480863477, lng: -77.02294507987553 },
         perfectFeet: 300
       },
       {
