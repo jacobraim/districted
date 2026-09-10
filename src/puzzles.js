@@ -2589,5 +2589,160 @@ export const puzzlesByDate = {
         answer: { lat: 38.921115260364914, lng: -77.03913871754749 }
       }
     ]
+  },
+   "2026-09-15": {
+    id: "086",
+    locations: [
+      {
+        name: "Purple Patch",
+        category: "Restaurant",
+        answer: { lat: 38.93055547172308, lng: -77.03765787493197 }
+      },
+      {
+        name: "National Building Museum",
+        category: "Museum/Landmark",
+        answer: { lat: 38.89778079639985, lng: -77.01759734609759 },
+        perfectFeet: 300
+      },
+      {
+        name: "Anacostia Arts Center",
+        category: "Arts Center",
+        answer: { lat: 38.86698952526031, lng: -76.98755124609903 }
+      },
+      {
+        name: "Nationals Park",
+        category: "Stadium",
+        answer: { lat: 38.872993466101846, , lng: -77.00741144609871 },
+        perfectFeet: 2000
+      },
+      {
+        name: "National Geographic Museum of Exploration",
+        category: "Museum",
+        answer: { lat: 38.90524857287017, lng: -77.03740973870497 }
+      }
+    ]
+  },
+    "2026-09-16": {
+    id: "087",
+    locations: [
+      {
+        name: "Planet Word",
+        category: "Museum",
+        answer: { lat: 38.90209647293806, lng: -77.02931367493332 }
+      },
+      {
+        name: "Bryant St Market",
+        category: "Market/Food Hall",
+        answer: { lat: 38.922071718772244, lng: -76.99658023260413 },
+        perfectFeet: 500
+      },
+      {
+        name: "The Pug",
+        category: "Bar",
+        answer: { lat: 38.90032322532434, lng: -76.98901657493333 }
+      },
+      {
+        name: "Jane Jane",
+        category: "Bar",
+        answer: { lat: 38.912872536731356, lng: -77.03166397846604 }
+      },
+      {
+        name: "Park View Recreation Center",
+        category: "Recreation Center",
+        answer: { lat: 38.9349803810766, lng: -77.02134964609584 }
+      }
+    ]
+  },
+  "2026-09-17": {
+    id: "088",
+    locations: [
+      {
+        name: "Mexican Cultural Institute",
+        category: "International DC",
+        answer: { lat: 38.92551869840351, lng: -77.0359326307526 }
+      },
+      {
+        name: "House of Sweden",
+        category: "International DC",
+        answer: { lat: 38.901521121193724, lng: -77.05882354609744 }
+      },
+      {
+        name: "Goethe-Institut Washington",
+        category: "International DC",
+        answer: { lat: 38.9127722161539, lng: -77.03147984609687 }
+      },
+      {
+        name: "Alliance Française de Washington",
+        category: "International DC",
+        answer: { lat: 38.91695040260527, lng: -77.048597130753 }
+      },
+      {
+        name: "Japan Information & Culture Center",
+        category: "International DC",
+        answer: { lat: 38.90456322262267, lng: -77.04184627493312 }
+      }
+    ]
+  },
+    "2026-09-18": {
+    id: "089",
+    locations: [
+      {
+        name: "The Royal",
+        category: "Restaurant",
+        answer: { lat: 38.915029971726334, lng: -77.01856554609678 }
+      },
+      {
+        name: "DC Arts Center",
+        category: "Arts Center",
+        answer: { lat: 38.92163051882417, lng: -77.04261080376826 }
+      },
+      {
+        name: "Sidwell Friends",
+        category: "School",
+        answer: { lat: 38.939590661694304, lng: -77.07494610376739 },
+        perfectFeet: 500
+      },
+      {
+        name: "Josephine Butler Parks Center",
+        category: "Historic Site",
+        answer: { lat: 38.92249527773231, lng: -77.0350238632913 }
+      },
+      {
+        name: "Northeast Library",
+        category: "Library",
+        answer: { lat: 38.89433768711617, lng: -76.99627694099752 }
+      }
+    ]
+  },
+  "2026-09-21": {
+    id: "090",
+    locations: [
+      {
+        name: "Hill Center at the Old Naval Hospital",
+        category: "Historic Site",
+        answer: { lat: 38.88298424720547, lng: -76.99311939576613 }
+      },
+      {
+        name: "Canal Park Ice Rink",
+        category: "Park/Recreation",
+        answer: { lat: 38.87705366705529, lng: -77.00313680377035 },
+        perfectFeet: 300
+      },
+      {
+        name: "Maret",
+        category: "School",
+        answer: { lat: 38.928374952508854, lng: -77.0603529245869 }
+      },
+{
+  name: "Tryst",
+  category: "Cafe",
+  answer: { lat: 38.92196027760654, lng: -77.04218756329144 }
+},
+      {
+        name: "GALA Hispanic Theatre",
+        category: "Theater",
+        answer: { lat: 38.930797925703075, lng: -77.03231484609599 }
+      }
+    ]
   }
 };
