@@ -2612,7 +2612,7 @@ export const puzzlesByDate = {
       {
         name: "Nationals Park",
         category: "Stadium",
-        answer: { lat: 38.872993466101846, , lng: -77.00741144609871 },
+        answer: { lat: 38.872993466101846, lng: -77.00741144609871 },
         perfectFeet: 2000
       },
       {
