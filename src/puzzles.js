@@ -2744,5 +2744,161 @@ export const puzzlesByDate = {
         answer: { lat: 38.930797925703075, lng: -77.03231484609599 }
       }
     ]
-  }
+  },
+   "2026-09-22": {
+    id: "091",
+    locations: [
+      {
+        name: "Logan Circle",
+        category: "Circle/Park",
+        answer: { lat: 38.909501673400634, lng: -77.029648775311 },
+        perfectFeet: 300
+      },
+      {
+        name: "Studio Theatre",
+        category: "Theater",
+        answer: { lat: 38.9100314, lng: -77.0316604 }
+      },
+      {
+        name: "Le Diplomate",
+        category: "Restaurant",
+        answer: { lat: 38.91125075114748, lng: -77.03174728118458 }
+      },
+      {
+        name: "Pearl Dive Oyster Palace",
+        category: "Restaurant",
+        answer: { lat: 38.911634072311124, lng: -77.03218762609824 }
+      },
+      {
+        name: "Mallard",
+        category: "Restaurant",
+        answer: { lat: 38.90852845243653, lng: -77.03169914227485 }
+      }
+    ]
+  },
+
+  "2026-09-23": {
+    id: "092",
+    locations: [
+      {
+        name: "Dōgon",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.883588771727055, lng: -77.03016797531956 }
+      },
+      {
+        name: "Reveler's Hour",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.92351986547376, lng: -77.04208950415267 }
+      },
+      {
+        name: "Daru",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.89969276981591, lng: -76.98390946182475 }
+      },
+      {
+        name: "Tapori",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90031537015496, lng: -76.99703517531862 }
+      },
+      {
+        name: "Pineapple & Pearls",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.880709623638914, lng: -76.99530404648432 }
+      }
+    ]
+  },
+
+  "2026-09-24": {
+    id: "093",
+    locations: [
+      {
+        name: "National Children's Museum",
+        category: "Museum",
+        answer: { lat: 38.89431712266269, lng: -77.02978097531891 }
+      },
+      {
+        name: "Capital Jewish Museum",
+        category: "Museum",
+        answer: { lat: 38.897203621643946, lng: -77.0148634888127 }
+      },
+      {
+        name: "Fort Dupont Ice Arena",
+        category: "Ice Arena",
+        answer: { lat: 38.8828571684123, lng: -76.94949327531954 }
+      },
+      {
+        name: "National Gallery of Art East Building",
+        category: "Museum",
+        answer: { lat: 38.891221623755165, lng: -77.01717111949593 }
+      },
+      {
+        name: "Ford's Theatre",
+        category: "Theater",
+        answer: { lat: 38.896678, lng: -77.0258178 }
+      }
+    ]
+  },
+
+  "2026-09-25": {
+    id: "094",
+    locations: [
+      {
+        name: "Ben's Chili Bowl",
+        category: "Restaurant",
+        answer: { lat: 38.917166371719915, lng: -77.028755504153 }
+      },
+      {
+        name: "Lincoln Theatre",
+        category: "Theater",
+        answer: { lat: 38.917138976467236, lng: -77.02898877531769 }
+      },
+      {
+        name: "Howard Theatre",
+        category: "Theater",
+        answer: { lat: 38.91546559784489, lng: -77.02108910415316 }
+      },
+      {
+        name: "9:30 Club",
+        category: "Music Venue",
+        answer: { lat: 38.9179480, lng: -77.0237227 }
+      },
+      {
+        name: "African American Civil War Memorial",
+        category: "Memorial",
+        answer: { lat: 38.91686006236803, lng: -77.02910870415302 }
+      }
+    ]
+  },
+
+  "2026-09-28": {
+    id: "095",
+    locations: [
+      {
+        name: "Old Stone House",
+        category: "Historic Site",
+        answer: { lat: 38.90532677962104, lng: -77.06034954648294 }
+      },
+      {
+        name: "National Bonsai & Penjing Museum",
+        category: "Museum/Garden",
+        answer: { lat: 38.91219291993042, lng: -76.9693244041533 }
+      },
+      {
+        name: "DC Improv Comedy Club",
+        category: "Comedy Club",
+        answer: { lat: 38.90501212077655, lng: -77.04101237531835 }
+      },
+      {
+        name: "Atlas Performing Arts Center",
+        category: "Theater",
+        answer: { lat: 38.89998927101392, lng: -76.98750033298934 }
+      },
+      {
+        name: "Kenilworth Aquatic Gardens",
+        category: "Garden",
+        answer: { lat: 38.91261691988049, lng: -76.94182650415321 },
+        perfectFeet: 500
+      }
+    ]
+  },
 };
