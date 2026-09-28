@@ -2901,4 +2901,162 @@ export const puzzlesByDate = {
       }
     ]
   },
+    "2026-09-29": {
+    id: "096",
+    locations: [
+      {
+        name: "Baked & Wired",
+        category: "Bakery",
+        answer: { lat: 38.90404642243796, lng: -77.06024491697006 }
+      },
+      {
+        name: "Seylou Bakery & Mill",
+        category: "Bakery",
+        answer: { lat: 38.90707617160404, lng: -77.02508541696993 }
+      },
+      {
+        name: "Rose Ave Bakery",
+        category: "Bakery",
+        answer: { lat: 38.924547878090905, lng: -77.0517986746406 }
+      },
+      {
+        name: "Un je ne sais Quoi",
+        category: "Patisserie",
+        answer: { lat: 38.90881972299833, lng: -77.04259224580558 }
+      },
+{
+  name: "Bread Alley",
+  category: "Bakery",
+  answer: { lat: 38.90794907160389, lng: -76.99925341696984 }
+}
+    ]
+  },
+
+  "2026-09-30": {
+    id: "097",
+    locations: [
+      {
+        name: "Big Bear Cafe",
+        category: "Cafe/Restaurant",
+        answer: { lat: 38.91276072346107, lng: -77.01240701696963 }
+      },
+      {
+        name: "Alamo Drafthouse Cinema Bryant Street",
+        category: "Movie Theater",
+        answer: { lat: 38.92203787160089, lng: -76.99768861696914 }
+      },
+      {
+        name: "National Museum of Women in the Arts",
+        category: "Museum",
+        answer: { lat: 38.900076572339614, lng: -77.02910087464168 }
+      },
+      {
+        name: "The Coupe",
+        category: "Restaurant/Cafe",
+        answer: { lat: 38.93258407159844, lng: -77.02819841696872 }
+      },
+      {
+        name: "Barrel",
+        category: "Whiskey Lounge",
+        answer: { lat: 38.88505537160874, lng: -76.99785601697094 }
+      }
+    ]
+  },
+
+  "2026-10-01": {
+    id: "098",
+    locations: [
+      {
+        name: "The Kreeger Museum",
+        category: "Museum",
+        answer: { lat: 38.921958471600796, lng: -77.08876431696923 }
+      },
+      {
+        name: "The Phillips Collection",
+        category: "Museum",
+        answer: { lat: 38.91175532820086, lng: -77.04682140743702 }
+      },
+      {
+        name: "Rubell Museum DC",
+        category: "Museum",
+        answer: { lat: 38.87943704538966, lng: -77.01094438280334 }
+      },
+      {
+        name: "Hillwood Estate, Museum & Gardens",
+        category: "Museum",
+        answer: { lat: 38.94373630563905, lng: -77.05266848998264 }
+      },
+      {
+        name: "Planet Word",
+        category: "Museum",
+        answer: { lat: 38.90209647293806, lng: -77.02931367493332 }
+      }
+    ]
+  },
+
+  "2026-10-02": {
+    id: "099",
+    locations: [
+      {
+        name: "Queen's English",
+        category: "Restaurant",
+        answer: { lat: 38.932157925738885, lng: -77.02850558813292 }
+      },
+      {
+        name: "Rock Creek Park Nature Center",
+        category: "Nature Center",
+        answer: { lat: 38.95996361418065, lng: -77.05165068813159 }
+      },
+{
+  name: "Heurich House Museum",
+  category: "Museum",
+  answer: { lat: 38.90805486899727, lng: -77.04463030347716 }
+},
+      {
+        name: "Culture House DC",
+        category: "Arts Center",
+        answer: { lat: 38.88046107549188, lng: -77.01199280532857 }
+      },
+      {
+        name: "National Zoo",
+        category: "Zoo",
+        answer: { lat: 38.929615571599314, lng: -77.04977367464033 },
+        perfectFeet: 1500
+      }
+    ]
+  },
+
+  "2026-10-05": {
+    id: "100",
+    locations: [
+      {
+        name: "The Anthem",
+        category: "Music Venue",
+        answer: { lat: 38.879985421076476, lng: -77.02591071104507 }
+      },
+      {
+        name: "Eastern Market",
+        category: "Market",
+        answer: { lat: 38.88639656293355, lng: -76.99643794982023 },
+        perfectFeet: 500
+      },
+      {
+        name: "Washington National Cathedral",
+        category: "Cathedral",
+        answer: { lat: 38.930594571599116, lng: -77.07074861696873 },
+        perfectFeet: 500
+      },
+      {
+        name: "Ben's Chili Bowl",
+        category: "Restaurant",
+        answer: { lat: 38.91713260893703, lng: -77.02877697196719 }
+      },
+      {
+        name: "Nationals Park",
+        category: "Stadium",
+        answer: { lat: 38.872993466101846, lng: -77.00741144609871 },
+        perfectFeet: 2000
+      }
+    ]
+  },
 };
