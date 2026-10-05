@@ -3059,4 +3059,35 @@ export const puzzlesByDate = {
       }
     ]
   },
+  "2026-10-06": {
+    id: "101",
+    locations: [
+      {
+        name: "All-Purpose Shaw",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.90694097160975, lng: -77.02420600366789 }
+      },
+      {
+        name: "Art Museum of the Americas",
+        category: "Museum",
+        answer: { lat: 38.89280832112471, lng: -77.04152574599735 }
+      },
+      {
+        name: "True Reformer Building",
+        category: "Historic Site",
+        answer: { lat: 38.91685547628827, lng: -77.02825054599622 }
+      },
+      {
+        name: "Meridian Hill Park",
+        category: "Park",
+        answer: { lat: 38.9210722187719, lng: -77.03578944599609 },
+        perfectFeet: 1000
+      },
+      {
+        name: "Rock Creek Park Nature Center",
+        category: "Nature Center",
+        answer: { lat: 38.959971956773245, lng: -77.05167214599433 }
+      }
+    ]
+  },
 };
