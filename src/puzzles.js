@@ -3090,4 +3090,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+  "2026-10-07": {
+    id: "102",
+    locations: [
+      {
+        name: "The Red Hen",
+        category: "100 Best Restaurant",
+        answer: { lat: 38.91495682371885, lng: -77.01231755927837 }
+      },
+      {
+        name: "Belmont-Paul Women's Equality National Monument",
+        category: "Historic Site",
+        answer: { lat: 38.89228957603526, lng: -77.00368910160772 }
+      },
+      {
+        name: "National Postal Museum",
+        category: "Museum",
+        answer: { lat: 38.8982242217546, lng: -77.00817640345846 }
+      },
+{
+  name: "Decatur House",
+  category: "Historic House",
+  answer: { lat: 38.90006107160559, lng: -77.03814641695081 }
+},
+      {
+        name: "Frederick Douglass National Historic Site",
+        category: "Historic Site",
+        answer: { lat: 38.86329847952932, lng: -76.98518874578846 }
+      }
+    ]
+  },
 };
