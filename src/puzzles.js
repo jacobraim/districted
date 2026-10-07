@@ -3120,4 +3120,34 @@ export const puzzlesByDate = {
       }
     ]
   },
+  "2026-10-08": {
+  id: "103",
+  locations: [
+    {
+      name: "Pascual",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.89561062082325, lng: -76.99511798811511 }
+    },
+    {
+      name: "Healy Hall",
+      category: "University Landmark",
+      answer: { lat: 38.907318069170884, lng: -77.07273457462216 }
+    },
+    {
+      name: "Metropolitan AME Church",
+      category: "Historic Church",
+      answer: { lat: 38.905462520605475, lng: -77.03540874578651 }
+    },
+    {
+      name: "President Lincoln's Cottage",
+      category: "Historic Site",
+      answer: { lat: 38.941721144620615, lng: -77.01183089708698 }
+    },
+    {
+      name: "Albert Einstein Memorial",
+      category: "Memorial",
+      answer: { lat: 38.89241947267767, lng: -77.04838171695118 }
+    }
+  ]
+},
 };
