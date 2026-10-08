@@ -3150,4 +3150,69 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-09": {
+  id: "104",
+  locations: [
+    {
+      name: "Oyster Oyster",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.909229523170225, lng: -77.02311867483569 }
+    },
+    {
+      name: "Walter E. Washington Convention Center",
+      category: "Convention Center",
+      answer: { lat: 38.90486289905351, lng: -77.0229934036718 },
+      perfectFeet: 700
+    },
+    {
+      name: "Basilica of the National Shrine of the Immaculate Conception",
+      category: "Basilica",
+      answer: { lat: 38.93336256496217, lng: -77.0006598195966 },
+      perfectFeet: 500
+    },
+    {
+      name: "Union Stage",
+      category: "Music Venue",
+      answer: { lat: 38.878921242135554, lng: -77.02454006504789 }
+    },
+    {
+      name: "United States Botanic Garden",
+      category: "Garden",
+      answer: { lat: 38.888153422768234, lng: -77.01287257483668 },
+      perfectfeet: 500
+    }
+  ]
+},
+
+"2026-10-12": {
+  id: "105",
+  locations: [
+    {
+      name: "Anju",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.91438257172641, lng: -77.04145050367136 }
+    },
+    {
+      name: "Washington Hilton",
+      category: "Hotel",
+      answer: { lat: 38.91656282403135, lng: -77.04541060367129 },
+      perfectFeet: 500
+    },
+    {
+      name: "Warner Theatre",
+      category: "Theater",
+      answer: { lat: 38.89646982167246, lng: -77.02914937483628 }
+    },
+    {
+      name: "National Japanese American Memorial",
+      category: "Memorial",
+      answer: { lat: 38.89450597173047, lng: -77.01036620367228 }
+    },
+    {
+      name: "Martin Luther King Jr. Memorial Library",
+      category: "Library",
+      answer: { lat: 38.89868227172957, lng: -77.0248388171643 }
+    }
+  ]
+},
 };
