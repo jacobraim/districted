@@ -3215,4 +3215,36 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-13": {
+  id: "106",
+  locations: [
+    {
+      name: "Maydan",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.91979071903508, lng: -77.03095820325086 }
+    },
+    {
+      name: "American University",
+      category: "University",
+      answer: { lat: 38.93800166206264, lng: -77.08884454557713 },
+      perfectFeet: 1000
+    },
+    {
+      name: "Francis A. Gregory Neighborhood Library",
+      category: "Library",
+      answer: { lat: 38.86469484984354, lng: -76.95423753208992 }
+    },
+    {
+      name: "Washington Harbour",
+      category: "Waterfront Landmark",
+      answer: { lat: 38.90152332118757, lng: -77.06010234557881 },
+      perfectFeet: 700
+    },
+    {
+      name: "National Academy of Sciences Building",
+      category: "Historic Building",
+      answer: { lat: 38.89300627079627, lng: -77.04772670325218 }
+    }
+  ]
+},
 };
