@@ -3247,4 +3247,66 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-14": {
+  id: "107",
+  locations: [
+    {
+      name: "Fiola",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.89390122125272, lng: -77.02066654599986 }
+    },
+    {
+      name: "Turkey Thicket Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.937851371602925, lng: -76.99240064599807 },
+      perfectFeet: 500
+    },
+    {
+      name: "National Presbyterian Church",
+      category: "Church",
+      answer: { lat: 38.94179037160206, lng: -77.08084651716291 }
+    },
+    {
+      name: "National Museum of Asian Art",
+      category: "Museum",
+      answer: { lat: 38.88818317368028, lng: -77.0273625460002 }
+    },
+    {
+      name: "DAR Constitution Hall",
+      category: "Music Venue",
+      answer: { lat: 38.89391072197181, lng: -77.04088460367002 }
+    }
+  ]
+},
+  "2026-10-15": {
+  id: "108",
+  locations: [
+    {
+      name: "SHIA",
+      category: "Restaurant",
+      answer: { lat: 38.908170471609324, lng: -77.00000293250437 }
+    },
+    {
+      name: "The George Washington University Museum and The Textile Museum",
+      category: "Museum",
+      answer: { lat: 38.89882517205089, lng: -77.04646489201981 }
+    },
+    {
+      name: "National Law Enforcement Museum",
+      category: "Museum",
+      answer: { lat: 38.89594417161201, lng: -77.01721907483484 }
+    },
+    {
+      name: "Alethia Tanner Park",
+      category: "Park",
+      answer: { lat: 38.911120516618716, lng: -77.00173031716427 },
+      perfectFeet: 500
+    },
+    {
+      name: "National Museum of African Art",
+      category: "Museum",
+      answer: { lat: 38.88799632266853, lng: -77.0255130036702 }
+    }
+  ]
+},
 };
