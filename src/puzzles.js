@@ -3309,4 +3309,69 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-16": {
+  id: "109",
+  locations: [
+    {
+      name: "Rooster & Owl",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.92146467171889, lng: -77.0321507037404 }
+    },
+    {
+      name: "Stead Park",
+      category: "Park",
+      answer: { lat: 38.91023922328296, lng: -77.03752534607058 },
+      perfectFeet: 500
+    },
+    {
+      name: "Washington Canoe Club",
+      category: "Historic Boathouse",
+      answer: { lat: 38.904554069939365, lng: -77.07178304607086 }
+    },
+    {
+      name: "Friendship Archway",
+      category: "Landmark",
+      answer: { lat: 38.899836971049865, lng: -77.02167884607108 }
+    },
+    {
+      name: "Arena Stage",
+      category: "Theater",
+      answer: { lat: 38.87730217172847,lng: -77.02010621723703 }
+    }
+  ]
+},
+
+"2026-10-19": {
+  id: "110",
+  locations: [
+    {
+      name: "Rania",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.89576358958447, lng: -77.0267929275465 }
+    },
+    {
+      name: "Transit Pier at The Wharf",
+      category: "Pier",
+      answer: { lat: 38.87998841973256, lng: -77.02648287490733 },
+      perfectFeet: 300
+    },
+    {
+      name: "Fort Reno Park",
+      category: "Park",
+      answer: { lat: 38.95199995597085, lng: -77.07592526284 },
+      perfectFeet: 500
+    },
+    {
+      name: "Lafayette Square",
+      category: "Park",
+      answer: { lat: 38.89924022199187, lng: -77.03623354607114 },
+      perfectFeet: 300
+    },
+    {
+      name: "National Portrait Gallery",
+      category: "Museum",
+      answer: { lat: 38.89781832182496, lng: -77.022986817236 }
+    }
+  ]
+},
 };
