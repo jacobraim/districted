@@ -3374,4 +3374,69 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-20": {
+  id: "111",
+  locations: [
+    {
+      name: "The Dabney",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.9063445717222, lng: -77.02449261723555 }
+    },
+    {
+      name: "Lincoln Park",
+      category: "Park",
+      answer: { lat: 38.88979202256928, lng: -76.9896895460716 },
+      perfectFeet: 500
+    },
+    {
+      name: "National Bonsai & Penjing Museum",
+      category: "Museum",
+      answer: { lat: 38.91221345383731, lng: -76.96931871950213 }
+    },
+    {
+      name: "Dupont Circle Metro Station North Entrance",
+      category: "Metro Station",
+      answer: { lat: 38.91097962336984, lng: -77.04461854607055 }
+    },
+    {
+      name: "Lincoln Memorial",
+      category: "Memorial",
+      answer: { lat: 38.88926857172585, lng: -77.05018673257723 },
+      perfectFeet: 500
+    }
+  ]
+},
+
+"2026-10-21": {
+  id: "112",
+  locations: [
+    {
+      name: "L'Ardente",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.89903842196809, lng: -77.01411714607116 }
+    },
+    {
+      name: "Dumbarton House",
+      category: "Historic House",
+      answer: { lat: 38.910803629758924, lng: -77.05587393263373 }
+    },
+    {
+      name: "The Wharf Marina",
+      category: "Marina",
+      answer: { lat: 38.87664122411804, lng: -77.02266660374264 },
+      perfectFeet: 500
+    },
+    {
+      name: "Stanton Park",
+      category: "Park",
+      answer: { lat: 38.89364137250811, lng: -76.99988506141219 },
+      perfectFeet: 300
+    },
+    {
+      name: "National Building Museum",
+      category: "Museum",
+      answer: { lat: 38.89773487190728, lng: -77.01760807490643 }
+    }
+  ]
+},
 };
