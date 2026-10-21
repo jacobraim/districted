@@ -3439,4 +3439,101 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-22": {
+  id: "113",
+  locations: [
+    {
+      name: "Causa",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.90651617172811, lng: -77.02473714621472 }
+    },
+    {
+      name: "National World War I Memorial",
+      category: "Memorial",
+      answer: { lat: 38.895868502883452, lng: -77.032427289295839 },
+      perfectFeet: 500
+    },
+    {
+      name: "U.S. Marine Barracks",
+      category: "Military Landmark",
+      answer: { lat: 38.87954001406915, lng: -76.99421042380371 }
+    },
+    {
+      name: "Meridian Hill Park",
+      category: "Park",
+      answer: { lat: 38.921063871724975, lng: -77.03580017504929 },
+      perfectFeet: 700
+    },
+    {
+      name: "DC History Center",
+      category: "History Center",
+      answer: { lat: 38.90263287172889, lng: -77.02288087505012 }
+    }
+  ]
+},
+
+"2026-10-23": {
+  id: "114",
+  locations: [
+    {
+      name: "Providencia",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.899456866562126, lng: -76.98729861341921 }
+    },
+    {
+      name: "Aquatic Resources Education Center",
+      category: "Education Center",
+      answer: { lat: 38.87852377607151, lng: -76.96940104621598 }
+    },
+    {
+      name: "Fort Dupont Park",
+      category: "Park",
+      answer: { lat: 38.88285568711412, lng: -76.94943925180664 },
+      perfectFeet: 1200
+    },
+{
+  name: "Anacostia Community Museum",
+  category: "Museum",
+  answer: { lat: 38.85654417173881, lng: -76.976807646217 }
+},
+    {
+      name: "President Lincoln's Cottage",
+      category: "Historic Site",
+      answer: { lat: 38.94171332698537, lng: -77.01184560388357 }
+    }
+  ]
+},
+
+"2026-10-26": {
+  id: "115",
+  locations: [
+    {
+      name: "Barbouzard",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.90212814642364, lng: -77.04010927361695 }
+    },
+    {
+      name: "Kenilworth Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.908371528447425, lng: -76.94094984621456 },
+      perfectFeet: 500
+    },
+    {
+      name: "Theodore Roosevelt Island",
+      category: "Park",
+      answer: { lat: 38.896462479218584, lng: -77.06267416453503 },
+      perfectFeet: 2000
+    },
+    {
+      name: "Warner Theatre",
+      category: "Theater",
+      answer: { lat: 38.89648652178691, lng: -77.02913864621515 }
+    },
+    {
+      name: "Mary McLeod Bethune Council House",
+      category: "Historic Site",
+      answer: { lat: 38.90811688225134, lng: -77.03075172718009 }
+    }
+  ]
+},
 };
