@@ -3536,4 +3536,35 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-27": {
+  id: "116",
+  locations: [
+    {
+      name: "Queen's English",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.93215792574479, lng: -77.02853777501063 }
+    },
+    {
+      name: "The Octagon",
+      category: "Historic House",
+      answer: { lat: 38.896350721685, lng: -77.04138854617669 }
+    },
+    {
+      name: "Anacostia Park Skating Pavilion",
+      category: "Park/Recreation",
+      answer: { lat: 38.87795236809959, lng: -76.96994159354618 }
+    },
+    {
+      name: "National Museum of American History",
+      category: "Museum",
+      answer: { lat: 38.891270920944606, lng: -77.03001871734139 }
+    },
+    {
+      name: "McPherson Square",
+      category: "Park",
+      answer: { lat: 38.90192762755221, lng: -77.03409769328306 },
+      perfectFeet: 300
+    }
+  ]
+},
 };
