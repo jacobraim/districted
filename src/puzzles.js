@@ -3598,4 +3598,100 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-29": {
+  id: "118",
+  locations: [
+    {
+      name: "Maketto",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.900044221249836, lng: -76.98663198850551 }
+    },
+    {
+      name: "Milken Center for Advancing the American Dream",
+      category: "Museum/Cultural Center",
+      answer: { lat: 38.899073071611866, lng: -77.03402614617656 }
+    },
+    {
+      name: "National Museum of African American History and Culture",
+      category: "Museum",
+      answer: { lat: 38.891047670224204, lng: -77.03259254617697 }
+    },
+    {
+      name: "Lincoln Park",
+      category: "Park",
+      answer: { lat: 38.88980037330012, lng: -76.98968954617705 },
+      perfectFeet: 500
+    },
+    {
+      name: "Avalon Theatre",
+      category: "Movie Theater",
+      answer: { lat: 38.96531094572857, lng: -77.07607081729003 }
+    }
+  ]
+},
+
+"2026-10-30": {
+  id: "119",
+  locations: [
+    {
+      name: "Rose's Luxury",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.88057428498285, lng: -76.99521694509833 }
+    },
+    {
+      name: "National City Christian Church",
+      category: "Church",
+      answer: { lat: 38.906548694929675, lng: -77.03260275370447 }
+    },
+    {
+      name: "Smithsonian American Art Museum",
+      category: "Museum",
+      answer: { lat: 38.89791842127974, lng: -77.02304734617661 }
+    },
+    {
+      name: "Banneker Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.922690524633055, lng: -77.02250160199776 },
+      perfectFeet: 500
+    },
+    {
+      name: "Navy Memorial",
+      category: "Memorial",
+      answer: { lat: 38.89442652191151, lng: -77.02278517501232 }
+    }
+  ]
+},
+
+"2026-11-02": {
+  id: "120",
+  locations: [
+    {
+      name: "Namak",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.9034688223762, lng: -77.03494331734083 }
+    },
+    {
+      name: "National Air and Space Museum",
+      category: "Museum",
+      answer: { lat: 38.888206271614, lng: -77.0198056750126 }
+    },
+    {
+      name: "Stanton Park",
+      category: "Park",
+      answer: { lat: 38.893607970825755, lng: -76.99986360384798 },
+      perfectFeet: 300
+    },
+    {
+      name: "Heurich House Museum",
+      category: "Museum",
+      answer: { lat: 38.90803817160986, lng: -77.04460884617613 }
+    },
+    {
+      name: "Tregaron Conservancy",
+      category: "Park",
+      answer: { lat: 38.933063912071304, lng: -77.0619659818402 },
+      perfectFeet: 1000
+    }
+  ]
+},
 };
