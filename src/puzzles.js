@@ -3567,4 +3567,35 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-10-28": {
+  id: "117",
+  locations: [
+    {
+      name: "Jônt",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.915840401281976, lng: -77.03229459045639 }
+    },
+    {
+      name: "Rock Creek Park Horse Center",
+      category: "Equestrian Center",
+      answer: { lat: 38.957683, lng: -77.051018 },
+      perfectFeet: 500
+    },
+    {
+      name: "Renwick Gallery",
+      category: "Museum",
+      answer: { lat: 38.8991259914141, lng: -77.0390773365021 }
+    },
+    {
+      name: "Franciscan Monastery of the Holy Land",
+      category: "Monastery/Garden",
+      answer: { lat: 38.9374187, lng: -76.9851312 }
+    },
+    {
+      name: "U.S. Botanic Garden Bartholdi Fountain and Gardens",
+      category: "Garden",
+      answer: { lat: 38.887913456683094, lng: -77.01291999811947 }
+    }
+  ]
+},
 };
