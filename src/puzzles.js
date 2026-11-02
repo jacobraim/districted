@@ -3694,4 +3694,36 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-11-03": {
+  id: "121",
+  locations: [
+    {
+      name: "Your Only Friend",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.904850991642185, lng: -77.02412907301127 }
+    },
+    {
+      name: "Embassy of Australia",
+      category: "Embassy",
+      answer: { lat: 38.90773822299544, lng: -77.0370094748641 },
+      perfectFeet: 300
+    },
+    {
+      name: "Folger Shakespeare Library",
+      category: "Library/Theater",
+      answer: { lat: 38.88938044218265, lng: -77.0027849530033 }
+    },
+    {
+      name: "The LINE DC",
+      category: "Hotel",
+      answer: { lat: 38.922759071724194, lng: -77.04161941719099 }
+    },
+    {
+      name: "Kalorama Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.92068843010035, lng: -77.0443147748636 },
+      perfectFeet: 500
+    }
+  ]
+},
 };
