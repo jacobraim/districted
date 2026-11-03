@@ -3726,4 +3726,37 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-11-04": {
+  id: "122",
+  locations: [
+    {
+      name: "Annabelle",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.9127547717268, lng: -77.04722986137202 }
+    },
+    {
+      name: "The Atlantis",
+      category: "Music Venue",
+      answer: { lat: 38.91810611012115, lng: -77.02375336704038 }
+    },
+    {
+      name: "Gallaudet University",
+      category: "University",
+      answer: { lat: 38.908417797401285, lng: -76.99243041904477 },
+      perfectFeet: 1000
+    },
+    {
+      name: "Rock Creek Tennis Center",
+      category: "Sports",
+      answer: { lat: 38.95411582078685, lng: -77.0382443921679 },
+      perfectFeet: 700
+    },
+    {
+      name: "Washington Monument",
+      category: "Monument",
+      answer: { lat: 38.8894708234958, lng: -77.03525728438987 },
+      perfectFeet: 500
+    }
+  ]
+},
 };
