@@ -3759,4 +3759,36 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-11-05": {
+  id: "123",
+  locations: [
+    {
+      name: "Gemini",
+      category: "100 Best Restaurant",
+      answer: { lat: 38.91008357172162, lng: -77.03827057455044 }
+    },
+    {
+      name: "Meridian International Center",
+      category: "Cultural Center",
+      answer: { lat: 38.92031317171931, lng: -77.03827727454998 }
+    },
+    {
+      name: "Frederick Douglass Memorial Bridge",
+      category: "Bridge",
+      answer: { lat: 38.86839028834241, lng: -77.005499345964 },
+      perfectFeet: 1000
+    },
+    {
+      name: "National Gallery of Art Sculpture Garden",
+      category: "Garden",
+      answer: { lat: 38.89128742105806, lng: -77.02294277455138 },
+      perfectFeet: 500
+    },
+    {
+      name: "Fort DeRussy",
+      category: "Historic Site",
+      answer: { lat: 38.963636552180176, lng: -77.0508936503193 }
+    }
+  ]
+},
 };
