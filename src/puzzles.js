@@ -1,4 +1,4 @@
-export const puzzlesByDate = {
+ieexport const puzzlesByDate = {
   "2026-05-19": {
     id: "001",
     locations: [
@@ -3788,6 +3788,135 @@ export const puzzlesByDate = {
       name: "Fort DeRussy",
       category: "Historic Site",
       answer: { lat: 38.963636552180176, lng: -77.0508936503193 }
+    }
+  ]
+},
+  "2026-11-06": {
+  id: "124",
+  locations: [
+    {
+      name: "Ivy and Coney",
+      category: "Restaurant/Bar",
+      answer: { lat: 38.910648523213524, lng: -77.02162101757247 }
+    },
+    {
+      name: "Supreme Court of the United States",
+      category: "Civic Landmark",
+      answer: { lat: 38.890634020863686, lng: -77.00443980408252 }
+    },
+    {
+      name: "Dumbarton Oaks",
+      category: "Museum/Garden",
+      answer: { lat: 38.91425232798762, lng: -77.0640163790763 },
+      perfectFeet: 700
+    },
+    {
+      name: "DC War Memorial",
+      category: "Memorial",
+      answer: { lat: 38.887593571608825, lng: -77.04349720408268 }
+    },
+    {
+      name: "Yards Park",
+      category: "Park",
+      answer: { lat: 38.873368918837826, lng: -77.00202814641125 },
+      perfectFeet: 700
+    }
+  ]
+},
+
+"2026-11-09": {
+  id: "125",
+  locations: [
+    {
+      name: "Thip Khao",
+      category: "Restaurant",
+      answer: { lat: 38.93298312583588, lng: -77.03299453291646 }
+    },
+    {
+      name: "Howard University",
+      category: "University",
+      answer: { lat: 38.92269261857506, lng: -77.019394788736 },
+      perfectFeet: 1000
+    },
+    {
+      name: "Vietnam Veterans Memorial",
+      category: "Memorial",
+      answer: { lat: 38.89129407785265, lng: -77.04772324583988 }
+    },
+    {
+      name: "Anacostia Community Museum",
+      category: "Museum",
+      answer: { lat: 38.856552526365014, lng: -76.97681837524826 }
+    },
+    {
+      name: "The Miracle Theatre",
+      category: "Movie Theater",
+      answer: { lat: 38.88172385491181, lng: -76.99511459444275 }
+    }
+  ]
+},
+
+"2026-11-10": {
+  id: "126",
+  locations: [
+    {
+      name: "Purple Patch",
+      category: "Restaurant",
+      answer: { lat: 38.93055547160494, lng: -77.03765787496222 }
+    },
+    {
+      name: "Frederick Douglass National Historic Site",
+      category: "Historic Site",
+      answer: { lat: 38.863273417653865, lng: -76.98517801757579 }
+    },
+    {
+      name: "Korean War Veterans Memorial",
+      category: "Memorial",
+      answer: { lat: 38.88754613441309, lng: -77.04716436915588 }
+    },
+    {
+      name: "National Museum of the American Indian",
+      category: "Museum",
+      answer: { lat: 38.88834002059488, lng: -77.0165034040827 }
+    },
+    {
+      name: "Langdon Park Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.92656202508154, lng: -76.97605227524441 },
+      perfectFeet: 500
+    }
+  ]
+},
+
+"2026-11-11": {
+  id: "127",
+  locations: [
+    {
+      name: "Old Ebbitt Grill",
+      category: "Restaurant",
+      answer: { lat: 38.897947471606, lng: -77.0332048887373 }
+    },
+    {
+      name: "National Cathedral",
+      category: "Cathedral",
+      answer: { lat: 38.930594571599265, lng: -77.07075934640785 },
+      perfectFeet: 500
+    },
+    {
+      name: "Marine Barracks Washington",
+      category: "Military Landmark",
+      answer: { lat: 38.87954001406915, lng: -76.99421042380371 }
+    },
+    {
+      name: "National Museum of Women in the Arts",
+      category: "Museum",
+      answer: { lat: 38.90009327160572, lng: -77.02910087524566 }
+    },
+    {
+      name: "Rock Creek Tennis Center",
+      category: "Sports",
+      answer: { lat: 38.95411582078685, lng: -77.0382443921679 },
+      perfectFeet: 700
     }
   ]
 },
