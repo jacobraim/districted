@@ -3919,5 +3919,5 @@ ieexport const puzzlesByDate = {
       perfectFeet: 700
     }
   ]
-},
+}
 };
