@@ -1,4 +1,4 @@
-ieexport const puzzlesByDate = {
+export const puzzlesByDate = {
   "2026-05-19": {
     id: "001",
     locations: [
