@@ -3919,5 +3919,134 @@ export const puzzlesByDate = {
       perfectFeet: 700
     }
   ]
-}
+},
+  "2026-11-12": {
+  id: "128",
+  locations: [
+    {
+      name: "Supra",
+      category: "Restaurant",
+      answer: { lat: 38.9059383717278, lng: -77.02671978995656 }
+    },
+    {
+      name: "National Capitol Columns",
+      category: "Landmark",
+      answer: { lat: 38.91026446848288, lng: -76.96735262893974 },
+      perfectFeet: 500
+    },
+    {
+      name: "Katzen Arts Center",
+      category: "Arts Center",
+      answer: { lat: 38.93920737160302, lng: -77.0871592172913 }
+    },
+    {
+      name: "St. John's Church Lafayette Square",
+      category: "Church",
+      answer: { lat: 38.900396673351736, lng: -77.0360740746135 }
+    },
+    {
+      name: "Fort Dupont Ice Arena",
+      category: "Ice Arena",
+      answer: { lat: 38.8828571684123, lng: -76.94949327531954 },
+      perfectFeet: 500
+    }
+  ]
+},
+
+"2026-11-13": {
+  id: "129",
+  locations: [
+    {
+      name: "DCity Smokehouse",
+      category: "Restaurant",
+      answer: { lat: 38.91329489768667, lng: -77.01430228810537 }
+    },
+    {
+      name: "Museum of the Bible",
+      category: "Museum",
+      answer: { lat: 38.884768399456696, lng: -77.0172281995098 }
+    },
+    {
+      name: "East Potomac Golf Links",
+      category: "Golf Course",
+      answer: { lat: 38.87458671898692, lng: -77.02677393263544 },
+      perfectFeet: 3000
+    },
+{
+  name: "Titanic Memorial",
+  category: "Memorial",
+  answer: { lat: 38.87193212841506, lng: -77.01931759052965 }
+},
+    {
+      name: "Rock Creek Park Nature Center",
+      category: "Nature Center",
+      answer: { lat: 38.9599636143034, lng: -77.05167214577509 }
+    }
+  ]
+},
+
+"2026-11-16": {
+  id: "130",
+  locations: [
+    {
+      name: "Lapis",
+      category: "Restaurant",
+      answer: { lat: 38.921323118860165, lng: -77.04383200344837 }
+    },
+    {
+      name: "National Bonsai & Penjing Museum",
+      category: "Museum/Garden",
+      answer: { lat: 38.91219291993604, lng: -76.96928148810518 }
+    },
+    {
+      name: "D.C. Armory",
+      category: "Arena",
+      answer: { lat: 38.888523802477486, lng: -76.97552223000588 },
+      perfectFeet: 500
+    },
+    {
+      name: "Clara Barton Missing Soldiers Office Museum",
+      category: "Museum",
+      answer: { lat: 38.89586363444467, lng: -77.02169292390784 }
+    },
+    {
+      name: "Theodore Roosevelt Memorial",
+      category: "Memorial",
+      answer: { lat: 38.89738610985933, lng: -77.06398537630506 },
+      perfectFeet: 1000
+    }
+  ]
+},
+
+"2026-11-17": {
+  id: "131",
+  locations: [
+    {
+      name: "St. Anselm",
+      category: "Restaurant",
+      answer: { lat: 38.9077157306019, lng: -76.99895332858304 }
+    },
+    {
+      name: "National Museum of Asian Art",
+      category: "Museum",
+      answer: { lat: 38.88815812069698, lng: -77.02735181694221 }
+    },
+    {
+      name: "Fort Stevens Battleground",
+      category: "Historic Site",
+      answer: { lat: 38.964326838419986, lng: -77.02936590099756 },
+      perfectFeet: 500
+    },
+    {
+      name: "DAR Museum",
+      category: "Museum",
+      answer: { lat: 38.894015420555476, lng: -77.0403111227539 }
+    },
+    {
+      name: "The Miracle Theatre",
+      category: "Movie Theater",
+      answer: { lat: 38.88172385491181, lng: -76.99511459444275 }
+    }
+  ]
+},
 };
