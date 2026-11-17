@@ -4049,4 +4049,168 @@ export const puzzlesByDate = {
     }
   ]
 },
+  "2026-11-18": {
+  id: "132",
+  locations: [
+    {
+      name: "Bar del Monte",
+      category: "Restaurant",
+      answer: { lat: 38.92826561804208, lng: -77.03736118843679 }
+    },
+    {
+      name: "Carter G. Woodson Home National Historic Site",
+      category: "Historic Site",
+      answer: { lat: 38.91085877172728, lng: -77.02415418658951 }
+    },
+    {
+      name: "Hains Point",
+      category: "Park",
+      answer: { lat: 38.857370535069535, lng: -77.02231404326653 },
+      perfectFeet: 1500
+    },
+    {
+      name: "Library of Congress",
+      category: "Library",
+      answer: { lat: 38.88868397173142, lng: -77.00470827494448 }
+    },
+    {
+      name: "Rock Creek Cemetery",
+      category: "Cemetery",
+      answer: { lat: 38.944886938636905, lng: -77.01096876144848 },
+      perfectFeet: 2500
+    }
+  ]
+},
+
+"2026-11-19": {
+  id: "133",
+  locations: [
+    {
+      name: "Menya Hosaki",
+      category: "Restaurant",
+      answer: { lat: 38.9420255141594, lng: -77.02468131727153 }
+    },
+    {
+      name: "Reservoir Park Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.92328678155995, lng: -77.01003554610733 },
+      perfectFeet: 700
+    },
+    {
+      name: "Fort Reno Stage",
+      category: "Music Venue",
+      answer: { lat: 38.95120823205445, lng: -77.07679107227635 }
+    },
+    {
+      name: "Tudor Place",
+      category: "Historic House",
+      answer: { lat: 38.91148937172716, lng: -77.06292504610806 }
+    },
+    {
+      name: "President Woodrow Wilson House",
+      category: "Historic House",
+      answer: { lat: 38.9139517116316, lng: -77.0516587461277 }
+    }
+  ]
+},
+
+"2026-11-20": {
+  id: "134",
+  locations: [
+    {
+      name: "La Piquette",
+      category: "Restaurant",
+      answer: { lat: 38.93335579178154, lng: -77.07309011727183 }
+    },
+    {
+      name: "Deanwood Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.90824032010167, lng: -76.93185047790948 },
+      perfectFeet: 700
+    },
+    {
+      name: "Hillwood Estate, Museum & Gardens",
+      category: "Museum/Garden",
+      answer: { lat: 38.943632627209844, lng: -77.05256607494195 },
+      perfectFeet: 1000
+    },
+    {
+      name: "U.S. Capitol",
+      category: "Civic Landmark",
+      answer: { lat: 38.88993052090458, lng: -77.0090290461092 },
+      perfectFeet: 1000
+    },
+    {
+      name: "National Archives",
+      category: "Museum/Landmark",
+      answer: { lat: 38.89280480863477, lng: -77.02294507987553 },
+      perfectFeet: 300
+    }
+  ]
+},
+
+"2026-11-23": {
+  id: "135",
+  locations: [
+    {
+      name: "Unconventional Diner",
+      category: "Restaurant",
+      answer: { lat: 38.906033873862675, lng: -77.02372304610866 }
+    },
+    {
+      name: "Marvin Gaye Recreation Center",
+      category: "Recreation Center",
+      answer: { lat: 38.891356767792864, lng: -76.91300894610912 },
+      perfectFeet: 700
+    },
+    {
+      name: "National Gallery of Art",
+      category: "Museum",
+      answer: { lat: 38.89120566462183, lng: -77.01990931509705 }
+    },
+    {
+      name: "Glover Archbold Park",
+      category: "Park",
+      answer: { lat: 38.92319797171853, lng: -77.08376554638342 },
+      perfectFeet: 1500
+    },
+    {
+      name: "Embassy of Belize",
+      category: "Embassy",
+      answer: { lat: 38.91661740907891, lng: -77.05624579508915 }
+    }
+  ]
+},
+
+"2026-11-24": {
+  id: "136",
+  locations: [
+    {
+      name: "Doi Moi",
+      category: "Restaurant",
+      answer: { lat: 38.9142554237609, lng: -77.032176903779 }
+    },
+    {
+      name: "Dumbarton House",
+      category: "Historic House",
+      answer: { lat: 38.910803629758924, lng: -77.05587393263373 }
+    },
+    {
+      name: "Smithsonian Castle",
+      category: "Museum/Landmark",
+      answer: { lat: 38.88878607173189, lng: -77.02601217494491 }
+    },
+    {
+      name: "Fort DeRussy",
+      category: "Historic Site",
+      answer: { lat: 38.963636552180176, lng: -77.0508936503193 },
+      perfectFeet: 500
+    },
+    {
+      name: "National Museum of the American Latino Gallery",
+      category: "Museum",
+      answer: { lat: 38.891029205401836, lng: -77.02960123926518 }
+    }
+  ]
+}
 };
